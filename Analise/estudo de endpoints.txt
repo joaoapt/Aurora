@@ -1,0 +1,35 @@
+
+/POST   /usuario
+
+request
+{
+    "nome": "",
+    "email" "",
+    "senha" ""
+}
+
+response (200)
+{
+    "id": 0,
+    "nome": "",
+    "email": "",
+    "senha": ""
+}
+
+//////////////////////////////////////////////////////////////////////////////////////
+
+/POST   /usuario/login
+
+request
+{
+    "email": "",
+    "senha": ""
+}
+
+response (200)
+{
+    "id": 0,
+    "nome": "",
+    "email": "",
+    "senha": ""
+}
