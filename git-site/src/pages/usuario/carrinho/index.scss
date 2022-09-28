@@ -1,0 +1,45 @@
+
+    
+.page-carrinho{
+    color: #fff;
+    background: fixed;
+    background-repeat: no-repeat;
+    height: 655px;
+    background-image:url(../../../../public/img/praia.jpg) ;
+
+    .interação{
+        display: flex;
+        
+    }
+    .nota{
+        margin-left: 50px;
+        display: flex;
+        justify-content:flex-end;
+    }
+    table{
+        margin-left: -40px;
+        width: 1450px;
+        text-align: center;
+    }
+    th{
+        color: #fff;
+        margin: 30px;
+        font-family: 'Oswald', sans-serif;
+        font-size: 40px;
+        margin: 3990px;
+    }
+    td{
+        color: #000;
+        font-weight: 600;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 20px;
+        text-align: center;
+        width: 100px;
+    }
+
+
+    .img-livro{
+        width: 150px;
+        height: 200px;
+    }
+}

@@ -1,0 +1,13 @@
+.page-pesquisa-livro{
+    height: 46px;
+    background-image:url(../../../../public/img/montanha.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom center;
+    .cabecalho
+    {
+        display: flex;
+        justify-content:flex-end;
+        text-align:end;
+    }
+}

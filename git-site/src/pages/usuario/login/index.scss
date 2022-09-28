@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Oswald:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&family=Oswald:wght@600&display=swap');
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.page-login{
+    display: flex;
+    align-items: center;
+    height: 40.8em;
+    background: linear-gradient(280.5deg, #25C998 0%, #1c8784 30%, #071441 100%);
+    text-align: center;
+    .titulo-login{
+        color: #fff;
+        margin: 530px 0px 0px;
+        font-family: 'Oswald', sans-serif;
+        font-size:55px ;
+    }
+    .letras{    
+        color: #fff;
+        word-spacing: 20px;
+        font-size: 28px;
+        font-family: 'Oswald', sans-serif;
+        display: block;
+        text-align: left;
+        margin-left: 20px;
+        margin-top: 30px;
+    }
+    .linha{
+        margin-left: auto;
+        margin-right: auto;
+        width: 365px;
+    }
+    input{
+        border-bottom: #fff 1px solid;
+        background: transparent;
+        font-family: 'Montserrat', sans-serif;
+        border: none;
+        outline: none;
+        font-size: 20px;
+        width: 370px;
+        height: 35px;
+        border: 1px none;
+        border-radius: 8px;
+        border-bottom:#fff 1px solid ;
+        color: #fff;
+    }
+    .local-cadastrar{
+    margin: 40px 0px 10px 0px;
+    }
+    .botão-login{
+        background: none;
+        border: #fff 2px solid;
+        text-decoration: none;
+        border-radius: 20px;
+        margin-top: 20px;
+        padding: 3px 14px;
+        cursor: pointer;
+        color:#fff;
+        font-size: 22px;
+        font-family: 'Oswald', sans-serif;
+        transition:all 0.6s ease-in-out 0.05s;
+        
+    }
+    .botão-voltar-login{
+        background: none;
+        border: #fff 2px solid;
+        text-decoration: none;
+        border-radius: 20px;
+        margin-top: 34px;
+        padding: 3px 14px;
+        cursor: pointer;
+        color:#fff ;
+        font-size: 22px;
+        font-family: 'Oswald', sans-serif;
+        margin-right: 200px;
+        transition:all 0.6s ease-in-out 0.05s;
+    }
+    .botão-cadastrar-login{
+        word-spacing: normal;
+        border:none;
+        padding: 5px 16px;
+        cursor: pointer;
+        color:#fff ;
+        font-size: 25px;
+        font-family: 'Oswald', sans-serif;
+        transition:all 0.5s ease-in-out 0s;
+    }
+    .conteudo-login{
+        border-bottom-right-radius: 10px;
+        border-bottom-left-radius: 4px;
+        padding: 33px 50px;
+        margin-top: -600px;
+        margin-left:auto;
+        margin-right: auto; 
+        color: rgb(255, 254, 254);
+        background: linear-gradient(85deg, #25C998 0%, #1c8784 30%, #1020AB 100%);
+    }
+    .base{
+        margin-top:50px;
+    }
+    .botão-cadastrar-login:hover{
+        color:#25C998;
+    }
+    .botão-voltar-login:hover{
+        transition:all 0.5s ease-in-out 0s;
+        color: #204050;
+        border: 2px #204050 solid;
+        border-radius: 5px;
+    
+    }
+    .botão-login:hover{
+        transition:all 0.5s ease-in-out 0s;
+        color: #25C998;
+        border: 2px  solid #25C998;
+        border-radius:5px;
+    }
+    input:hover{
+        transition: 0.3s;
+        border: 1px none;
+        border-radius: 10px;
+        border-bottom: #21b98c 2.5px solid;
+    }    
+}

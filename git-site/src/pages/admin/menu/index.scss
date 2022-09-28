@@ -1,0 +1,22 @@
+.page-home
+{
+    height: 49em;
+    background-image:url(../../../../public/img/montanha.jpg);
+    background-size: cover;
+    background-position: bottom center;
+    display: flex;
+    .cabecalho
+    {
+        display: flex;
+        justify-content:flex-end;
+        text-align:end;
+    }
+    
+    .gif
+    {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        pointer-events: none;
+    }
+}

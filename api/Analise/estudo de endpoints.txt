@@ -1,0 +1,65 @@
+
+/POST   /usuario
+
+request
+{
+    "nome": "",
+    "email" "",
+    "senha" ""
+}
+
+response (200)
+{
+    "id": 0,
+    "nome": "",
+    "email": "",
+    "senha": ""
+}
+
+//////////////////////////////////////////////////////////////////////////////////////
+
+/POST   /usuario/login
+
+request
+{
+    "email": "",
+    "senha": ""
+}
+
+response (200)
+{
+    "id": 0,
+    "nome": "",
+    "email": "",
+    "senha": ""
+}
+
+
+//consultar
+server.get('/consultar', async (resp) => {
+    try {
+        const resposta = await ConsultarTodos();
+        resp.send(resposta)
+    } catch (err) {
+        resp.status(401).send({
+            erro: err.message
+        });
+    }
+})
+
+//cadaastro livro
+server.post('/admin/cadastrar', async (req, resp) => {
+    try {
+        const novolivro = req.body;
+        if(!novolivro.categoria.trim()){
+            throw new Error('O nome da categoria é OBRIGATÓRIO');
+        }
+        const local = await cadastrarLivro (novolivro)
+        resp.send(local)
+    }
+    catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        });
+    }
+})

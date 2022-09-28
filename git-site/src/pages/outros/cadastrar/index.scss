@@ -1,0 +1,101 @@
+
+.conteudo-cadastrar{
+    padding: 22px 50px;
+    margin-top: -170px;
+    margin-left:auto;
+    margin-right: auto; 
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+.page-cadastrar{
+    display: flex;
+    align-items: center;
+    height: 40.8em;
+    background: linear-gradient(280.5deg, #25C998 0%, #1c8784 30%, #071441 100%);
+    text-align: center;
+    .titulo-cadastrar{
+        margin-top: 92px;
+        color: #fff;
+        font-family: 'Oswald', sans-serif;
+        font-size:55px ;
+    }
+    .sub-titulo{
+        color: #fff;
+        word-spacing: 20px;
+        font-size: 25px;
+        font-family: 'Oswald', sans-serif;
+        display: block;
+        text-align: left;
+        margin-left: 10px;
+        margin-top: 25px;
+    }
+    .usuario-base{
+        margin-bottom: -30px;
+    }
+    .conteudo-cadastrar{
+        margin-bottom: -30px;
+        border-bottom-right-radius: 10px;
+        border-bottom-left-radius: 4px;
+        margin-left:auto;
+        margin-right: auto; 
+        background: linear-gradient(85deg, #25C998 0%, #1c8784 40%, #1020AB 100%);
+    }
+    
+    .botão-cadastrar{
+        background: none;
+        border: #fff 2px solid;
+        text-decoration: none;
+        border-radius: 20px;
+        margin-top: 28px;
+        padding: 3px 14px;
+        cursor: pointer;
+        color:#fff ;
+        border-radius: 25px;
+        margin-top: 20px;
+        padding: 3px 14px;
+        cursor: pointer;
+        font-size: 22px;
+        font-family: 'Oswald', sans-serif;
+        transition:all 0.6s ease-in-out 0.05s;
+        cursor: pointer;
+    }
+    .botão-voltar-cadastrar{
+        background: none;
+        border: #fff 2px solid;
+        text-decoration: none;
+        border-radius: 20px;
+        margin-top: 28px;
+        padding: 3px 14px;
+        cursor: pointer;
+        color:#fff ;
+        text-decoration: none;
+        border-radius: 25px;
+        margin-top: 20px;
+        padding: 3px 14px;
+        cursor: pointer;
+        font-size: 22px;
+        font-family: 'Oswald', sans-serif;
+        margin-right: 200px;
+        transition:all 0.6s ease-in-out 0.05s;
+        cursor: pointer;
+    }
+    .botão-cadastrar:hover{
+        transition:all 0.5s ease-in-out 0s;
+        color: #1CB284;
+        border: 2px #1CB284  solid;
+        border-radius: 5px;
+    
+    }
+    .botão-voltar-cadastrar:hover{
+        transition:all 0.5s ease-in-out 0s;
+        color: #204050;
+        border: 2px #204050 solid;
+        border-radius:5px;
+    }
+    
+    
+}

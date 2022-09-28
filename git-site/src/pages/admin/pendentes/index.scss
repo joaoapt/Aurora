@@ -1,0 +1,14 @@
+.page-pendentes
+{
+    height: 48.4em;
+    background-image:url(../../../../public/img/aurora.jpg);
+    background-size: cover;
+    background-position: bottom center;
+    display: flex;
+    .cabecalho
+    {
+        display: flex;
+        justify-content:flex-end;
+        text-align:end;
+    }
+}

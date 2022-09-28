@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Mono&display=swap');@import url('https://fonts.googleapis.com/css2?family=PT+Mono&display=swap');
+
+.nota-pagamento{
+    display: flex;
+    .conteudo{
+        height: 240px;
+        width: 280px;
+        background: #25c998a9;
+        border-radius: 0px 0px 5px 15px;
+    }
+    .titulo{
+        margin-top: 14px;
+        font-weight:500;
+        color: #fff;
+        font-size: 45px;
+        text-align: center;
+        font-family: 'Montserrat', serif; 
+        border-bottom: #fff solid 2px;
+        padding: 7px 9px;
+    }
+    .centralizar{
+        display: flex;
+        justify-content: center;
+    }
+    
+    .botão{
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        font-weight: 400;
+        font-family: 'Oswald', sans-serif;
+        align-items: center;
+        background:none;
+        cursor: pointer;
+        align-items: center;
+        box-sizing: border-box;
+        border: #fff 2px solid;
+        border-radius: 10px;
+        color: #fff;
+        font-size:25px;
+        padding: 7px 9px;
+        margin-top: 20px;
+    }
+
+    hr{
+        border: #fff 1px solid;
+        width: 50px;
+        background: #FFFFFF;
+        border-radius: 25px;
+    }
+    
+    .resultado{
+        margin-top: 10px;
+        color: #fff;
+        font-size: 20px;
+        font-family: 'PT Mono', monospace;
+        display: flex;
+        justify-content: center;
+    }
+}
+

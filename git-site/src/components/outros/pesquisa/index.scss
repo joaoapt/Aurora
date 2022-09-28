@@ -1,0 +1,32 @@
+.pesquisa{
+      nav{
+            height: 90px;
+            background: linear-gradient(280.5deg,  #071441 0%,  #071441 30%, #000 60%);
+      }
+      .titulo{
+            font-size: 19px;
+            margin-top: 1px;
+            margin-left: 1px;
+            font-family: 'Oswald', sans-serif;
+            color: #fff;
+      }
+      .cont-logo{
+      
+            display: flex;
+      }
+      .logo{
+            margin-top: 6px;
+            margin-left: 9px;
+            width: 90px;
+      }
+      .barra{
+            margin-top: -4px;
+            font-size: 70px;
+            color: #fff;
+      }
+      .linha{
+            background:black;
+            height: 4px;
+            width: auto;
+      }
+}

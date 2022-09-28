@@ -1,0 +1,21 @@
+.page-editar
+{
+    background-image:url(../../../../public/img/aurora.jpg) ;
+    background-size: cover;
+    background-position: bottom center;
+    display: flex;
+    .cabecalho
+    {
+        display: flex;
+        justify-content:flex-end;
+        text-align:end;
+    }
+    
+    .gif
+    {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        pointer-events: none;
+    }
+}
