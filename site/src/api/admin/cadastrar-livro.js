@@ -1,6 +1,4 @@
-
 import axios from 'axios'
-import { LoginAdmin } from './login-admin'
 const api = axios.create({
     baseURL:'http://localhost:5000'
 })

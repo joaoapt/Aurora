@@ -5,10 +5,12 @@
     background-size: cover;
     background-position: bottom center;
     display: flex;
-    .cabecalho
-    {
+    
+    .base{
         display: flex;
-        justify-content:flex-end;
-        text-align:end;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
     }
 }

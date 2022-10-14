@@ -1,5 +1,5 @@
 import storage from 'local-storage'
-import { LoginAdmin } from '../../../api/login-admin'
+import { LoginAdmin } from '../../../api/admin/login-admin'
 import { useState, useRef,useEffect } from 'react';
 import LoadingBar from 'react-top-loading-bar'
 import { useNavigate } from 'react-router-dom';
@@ -7,7 +7,6 @@ import { useNavigate } from 'react-router-dom';
 import './index.scss';
 
 export default function Index() {
-
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
     const [erro, setErro] = useState('');
@@ -26,9 +25,9 @@ export default function Index() {
         setCarregando(true);
         
         try{
-        const Marcelo = await LoginAdmin(email, senha);
+        const Marceloo = await LoginAdmin(email, senha);
 
-            storage('usuario-logado', Marcelo);
+            storage('usuario-logado', Marceloo);
 
         setTimeout(() => {
             navigate('/menu');

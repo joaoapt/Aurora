@@ -1,17 +1,18 @@
-import { cadastrarLogin, login } from '../repository/usuarioRepository.js'
+import { cadastrarLogin, Login } from '../repository/usuarioRepository.js'
 import { Router } from 'express';
 
 const server = Router();
 
-server.post('/usuario/login', async (req, resp) => {
+server.post('/login/usuario', async (req, resp) => {
     try {
         const { email, senha } = req.body;
 
-        const resposta = await login(email, senha);
-        
+        const resposta = await Login(email, senha);
+
         if (!resposta) {
-            throw new Error('Opps ocorreu um erro inesperado. Tente novamente');
+            throw new Error('Ops, Ocorreu um Erro Inesperado. Tente Novamente!');
         }
+
 
         resp.send(resposta)
 
@@ -22,18 +23,18 @@ server.post('/usuario/login', async (req, resp) => {
     }
 })
 
-server.post('/usuario', async (req, resp) => {
+server.post('/cadastrar/usuario', async (req, resp) => {
     try {
         const novoLogin = req.body;
         
-        if (!novoLogin.usuario)
-            throw new Error('O seu Nome é obrigatório!');
+        if (!novoLogin.nome)
+            throw new Error('O seu Nome é Obrigatório!');
         
         if (!novoLogin.email)
-            throw new Error('O seu Email é obrigatório!');
+            throw new Error('O seu Email é Obrigatório!');
         
         if (!novoLogin.senha)
-            throw new Error('A sua Senha é obrigatório!');
+            throw new Error('A sua Senha é Obrigatório!');
 
         const novo = await cadastrarLogin (novoLogin);
         resp.send(novo)
