@@ -5,24 +5,20 @@ import { con } from "./connection.js";
 export async function inserirPedido(novoPedido) {
     const comando = `
         INSERT INTO tb_pedido (
-            id_usuario,
+            id_usuario_conta,
             id_usuario_endereco,
             dt_pedido,
-            cod_nota_fiscal, 
             ds_status,
-            tp_pagamento
+            tp_forma_pagamento,
+            dt_pedido
         )
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+        VALUES (?, ?, ?, ?, ?, ?)
     `
 
     const [info] = await con.query(comando, [
         novoPedido.idUsuario,
         novoPedido.idEndereco,
-        novoPedido.idCupom,
         novoPedido.data,
-        novoPedido.notaFiscal,
-        novoPedido.tipoFrete,
-        novoPedido.valorFrete,
         novoPedido.status,
         novoPedido.tipoPagamento
     ]);
@@ -38,9 +34,9 @@ export async function inserirPagamento(idPedido, novoPagamento) {
                 id_pedido,
                 nm_cartao,
                 nr_cartao,
+                ds_cpf,
                 dt_vencimento,
                 cod_seguranca,
-                nr_parcelas,
                 ds_forma_pagamento
             )
             VALUES (?, ?, ?, ?, ?, ?, ?);
@@ -50,9 +46,28 @@ export async function inserirPagamento(idPedido, novoPagamento) {
         idPedido,
         novoPagamento.nome,
         novoPagamento.numero,
+        novoPagamento.cpf,
         novoPagamento.vencimento,
         novoPagamento.codSeguranca,
-        novoPagamento.parcelas,
+        novoPagamento.formaPagamento
+    ]);
+    return info.affectedRows;
+}
+
+export async function inserirPagamentoBoleto(idPedido, novoPagamento) {
+    const comando = `
+            INSERT INTO tb_pagamento_boleto (
+                id_pedido,
+                cod_boleto,
+                ds_forma_pagamento
+            )
+            VALUES (?, ?, ?, ?, ?, ?, ?);
+    `
+
+    const [info] = await con.query(comando, [
+        idPedido,
+        novoPagamento.nome,
+        novoPagamento.codigo,
         novoPagamento.formaPagamento
     ]);
     return info.affectedRows;

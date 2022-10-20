@@ -3,19 +3,17 @@ import randomString from 'randomstring'
 export function criarNovoPedido(idUsuario, info) {
     
     let agora = new Date();
-    let notaFiscal = criarNotaFiscal();
+    let criarBoleto = criarBoleto();
 
     return {
         idUsuario: idUsuario,
         idEndereco: info.idEndereco,
         data: agora,
-        notaFiscal: notaFiscal,
-        valorFrete: valorFrete,
         status: 'Confirmando Pagamento',
         tipoPagamento: 'Cartão'
     }
 }
 
-export function criarNotaFiscal() {
+export function criarBoleto() {
     return randomString.generate(11);
 }

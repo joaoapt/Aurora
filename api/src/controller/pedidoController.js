@@ -3,7 +3,7 @@
 import { Router } from "express";
 import { inserirPagamento, inserirPedido, inserirPedidoItem } from "../repository/pedidoRepository.js";
 import { buscarProdutoPorId } from "../repository/produtoRepository.js";
-import { acharCupom, criarNotaFiscal, criarNovoPedido } from "../service/novoProdutoService.js";
+import { criarboleto, criarNovoPedido } from "../service/novoProdutoService.js";
 const server = Router();
 
 
@@ -14,8 +14,7 @@ server.post('/api/pedido/:idUsuario/', async (req, resp) => {
         const info = req.body;
 
 
-        const idCupom = await acharCupom(info.cupom);
-        const novoPedido = criarNovoPedido(idUsuario, idCupom, info);
+        const novoPedido = criarNovoPedido(idUsuario, info);
 
         const idPedidoCriado = await inserirPedido(novoPedido);
         await inserirPagamento(idPedidoCriado, info.cartao);

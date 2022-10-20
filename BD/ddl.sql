@@ -91,12 +91,14 @@ create table tb_pedidoitem(
     id_pedido_item int primary key auto_increment,
     id_pedido int,
     id_produto int,
+    qtd_itens int,
+    vl_produto decimal(15, 2),
     foreign key (id_pedido) references tb_pedido(id_pedido),
     foreign key (id_produto) references tb_produto(id_produto)
 );﻿
 
-create table tb_pagamentocartao(
-    id_pagamentocartao int primary key auto_increment,
+create table tb_pagamento_cartao(
+    id_pagamento_cartao int primary key auto_increment,
     id_pedido int,
     nm_pessoa varchar(200),
     nr_cartao int,
