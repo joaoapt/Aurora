@@ -46,7 +46,7 @@ export async function alterarProduto(id, categoria, livro, autor, editora, idiom
 
 
 export async function buscarProdutos() {
-    const r = await api.get('/admin/livro');
+    const r = await api.get('/consultar');
     return r.data;
 }
 
@@ -68,13 +68,13 @@ export async function salvarImagem(id, imagem) {
 
 
 export async function removerProduto(id) {
-    const r = await api.delete('/admin/livro/' + id);
+    const r = await api.delete('/admin/produto/' + id);
     return r.data;
 }
 
 
 
 export async function buscarProdutoPorId(id) {
-    const r = await api.get('/admin/livro/' + id);
+    const r = await api.get('/admin/produto/' + id);
     return r.data;
 }
