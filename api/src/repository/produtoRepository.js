@@ -50,7 +50,8 @@ export async function Editar(id, produto) {
 
     const [resp] = await con.query(comando, [
         produto.categoria, produto.livro, produto.autor, produto.editora, produto.idioma, produto.isbn13, produto.isbn10, produto.preco, produto.original, produto.sinopse, produto.versao, produto.pagina, produto.volume, produto.largura, produto.comprimento, id
-    ])
+    ]);
+    return resp.affectedRows;
 }
 
 export async function removerProduto(idProduto) {
