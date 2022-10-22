@@ -18,6 +18,7 @@ export async function salvarProdutoCategoria(idProduto, idCategoria) {
     const [resp] = await con.query(comando, [idCategoria, idProduto])
 }
 
+
 export async function ConsultarTodos() {
     const comando = `
     select * from tb_produto`
@@ -26,10 +27,30 @@ export async function ConsultarTodos() {
     return linhas;
 }
 
-export async function Editar() {
+export async function Editar(id, produto) {
     const comando = `
-    UPDATE ?????
+    UPDATE tb_produto 
+    set   id_categoria = ?, 
+    nm_livro = ?, 
+    nm_autor = ?, 
+    nm_editora = ?, 
+    nm_idioma = ?, 
+    nr_isbn13 = ?, 
+    nr_isbn10 = ?, 
+    vl_preco = ?, 
+    nm_original = ?, 
+    ds_sinopse = ?, 
+    ds_versao = ?, 
+    nr_pagina = ?, 
+    nr_volume = ?, 
+    nr_largura = ?, 
+    nr_comprimento = ?
+    where id_produto = ?
     `
+
+    const [resp] = await con.query(comando, [
+        produto.categoria, produto.livro, produto.autor, produto.editora, produto.idioma, produto.isbn13, produto.isbn10, produto.preco, produto.original, produto.sinopse, produto.versao, produto.pagina, produto.volume, produto.largura, produto.comprimento, id
+    ])
 }
 
 export async function removerProduto(idProduto) {
