@@ -118,7 +118,7 @@ export async function buscarProdutoPorId(id) {
 }
 
 
-export async function buscarProdutoCategorias(idProduto) {
+export async function buscarProdutoCategoria(idProduto) {
     const comando = `
          select id_categoria   as id
            from tb_categoria 
@@ -131,7 +131,7 @@ export async function buscarProdutoCategorias(idProduto) {
 
 
 
-export async function buscarProdutoImagens(idProduto) {
+export async function buscarProdutoImagem(idProduto) {
     const comando = `
           select ds_imagem   as imagem
             from tb_produto

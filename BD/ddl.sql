@@ -50,7 +50,7 @@ create table tb_usuario(
     nm_usuario varchar(200)
 );
 
-create table tb_usuarioendereco(
+create table tb_usuario_endereco(
     id_usuario_endereco int primary key auto_increment,
     id_usuario_conta int,
     ds_endereco varchar(200),
