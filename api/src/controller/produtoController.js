@@ -82,4 +82,18 @@ server.get('/categoria', async (req, resp) => {
     }
 })
 
+
+
+export async function buscarCategoriaPorId(id) {
+    const comando = `
+        select id_categoria         as id,
+               nm_categoria         as categoria
+          from tb_categoria
+         where id_categoria = ?
+    `
+
+    const [linhas] = await con.query(comando, [id]);
+    return linhas[0];
+}
+
 export default server;

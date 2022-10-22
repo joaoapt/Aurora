@@ -24,6 +24,45 @@ export async function cadastrar(categoria, livro, autor, editora, idioma, isbn13
     return resposta.data;
 }
 
+export async function alterarProduto(id, nome, preco, destaque, idDepartamento, categorias) {
+    await api.put('/admin/livro/' + id, { nome, preco, destaque, idDepartamento, categorias });
+}
+
+
+
+export async function buscarProdutos() {
+    const r = await api.get('/admin/livro');
+    return r.data;
+}
+
+
+export async function salvarImagens(id, imagem) {
+    
+    let form = new FormData();
+    form.append('imagem', imagem);
+
+    const r = await api.put(`/admin/livro/${id}/imagem`, form, {
+        headers: {
+            'Content-Type': 'multipart/form-data'
+        }
+    });
+
+    return r.data;
+}
+
+
+
+export async function removerProduto(id) {
+    const r = await api.delete('/admin/livro/' + id);
+    return r.data;
+}
+
+
+
+export async function buscarProdutoPorId(id) {
+    const r = await api.get('/admin/livro/' + id);
+    return r.data;
+}
 
 ////imagem capa do livro
 //export async function enviarImagem(id, imagem) {
