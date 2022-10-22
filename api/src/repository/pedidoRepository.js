@@ -9,7 +9,7 @@ export async function inserirPedido(novoPedido) {
             id_usuario_endereco,
             dt_pedido,
             ds_status,
-            tp_forma_pagamento,
+            ds_forma_pagamento,
             dt_pedido
         )
         VALUES (?, ?, ?, ?, ?, ?)
@@ -28,7 +28,7 @@ export async function inserirPedido(novoPedido) {
 
 
 
-export async function inserirPagamento(idPedido, novoPagamento) {
+export async function inserirPagamentoCartao(idPedido, novoPagamento) {
     const comando = `
             INSERT INTO tb_pagamento_cartao (
                 id_pedido,

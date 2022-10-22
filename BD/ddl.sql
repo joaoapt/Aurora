@@ -113,6 +113,7 @@ create table tb_pagamento_cartao(
     cod_seguranca int(3),
     dt_validade varchar(5),
     ds_cpf varchar(14),
+    ds_forma_pagamento varchar(10)
     foreign key (id_pedido) references tb_pedido(id_pedido)
 );
 ﻿
