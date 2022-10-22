@@ -36,7 +36,7 @@ export async function buscarProdutos() {
 }
 
 
-export async function salvarImagens(id, imagem) {
+export async function salvarImagem(id, imagem) {
     
     let form = new FormData();
     form.append('imagem', imagem);
