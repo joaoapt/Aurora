@@ -47,7 +47,7 @@ server.post('/admin/cadastrar/livro', async (req, resp) => {
         if(!novolivro.comprimento){
             throw new Error('O Comprimento é OBRIGATÓRIO');
         }
-        const local = await cadastrarLivro (novolivro)
+        const local = await cadastrarLivro(novolivro)
         resp.send(local)
     }
     catch (err) {
