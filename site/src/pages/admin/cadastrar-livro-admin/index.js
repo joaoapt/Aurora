@@ -5,9 +5,9 @@ import Cabecalho from '../../../components/admin/cabecalho';
 
 import { useState,useEffect } from 'react';
 
-import { listarCategorias} from '../../../api/admin/cadastro'
-import { cadastrar } from '../../../api/admin/cadastrar-livro'
-
+import { listarCategorias } from '../../../api/admin/categorias';
+import { cadastrar } from '../../../api/admin/cadastrar-livro';
+ 
 import storage from 'local-storage';
 
 import { ToastContainer, toast } from 'react-toastify';

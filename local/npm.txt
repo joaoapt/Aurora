@@ -1,0 +1,35 @@
+React
+baixa as dependencias
+npm i
+
+cria o react
+npx create-react-app ./
+
+baixa o sass e o scss
+npm i scss
+npm i sass
+
+baixa as rotas
+npm i react-router-dom
+
+baixa o as coisas nessesarias para fazer a conecção com a API
+npm i axios
+npm i local-storage
+
+npm i axios local-storage 
+
+
+estetica 
+npm i react-top-loading-bar
+npm i react-toastify
+
+npm i swiper
+
+
+ULTIMO A SER BAIXADO O npm i react-lottie --force
+
+API
+npm init -y
+npm i express cors dotenv nodemon mysql2
+npm i  
+

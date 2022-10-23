@@ -4,18 +4,57 @@
     background-size: cover;
     background-position: bottom center;
     display: flex;
-    .cabecalho
+    
+    .base
     {
         display: flex;
-        justify-content:flex-end;
-        text-align:end;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
     }
-    
-    .gif
+
+    .box1
     {
         display: flex;
         justify-content: center;
-        align-items: center;
-        pointer-events: none;
     }
+
+    .box2
+    {
+        display: flex;
+        justify-content: center;
+    }
+
+    h3{
+        font-size: 30px;
+        color: #fff;
+        font-family: 'Montserrat', serif;
+        margin-top: 50px;
+        margin-bottom: 25px;
+    }
+
+    .img{
+        width: 280px;
+        margin: 2em;
+    }
+
+    .img-invisivel
+    {
+        width: 20px;
+        visibility: visible;
+        cursor: pointer;
+        margin-left: 20px;
+    }
+
+    .img :hover
+    {
+        background-color: rgba(61, 60, 60, 0.829);
+    }
+
+    .coluna-img
+    {
+
+    }
+    
 }

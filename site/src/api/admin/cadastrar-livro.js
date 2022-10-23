@@ -64,7 +64,7 @@ export async function buscarProdutoPorId(id) {
     return r.data;
 }
 
-////imagem capa do livro
+//imagem capa do livro
 //export async function enviarImagem(id, imagem) {
 //    const formData = new FormData();
 //    formData.append('capa-livro', imagem);

@@ -1,6 +1,6 @@
 create database aurorabksDB;
 
--- drop database aurorabksdb;
+drop database aurorabksdb;
 
 use aurorabksDB;
 
@@ -13,6 +13,12 @@ create table tb_admin (
 create table tb_categoria (
     id_categoria int primary key auto_increment,
     ds_categoria varchar(50)
+);
+
+create table tb_classificacao (
+    id_classificacao int primary key auto_increment,
+    ds_classiicacao varchar(10),
+    ds_cor varchar(7)
 );
 
 create table tb_produto (

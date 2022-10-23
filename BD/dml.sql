@@ -37,8 +37,8 @@ select id_usuario_endereco      id,
  where  id_usuario         = 12;
 
 -- inserir dados
-insert into tb_produto (nm_categoria, nm_livro, nm_autor, nm_editora, nr_isbn13, nr_isbn10, vl_preco, nm_original, ds_sinopse, ds_versao, nr_pagina, nr_volume, nr_largura, nr_comprimento)
-	values('filosofia','ameno','alan','mono',320,402,19,'amenonolo','martelo de ferro','2',23,42,24,43);
+insert into tb_produto (id_categoria, nm_livro, nm_autor, nm_editora, nr_isbn13, nr_isbn10, vl_preco, nm_original, ds_sinopse, ds_versao, nr_pagina, nr_volume, nr_largura, nr_comprimento)
+	values(1,'ameno','alan','mono',320,402,19,'amenonolo','martelo de ferro','2',23,42,24,43);
    
 -- inserir imagem
 insert into tb_produto (ds_imagem)

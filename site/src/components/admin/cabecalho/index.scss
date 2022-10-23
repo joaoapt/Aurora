@@ -1,16 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Silkscreen&display=swap');
 .base-cabeçalho{
        text-align: end;
 
     display: flex;
     
     background-color:#fff;
-    padding: 0px 133.9px;
+    padding: 2px 171.5px;
     box-shadow: -10px 10px 100px #000;
     b{
         text-align: end;
         color: #000;
         font-family: 'Montserrat', serif; 
-        font-size: 30px;
-        
+        font-size: 33px;
+        font-weight: 700;
     }
 }

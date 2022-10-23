@@ -5,6 +5,6 @@ const api = axios.create({
 
 
 export async function listarCategorias() {
-    const r = await api.get('/admin/categoria');
+    const r = await api.get('/categoria');
     return r.data;
 }

@@ -49,7 +49,7 @@ export default function Index(props) {
                     </Link>
                 </div>
                 <div>
-                    <Link to='/pendentes' className={verificarMenuSele ('pendentes')}>
+                    <Link to='/pendentesmenu' className={verificarMenuSele ('pendentes')}>
                         <img className='icon-lupa' src="../img/local.png" alt='consultar'/>
                         <p className='menu-p3'>Pendentes</p>
                     </Link>

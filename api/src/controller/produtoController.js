@@ -1,57 +1,47 @@
-import { cadastrarLivro, ConsultarTodos, listarCategorias } from '../repository/produtoRepository.js'
-
+import { cadastrarLivro, ConsultarTodos, listarCategorias,buscarCategoriaPorId,salvarProdutoCategoria,listarClassificacoes, salvarProdutoClassificacao, buscarProdutoClassificacao, } from '../repository/produtoRepository.js'
+import { validarProduto } from '../service/produto.js'
 import { Router } from 'express'
+//import multer from 'multer'
 
 const server = Router();
+//const upload = multer({ dest: 'storage/produto' });
 
 //cadaastro livro
 server.post('/admin/cadastrar/livro', async (req, resp) => {
     try {
         const novolivro = req.body;
-        if(!novolivro.categoria){
-            throw new Error('A Categoria é OBRIGATÓRIA!');
+        await validarProduto(novolivro);
+        const local = await cadastrarLivro(novolivro);
+        
+        for (const idCat of novolivro.categoria) {
+            const cat = await buscarCategoriaPorId(idCat);
+            
+            if (cat != undefined)
+                await salvarProdutoCategoria(local, novolivro.categoria);
         }
-        if(!novolivro.livro){
-            throw new Error('O Titulo do Livro é OBRIGATÓRIO!');
+
+        // for (const idCat of novolivro.categoria) {
+        //     const cat = await buscarCategoriaPorId(idCat);
+            
+        //     if (cat != undefined)
+        //         await salvarProdutoCategoria(idnovo, idCat);
+        // }
+
+        for (const idCla of novolivro.classificacao) {
+            const cla = await buscarProdutoClassificacao(idCla);
+            
+            if (cla != undefined)
+                await salvarProdutoClassificacao(local, novolivro.classificacao);
         }
-        if(!novolivro.autor){
-            throw new Error('O Nome do Autor é OBRIGATÓRIO!');
-        }
-        if(!novolivro.editora){
-            throw new Error('O Nome da Editora é OBRIGATÓRIO!');
-        }
-        if(!novolivro.idioma){
-            throw new Error('O Idioma é OBRIGATÓRIO!');
-        }
-        if(!novolivro.preco){
-            throw new Error('O Valor é OBRIGATÓRIO!');
-        }
-        if(novolivro.preco <= 0){
-            throw new Error('O Valor Não Pode Ser Menor Ou Igual A ZERO!');
-        }
-        if(!novolivro.sinopse){
-            throw new Error('A Sinopse é OBRIGATÓRIA!');
-        }
-        if(!novolivro.versao){
-            throw new Error('A Versão é OBRIGATÓRIA!');
-        }
-        if(!novolivro.pagina){
-            throw new Error('A Quantidade de Páginas é OBRIGATÓRIA');
-        }
-        if(!novolivro.volume){
-            throw new Error('O Volume é OBRIGATÓRIO!');
-        }
-        if(!novolivro.largura){
-            throw new Error('A Largura é OBRIGATÓRIA!');
-        }
-        if(!novolivro.comprimento){
-            throw new Error('O Comprimento é OBRIGATÓRIO');
-        }
-        const local = await cadastrarLivro (novolivro)
-        resp.send(local)
+
+        resp.send({
+            id: idcla,
+            id: idCat
+        });
+        
     }
     catch (err) {
-        resp.status(400).send({
+        return resp.status(400).send({
             erro: err.message
         });
     }
@@ -82,18 +72,5 @@ server.get('/categoria', async (req, resp) => {
     }
 })
 
-
-
-export async function buscarCategoriaPorId(id) {
-    const comando = `
-        select id_categoria         as id,
-               nm_categoria         as categoria
-          from tb_categoria
-         where id_categoria = ?
-    `
-
-    const [linhas] = await con.query(comando, [id]);
-    return linhas[0];
-}
 
 export default server;

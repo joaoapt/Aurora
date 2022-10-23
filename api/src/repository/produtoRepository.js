@@ -2,20 +2,11 @@ import { con } from './connection.js'
 
 export async function cadastrarLivro (cadastro) {
     const comando = `
-    INSERT INTO tb_produto (id_categoria, nm_livro, nm_autor, nm_editora, nm_idioma, nr_isbn13, nr_isbn10, vl_preco, nm_original, ds_sinopse, ds_versao, nr_pagina, nr_volume, nr_largura, nr_comprimento)
-    VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)`
+    INSERT INTO tb_produto (id_categoria, id_classificacao, nm_livro, nm_autor, nm_editora, nm_idioma, nr_isbn13, nr_isbn10, vl_preco, nm_original, ds_sinopse, ds_versao, nr_pagina, nr_volume, nr_largura, nr_comprimento)
+    VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)`
 //16
-    const resposta = await con.query(comando, [cadastro.categoria, cadastro.livro,cadastro.autor,cadastro.editora,cadastro.idioma,cadastro.isbn13,cadastro.isbn10,cadastro.preco,cadastro.original,cadastro.sinopse,cadastro.versao,cadastro.pagina,cadastro.volume,cadastro.largura,cadastro.comprimento]);
+    const resposta = await con.query(comando, [cadastro.categoria, cadastro.classificacao, cadastro.livro,cadastro.autor,cadastro.editora,cadastro.idioma,cadastro.isbn13,cadastro.isbn10,cadastro.preco,cadastro.original,cadastro.sinopse,cadastro.versao,cadastro.pagina,cadastro.volume,cadastro.largura,cadastro.comprimento]);
     return resposta.insertId;
-}
-
-export async function salvarProdutoCategoria(idProduto, idCategoria) {
-    const comando = `
-        insert into tb_produto_categoria (id_categoria, id_produto)
-                                  values (?, ?)
-    `
-
-    const [resp] = await con.query(comando, [idCategoria, idProduto])
 }
 
 export async function ConsultarTodos() {
@@ -51,6 +42,58 @@ export async function listarCategorias() {
 
     const [linhas] = await con.query(comando);
     return linhas;
+}
+
+export async function listarClassificacoes() {
+    const comando = `
+        select id_classificacao         as id,
+               ds_classificacao         as classificacao
+          from tb_classificacao_indicativa
+    `
+
+    const [linhas] = await con.query(comando);
+    return linhas;
+}
+
+export async function buscarProdutoClassificacao(idProduto) {
+    const comando = `
+         select id_classificacao   as id
+           from tb_classificacao 
+          where id_produto = ?
+        `
+
+    const [registros] = await con.query(comando, [idProduto]);
+    return registros.map(item => item.id);
+}
+
+export async function buscarCategoriaPorId(id) {
+    const comando = `
+        select id_categoria         as id,
+               ds_categoria         as categoria
+          from tb_categoria
+         where id_categoria = ?;
+    `
+
+    const [linhas] = await con.query(comando, [id]);
+    return linhas[0];
+}
+
+export async function salvarProdutoCategoria(idCategoria, idProduto) {
+    const comando = `
+    insert into tb_produto_categoria (id_categoria, id_produto)
+                value(?,?);
+    `
+
+    const [resp] = await con.query(comando, [idCategoria, idProduto]);
+}
+
+export async function salvarProdutoClassificacao(idProduto, idClassificacao) {
+    const comando = `
+        insert into tb_produto_classificacao (id_classificacao, id_produto)
+                                  values (?, ?)
+    `
+
+    const [resp] = await con.query(comando, [idClassificacao, idProduto])
 }
 
 export async function buscarProdutos() {
@@ -122,7 +165,7 @@ export async function buscarProdutoImagens(idProduto) {
 
 export async function listarProdutosInicio() {
     const comando = `
-        select tb_produto.id_produto		id,
+           select tb_produto.id_produto		id,
                nm_produto					produto,
                vl_preco						preco,
                nm_categoria				    categoria,

@@ -1,0 +1,70 @@
+.pag-pendentes-menu{
+    height: 48.8em;
+    background-image:url(../../../../public/img/aurora.jpg);
+    background-size: cover;
+    background-position: bottom center;
+    display: flex;
+    
+    .base
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .link
+    {
+        margin-top: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+    }
+    
+    .quadrado-1
+    {
+        text-decoration: none;
+        margin: 40px;
+        background-color:rgba(141, 138, 138, 0.774) ;
+        height: 450px;
+        width: 350px;
+        border-radius: 10px; 
+    }
+
+    .quadrado-2
+    {
+        text-decoration: none;
+        margin: 40px;
+        background-color: rgba(141, 138, 138, 0.774);
+        height: 450px;
+        width: 350px;
+        border-radius: 10px; 
+    }
+
+    p{
+        color: #fff;
+        font-family: 'Montserrat', serif; 
+        font-size: 30px;
+        text-align: center;
+    }
+
+    .rede
+    {
+        margin-top: 40px;
+        margin-bottom: 24px;
+        margin-left: 64px;
+        width: 235px;
+    }
+
+    .tabela
+    {
+        margin-top: 40px;
+        margin-bottom: 24px;
+        margin-left: 49px;
+        width: 250px;
+    }
+    a:hover{
+        background-color: rgb(172, 171, 171);
+    }
+}
