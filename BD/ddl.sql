@@ -15,9 +15,16 @@ create table tb_categoria (
     ds_categoria varchar(50)
 );
 
+create table tb_classificacao (
+    id_classificacao int primary key auto_increment,
+    ds_classiicacao varchar(50),
+    ds_cor varchar(7)
+);
+
 create table tb_produto (
 	id_produto 			int primary key auto_increment,
 	id_categoria		int,
+    id_classificacao    int,
     nm_livro			varchar(150),
     nm_autor			varchar(100),
     nm_editora			varchar(100),
@@ -34,6 +41,7 @@ create table tb_produto (
     nr_comprimento		int,
     ds_imagem           varchar(300),
     foreign key (id_categoria) references tb_categoria(id_categoria)
+    foreign key (id_classificacao) references tb_classificacao(id_classificacao)
 );
 
 create table tb_produto_categoria (
@@ -41,6 +49,14 @@ create table tb_produto_categoria (
     id_categoria int,
     id_produto int
     foreign key (id_categoria) references tb_categoria(id_categoria),
+    foreign key (id_produto) references tb_produto(id_produto)
+);
+
+create table tb_produto_classificacao (
+    id_produto_classificacao int primary key auto_increment,
+    id_classificacao int,
+    id_produto int
+    foreign key (id_classificacao) references tb_classificacao(id_classificacao),
     foreign key (id_produto) references tb_produto(id_produto)
 );
 

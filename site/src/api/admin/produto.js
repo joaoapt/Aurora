@@ -3,9 +3,10 @@ const api = axios.create({
     baseURL:'http://localhost:5000'
 })
 
-export async function cadastrar(categoria, livro, autor, editora, idioma, isbn13, isbn10, preco, original, sinopse, versao, pagina, volume, largura, comprimento) {
+export async function cadastrar(categoria, classicacao, livro, autor, editora, idioma, isbn13, isbn10, preco, original, sinopse, versao, pagina, volume, largura, comprimento) {
     const resposta = await api.post('/admin/cadastrar/livro', {
         categoria:categoria,
+        classificacao: classicacao,
         livro:livro,
         autor:autor,
         editora:editora,
@@ -20,13 +21,14 @@ export async function cadastrar(categoria, livro, autor, editora, idioma, isbn13
         volume:volume,
         largura:largura,
         comprimento:comprimento
-    })
+    });
     return resposta.data;
 }
 
-export async function alterarProduto(id, categoria, livro, autor, editora, idioma, isbn13, isbn10, preco, original, sinopse, versao, pagina, volume, largura, comprimento) {
+export async function alterarProduto(id, categoria, classificacao, livro, autor, editora, idioma, isbn13, isbn10, preco, original, sinopse, versao, pagina, volume, largura, comprimento) {
     await api.put('/admin/livro/' + id, {         
         categoria:categoria,
+        classificacao:classificacao,
         livro:livro,
         autor:autor,
         editora:editora,
@@ -40,7 +42,9 @@ export async function alterarProduto(id, categoria, livro, autor, editora, idiom
         pagina:pagina,
         volume:volume,
         largura:largura,
-        comprimento:comprimento });
+        comprimento:comprimento 
+    });
+    return resposta.data;
 }
 
 
