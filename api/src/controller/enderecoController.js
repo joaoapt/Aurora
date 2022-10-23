@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { listar, salvar, alterarEndereco } from "../repository/EnderecoRepository.js";
+import { listar, salvar, alterarEndereco } from "../repository/enderecoRepository.js";
 const server = Router();
 
 
