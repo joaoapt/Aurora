@@ -54,3 +54,8 @@ select * from tb_produto;
 
 -- consulta nome categoria
 select * from tb_categoria;
+
+--CSOU2.1 :: alterar a imagem
+UPDATE tb_filme
+   SET img_filme =``
+ WHERE id_filme = 1;

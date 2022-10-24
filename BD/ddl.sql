@@ -17,13 +17,12 @@ create table tb_categoria (
 
 create table tb_classificacao (
     id_classificacao int primary key auto_increment,
-    ds_classiicacao varchar(10),
+    ds_classificacao varchar(3),
     ds_cor varchar(7)
 );
 
 create table tb_produto (
 	id_produto 			int primary key auto_increment,
-	id_categoria		int,
     nm_livro			varchar(150),
     nm_autor			varchar(100),
     nm_editora			varchar(100),
@@ -37,16 +36,30 @@ create table tb_produto (
     nr_pagina			int,
     nr_volume			int,
     nr_largura			int,
-    nr_comprimento		int,
-    ds_imagem           varchar(300),
-    foreign key (id_categoria) references tb_categoria(id_categoria)
+    nr_comprimento		int
+);
+
+create table tb_produto_img (
+	id_produto_img	    int primary key auto_increment,
+    id_produto				int,
+    ds_img   			varchar(800),
+    foreign key (id_produto) references tb_produto(id_produto)
 );
 
 create table tb_produto_categoria (
     id_produto_categoria int primary key auto_increment,
     id_categoria int,
-    id_produto int
+    id_produto int,
     foreign key (id_categoria) references tb_categoria(id_categoria),
+    foreign key (id_produto) references tb_produto(id_produto)
+);
+
+
+create table tb_produto_classificacao (
+    id_produto_classificacao int primary key auto_increment,
+    id_classificacao int,
+    id_produto int,
+    foreign key (id_classificacao) references tb_classificacao(id_classificacao),
     foreign key (id_produto) references tb_produto(id_produto)
 );
 
@@ -83,6 +96,7 @@ create table tb_usuariofavorito(
 create table tb_usuariologin(
 	id_usuario_login int primary key auto_increment,
     id_usuario_conta int,
+    nm_usuario varchar(200),
     ds_email varchar(100),
     ds_senha varchar(100),
     foreign key (id_usuario_conta) references tb_usuario(id_usuario_conta)

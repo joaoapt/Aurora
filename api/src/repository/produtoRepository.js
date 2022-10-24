@@ -2,10 +2,10 @@ import { con } from './connection.js'
 
 export async function cadastrarLivro (cadastro) {
     const comando = `
-    INSERT INTO tb_produto (id_categoria, id_classificacao, nm_livro, nm_autor, nm_editora, nm_idioma, nr_isbn13, nr_isbn10, vl_preco, nm_original, ds_sinopse, ds_versao, nr_pagina, nr_volume, nr_largura, nr_comprimento)
-    VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)`
-//16
-    const resposta = await con.query(comando, [cadastro.categoria, cadastro.classificacao, cadastro.livro,cadastro.autor,cadastro.editora,cadastro.idioma,cadastro.isbn13,cadastro.isbn10,cadastro.preco,cadastro.original,cadastro.sinopse,cadastro.versao,cadastro.pagina,cadastro.volume,cadastro.largura,cadastro.comprimento]);
+    INSERT INTO tb_produto ( nm_livro, nm_autor, nm_editora, nm_idioma, nr_isbn13, nr_isbn10, vl_preco, nm_original, ds_sinopse, ds_versao, nr_pagina, nr_volume, nr_largura, nr_comprimento)
+    VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)`
+//15
+    const resposta = await con.query(comando, [cadastro.livro, cadastro.autor, cadastro.editora, cadastro.idioma, cadastro.isbn13, cadastro.isbn10, cadastro.preco, cadastro.original, cadastro.sinopse, cadastro.versao, cadastro.pagina, cadastro.volume, cadastro.largura, cadastro.comprimento]);
     return resposta.insertId;
 }
 
@@ -23,16 +23,17 @@ export async function Editar() {
     `
 }
 
-export async function removerProduto(idProduto) {
+//img
+export async function salvarProdutoImagem(idProduto, imagemPath) {
     const comando = `
-        delete from tb_produto 
-              where id_produto = ?
+        insert into tb_produto_img (id_produto, ds_img)
+                                  values (?, ?)
     `
 
-    const [resp] = await con.query(comando, [idProduto])
-    return resp.affectedRows;
+    const [resp] = await con.query(comando, [idProduto, imagemPath])
 }
 
+//categoria
 export async function listarCategorias() {
     const comando = `
         select id_categoria         as id,
@@ -42,28 +43,6 @@ export async function listarCategorias() {
 
     const [linhas] = await con.query(comando);
     return linhas;
-}
-
-export async function listarClassificacoes() {
-    const comando = `
-        select id_classificacao         as id,
-               ds_classificacao         as classificacao
-          from tb_classificacao_indicativa
-    `
-
-    const [linhas] = await con.query(comando);
-    return linhas;
-}
-
-export async function buscarProdutoClassificacao(idProduto) {
-    const comando = `
-         select id_classificacao   as id
-           from tb_classificacao 
-          where id_produto = ?
-        `
-
-    const [registros] = await con.query(comando, [idProduto]);
-    return registros.map(item => item.id);
 }
 
 export async function buscarCategoriaPorId(id) {
@@ -87,7 +66,32 @@ export async function salvarProdutoCategoria(idCategoria, idProduto) {
     const [resp] = await con.query(comando, [idCategoria, idProduto]);
 }
 
-export async function salvarProdutoClassificacao(idProduto, idClassificacao) {
+//classificação
+export async function listarClassificacoes() {
+    const comando = `
+        select id_classificacao         as id,
+               ds_classificacao         as classificacao,
+               ds_cor                   as cor
+          from tb_classificacao
+    `
+
+    const [linhas] = await con.query(comando);
+    return linhas;
+}
+
+export async function buscarProdutoClassificacao(id) {
+    const comando = `
+         select id_classificacao   as id
+                ds_classificacao   as classificacao
+           from tb_classificacao 
+          where id_produto = ?
+        `
+
+        const [linhas] = await con.query(comando, [id]);
+        return linhas[0];
+}
+
+export async function salvarProdutoClassificacao(idClassificacao, idProduto) {
     const comando = `
         insert into tb_produto_classificacao (id_classificacao, id_produto)
                                   values (?, ?)
@@ -96,6 +100,9 @@ export async function salvarProdutoClassificacao(idProduto, idClassificacao) {
     const [resp] = await con.query(comando, [idClassificacao, idProduto])
 }
 
+
+
+//EEEEEEERROOOOOOO
 export async function buscarProdutos() {
     const comando = `
         select tb_produto.id_produto        as id,
@@ -180,4 +187,14 @@ export async function listarProdutosInicio() {
 
     const [registros] = await con.query(comando);
     return registros;
+}
+
+export async function removerProduto(idProduto) {
+    const comando = `
+        delete from tb_produto 
+              where id_produto = ?
+    `
+
+    const [resp] = await con.query(comando, [idProduto])
+    return resp.affectedRows;
 }
