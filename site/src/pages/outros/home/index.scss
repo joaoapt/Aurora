@@ -1,5 +1,35 @@
-.ola{
-    
+.pag-home{
+    display: flex;
+    height: auto;
+    .conteudo{
+        margin-top: 30px;
+    }
+    .box-quadrado{
+        display: flex;
+        justify-content:space-around;
+    }
+    .quadrado{
+        width: 380px;
+        height: 450px;
+        border-radius: 10px;
+        background-color: aquamarine;
+    }
+    .gif{
+        width: 01px;
+    }
+     h3{
+        font-size: 30px;
+        color: black;
+        font-family: 'Montserrat', sans-serif;
+    }
+    .img{
+        display: flex;
+        justify-content: center;
+        margin: 30px;
+    }
 
-
+    .propaganda
+    {
+        width: 900px;
+    }
 }
