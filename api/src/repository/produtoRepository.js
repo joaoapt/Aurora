@@ -108,18 +108,12 @@ export async function buscarProdutos() {
         select tb_produto.id_produto        as id,
             nm_produto                      as produto,
             vl_preco                        as preco,
-            bt_destaque                     as destaque,
-            nm_departamento                 as departamento,
-            count(nm_categoria)             as qtdCategorias
+           nm_categoria                     as categoria
         from tb_produto 
-        inner join tb_produto_categoria on tb_produto_categoria.id_produto = tb_produto.id_produto
-        inner join tb_categoria on tb_categoria.id_categoria = tb_produto_categoria.id_categoria
         group 
             by tb_produto.id_produto,
                 nm_produto,
-                vl_preco,
-                bt_destaque,
-                nm_departamento
+                vl_preco
         `
 
     const [registros] = await con.query(comando);
@@ -133,11 +127,8 @@ export async function buscarProdutoPorId(id) {
          select id_produto                      as id,
                 nm_produto                      as produto,
                 vl_preco                        as preco,
-                bt_destaque                     as destaque,
-                tb_produto.id_categoria         as categoria,
-                nm_departamento                 as nomeDepartamento
+                ds_categoria                    as categoria,
         from tb_produto 
-        inner join tb_categoria on tb_categoria.id_categoria = tb_produto.id_categoria
        where id_produto = ?
         `
 
@@ -148,8 +139,8 @@ export async function buscarProdutoPorId(id) {
 
 export async function buscarProdutoCategorias(idProduto) {
     const comando = `
-         select id_categoria   as id
-           from tb_categoria 
+         select ds_categoria   as       categoria
+           from tb_produto 
           where id_produto = ?
         `
 
@@ -175,10 +166,9 @@ export async function listarProdutosInicio() {
            select tb_produto.id_produto		id,
                nm_produto					produto,
                vl_preco						preco,
-               nm_categoria				    categoria,
+               ds_categoria				    categoria,
                ds_imagem     				imagem
           from tb_produto
-    inner join tb_categoria on tb_produto.id_categoria = tb_categoria.id_categoria
          group 
             by tb_produto.id_produto,
                nm_produto,
