@@ -1,12 +1,11 @@
 .b{
-  
       background: linear-gradient(280.5deg, #071441, #000000);
       background-size: 400% 400%;
-      width: 1366px;
-      height: 100px;
+      width: 1349px;
+      height: 80px;
    
   .titulo{
-        font-size: 20px;
+        font-size: 23px;
         margin-top: 11px;
         margin-left: 1px;
         font-family: 'Oswald', sans-serif;
@@ -14,17 +13,16 @@
   }
   
   .cont-logo{
-  
         display: flex;
   }
   .logo{
-        margin-top: 6px;
-        margin-left: 9px;
-        width: 100px;
+        margin-top: 8px;
+        margin-left: 20px;
+        width: 75px;
   }
   .barra{
         margin-top: -4px;
-        font-size: 80px;
+        font-size: 68px;
         color: #fff;
   }
   .linha{
@@ -43,9 +41,9 @@
      border-bottom-right-radius: 20px;
      border-top-right-radius:2px;
      border-bottom-left-radius: 2px;
-      width: 450px;
-      height: 45px;
-      margin-left: 130px;
+      width: 460px;
+      height: 40px;
+      margin-left: 180px;
     margin-top: 25px;
   }
 
@@ -54,7 +52,7 @@
       margin-left: -10px;
       border: none;
       padding: 0px;
-      font-size: 20px;
+      font-size: 18px;
       width: 700px;
       height: 32px;
       border-radius: 5px;
@@ -70,14 +68,14 @@
       width: 23px;
   }
   .carrinho{
-    margin-top: 28px;
+    margin-top: 24px;
     width: 40px;
-    margin-left: 75px;
+    margin-left: 90px;
   }
   .puta2{
       width: 35px;
       margin-top: 30px;
-      margin-left: 55px;
+      margin-left: 60px;
   }
   .botão-login{
     word-spacing: normal;
@@ -85,13 +83,12 @@
     //color: ;
     padding: 5px 16px;
     cursor: pointer;
-    color:#fff ;
     font-size: 25px;
     font-family: 'Oswald', sans-serif;
     transition:all 0.5s ease-in-out 0s;
     margin-top: 28px;
     text-decoration: none;
-    margin-left: 45px;
+    margin-left: 50px;
   }
 
   -webkit-animation: aaa 15s ease infinite;

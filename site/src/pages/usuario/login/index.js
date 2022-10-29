@@ -60,9 +60,9 @@ export default function Index() {
                             <input className='input-2' type='password' value={senha} onChange={e => setSenha(e.target.value)}/>
                         </div>
                     </div>  
-                    <div>
-                      <Link className='botão-voltar-cadastrar' to='/cadastrar'>Voltar</Link>
-                    </div>
+                    <div className='local-cadastrar'>
+                                <Link className='botão-cadastrar-login' to='/cadastrar'>Cadastrar-se</Link>
+                            </div> 
                     <div className='botoes'>
                         <div>
                             <button className='botão1'>Voltar</button>

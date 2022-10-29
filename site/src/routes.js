@@ -20,7 +20,7 @@ export default function Index() {
                 <Route path="/pendentesmenu" element={<PendentesMenu/>}/>
                 <Route path="/pendentes" element={<Pendentes/>}/>
                 <Route path="/Editar-site" element={<Editar/>}/>
-                <Route path="/home" element={<Home/>}/>
+                <Route path="/" element={<Home/>}/>
                 <Route path="/menu" element={<MenuAdmin/>} />
                 <Route path="/login" element={<Login/>}/>
                 <Route path="/login-admin" element={<LoginAdmin/>}/>

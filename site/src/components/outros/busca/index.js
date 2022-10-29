@@ -19,16 +19,13 @@ export default function Index (){
                         <input type="text" placeholder='Buscar' />
                         <img className='puta' src='../img/pesquisa.png' alt='' />
                     </div>
-                    <Link>
+                    <Link to='/carrinho'>
                         <img className='carrinho' src='../img/carrinho.png' alt='' />
                     </Link>
-                    <Link
-                         className='botão-login' to='/login'>
-                            Login
-                    </Link>
-                    <Link>
+                    <Link className='botão-login' to='/login'>Login</Link>
+                    <div>
                         <img className='puta2' src='../img/menu-aberto.png' alt='menu' />
-                    </Link>
+                    </div>
                 
                 </div>
             </nav>

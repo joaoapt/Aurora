@@ -1,27 +1,39 @@
+
 .pag-home{
     display: flex;
-    height: auto;
+    min-height: 700px;
     .conteudo{
         margin-top: 30px;
     }
+
     .box-quadrado{
         display: flex;
         justify-content:space-around;
+        text-align: center;
     }
+
     .quadrado{
         width: 380px;
         height: 450px;
         border-radius: 10px;
-        background-color: aquamarine;
+        background-color:rgb(221, 220, 220);
+        pointer-events: none;
     }
-    .gif{
-        width: 01px;
+
+    .gif
+    {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        pointer-events: none;
     }
+    
      h3{
         font-size: 30px;
         color: black;
         font-family: 'Montserrat', sans-serif;
     }
+
     .img{
         display: flex;
         justify-content: center;
@@ -30,6 +42,11 @@
 
     .propaganda
     {
-        width: 900px;
+        width: 1120px;
     }
+    .aaa{
+        display: flex;
+        justify-content: center;
+    }
+
 }

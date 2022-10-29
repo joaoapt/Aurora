@@ -1,8 +1,7 @@
 import './index.scss';
 import Menu from '../../../components/admin/menu';
 import Cabecalho from '../../../components/admin/cabecalho';
-
-// import { Gif } from '../../../components/animação/GifAnimatons';
+import { Gif } from '../../../components/animação/GifAnimatons';
 
 export default function Index() {
     return(
@@ -13,7 +12,7 @@ export default function Index() {
                     <Cabecalho/>
                 </div>
                 <div className='gif'>
-                 
+                 <Gif/>
                 </div>
             </div>
         </main>
