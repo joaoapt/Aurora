@@ -3,6 +3,8 @@ import Buscar from '../../../components/outros/busca';
 import Rodape from '../../../components/outros/rodape';
 import Card from '../../../components/carrocel/card';
 import Produto from '../../../components/carrocel/produto';
+import Categoria from '../../../components/outros/categoria';
+import { Link } from 'react-router-dom';
 // import { Romance } from '../../../components/animação/romanceAnimation';
 // import { FC } from '../../../components/animação/FCAnimatons';
 
@@ -13,17 +15,29 @@ export default function Index () {
                 <nav><Buscar/></nav>
                 <div className='conteudo'>
                     <div><Card/></div>
-                    <div className='aaa'>
-                        <Produto/>
+                    <div className='cate'>
+                        <Categoria/> 
                     </div>
-                    <div className='aaa'>
-                        <Produto/>
+                    <div>
+                        <h4>Aventura</h4>
+                        <div className='aaa'>
+                            <Produto/>
+                        </div>
                     </div>
-                    <div className='img'>
+                    <div>
+                        <h4>Filosofia</h4>
+                        <div className='aaa'>
+                            <Produto/>
+                        </div>
+                    </div>
+                    <Link to='/produto/vil' className='img'>
                         <img className="propaganda" src="./img/propaganda.png" alt="propaganda"/>
-                    </div>
-                    <div className='aaa'>
-                        <Produto/>
+                    </Link>
+                    <div>
+                        <h4>Sociologia</h4>
+                        <div className='aaa'>
+                            <Produto/>
+                        </div>
                     </div>
                     <div className='box-quadrado'>
                         <div className='quadrado'>

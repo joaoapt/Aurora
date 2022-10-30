@@ -9,6 +9,7 @@ import CadastrarUsuario from './pages/outros/cadastrar';
 import MenuAdmin from './pages/admin/menu';
 import Carrinho from './pages/usuario/carrinho';
 //import Cadastralivro from './pages/admin/cadastrar-livro-admin';
+import ProdutoVil from './pages/outros/produto-vil'
 import PendentesMenu from './pages/admin/pedentes-menu';
 import PendentesPessoas from './pages/admin/pessoas';
 
@@ -16,6 +17,7 @@ export default function Index() {
     return(
         <BrowserRouter>
             <Routes>
+                <Route path="/produto/vil" element={<ProdutoVil/>}/>
                 <Route path="/pendentespessoas" element={<PendentesPessoas/>}/>
                 <Route path="/pendentesmenu" element={<PendentesMenu/>}/>
                 <Route path="/pendentes" element={<Pendentes/>}/>

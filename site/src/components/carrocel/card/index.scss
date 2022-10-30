@@ -4,6 +4,7 @@
     width:1349px;
     display: flex;  
     justify-content: center;
+
     .segundacoluna
         {
             cursor:grab;
@@ -16,6 +17,9 @@
             justify-content: center;
             width: 1366px;
             height: 400px;
+        }
+        span{
+            background-color: #fff;
         }
 
 }

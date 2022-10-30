@@ -6,6 +6,7 @@
     margin-top:40px;
     background: linear-gradient(280.5deg, #071441, #000000);
     background-size: 400% 400%;
+    
     .conterne-rodapé
     {
         display: flex;
@@ -26,18 +27,21 @@
 
     h1
     {
+        font-size: 25px;
         color: #fff;
         font-family: 'Oswald', sans-serif;
     }
 
     h2
     {
+        font-size: 20px;
         color: #fff;
         font-family: 'Oswald', sans-serif;
     }
 
     p
     {
+        font-size: 17px;
         margin-top: 5px;
         color: #fff;
         font-family: 'Montserrat', sans-serif;
