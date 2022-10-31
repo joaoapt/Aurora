@@ -12,7 +12,7 @@ export default function Index () {
     return(
         <div className='pag-home'>
             <div>
-                <nav><Buscar/></nav>
+            <nav><Buscar/></nav>
                 <div className='conteudo'>
                     <div><Card/></div>
                     <div className='cate'>
