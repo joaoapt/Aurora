@@ -1,4 +1,4 @@
-import { cadastrarLivro, ConsultarTodos, listarCategorias,buscarCategoriaPorId,salvarProdutoCategoria,listarClassificacoes, salvarProdutoClassificacao, buscarProdutoClassificacao, } from '../repository/produtoRepository.js'
+import { cadastrarLivro, ConsultarTodos} from '../repository/produtoRepository.js'
 import { validarProduto } from '../service/produto.js'
 import { Router } from 'express'
 //import multer from 'multer'
@@ -11,34 +11,7 @@ server.post('/admin/cadastrar/livro', async (req, resp) => {
     try {
         const novolivro = req.body;
         await validarProduto(novolivro);
-        const local = await cadastrarLivro(novolivro);
-        
-        for (const idCat of novolivro.categoria) {
-            const cat = await buscarCategoriaPorId(idCat);
-            
-            if (cat != undefined)
-                await salvarProdutoCategoria(local, novolivro.categoria);
-        }
-
-        // for (const idCat of novolivro.categoria) {
-        //     const cat = await buscarCategoriaPorId(idCat);
-            
-        //     if (cat != undefined)
-        //         await salvarProdutoCategoria(idnovo, idCat);
-        // }
-
-        for (const idCla of novolivro.classificacao) {
-            const cla = await buscarProdutoClassificacao(idCla);
-            
-            if (cla != undefined)
-                await salvarProdutoClassificacao(local, novolivro.classificacao);
-        }
-
-        resp.send({
-            id: idcla,
-            id: idCat
-        });
-        
+        await cadastrarLivro(novolivro);
     }
     catch (err) {
         return resp.status(400).send({
@@ -90,55 +63,6 @@ server.get('/consultar', async (req,resp) => {
 })
 
 
-server.get('/categoria', async (req, resp) => {
-    try {
-        const linhas = await listarCategorias();
-        resp.send(linhas);
-    }
-    catch (err) {
-        resp.status(400).send({
-            erro: err.message
-        })
-    }
-})
-
-server.get('/classificacao', async (req, resp) => {
-    try {
-        const linhas = await listarClassificacoes();
-        resp.send(linhas);
-    }
-    catch (err) {
-        resp.status(400).send({
-            erro: err.message
-        })
-    }
-})
-
-server.get('/categoria/:id', async (req, resp) => {
-    try {
-        const id = req.params.id; 
-        const linhas = await buscarCategoriaPorId(id);
-        resp.send(linhas);
-    }
-    catch (err) {
-        resp.status(400).send({
-            erro: err.message
-        })
-    }
-})
-
-server.get('/classificacao/:id', async (req, resp) => {
-    try {
-        const id = req.params.id; 
-        const linhas = await buscarProdutoClassificacao(id);
-        resp.send(linhas);
-    }
-    catch (err) {
-        resp.status(400).send({
-            erro: err.message
-        })
-    }
-})
 
 
 export default server;
