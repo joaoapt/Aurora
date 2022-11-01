@@ -17,10 +17,14 @@ export async function ConsultarTodos() {
     return linhas;
 }
 
-export async function Editar() {
+export async function Editar(id, produto) {
     const comando = `
-    UPDATE ?????
+    UPDATE tb_produto 
+    set nm_livro = ?, nm_autor = ?, ds_categoria = ?, ds_classificacao = ?, nm_editora = ?, nm_idioma = ?, nr_isbn13 = ?, nr_isbn10 = ?, vl_preco = ?, nm_original = ?, ds_sinopse, ds_versao, nr_pagina, nr_volume, nr_largura, nr_comprimento
+
     `
+    const resposta = await con.query(comando, [produto.livro, produto.autor, produto.categoria, produto.classificacao, produto.editora, produto.idioma, produto.isbn13, produto.isbn10, cadastro.preco, produto.original, produto.sinopse, produto.versao, produto.pagina, produto.volume, produto.largura, produto.comprimento, id]);
+    return resposta.affectedRows;
 }
 
 //img

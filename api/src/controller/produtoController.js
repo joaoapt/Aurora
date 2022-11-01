@@ -1,4 +1,4 @@
-import { cadastrarLivro, ConsultarTodos} from '../repository/produtoRepository.js'
+import { cadastrarLivro, ConsultarTodos, Editar} from '../repository/produtoRepository.js'
 import { validarProduto } from '../service/produto.js'
 import { Router } from 'express'
 //import multer from 'multer'
@@ -17,6 +17,22 @@ server.post('/admin/cadastrar/livro', async (req, resp) => {
         return resp.status(400).send({
             erro: err.message
         });
+    }
+})
+
+server.put('/admin/produto/:id', async (req, resp) => {
+    try {
+        const id = req.params.id;
+        const produto = req.body;
+        await Editar(id, produto);
+        
+        resp.status(204).send();
+
+    }
+    catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        })
     }
 })
 
