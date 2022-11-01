@@ -23,12 +23,10 @@ server.get('/api/produto/:id', async (req, resp) => {
         const id = req.params.id;
 
         const produto = await buscarProdutoPorId(id);
-        const categoria = await buscarProdutoCategoria(id);
         const imagem = await buscarProdutoImagem(id);
 
         resp.send({
             info: produto,
-            categoria: categoria,
             imagem: imagem
         })
     }
