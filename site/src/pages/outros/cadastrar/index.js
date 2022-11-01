@@ -25,7 +25,7 @@ export default function Index() {
             <ToastContainer/>
             <div className='conteudo-login'>
                 <div className='local'>
-                <h1>Login Admin</h1>
+                <h1>Login</h1>
                     <div className='contener-input'>
                         <div className='input-2'>
                             <label className='letras'>Nome:</label>

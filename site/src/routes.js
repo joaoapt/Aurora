@@ -12,7 +12,7 @@ import Carrinho from './pages/usuario/carrinho';
 import ProdutoVil from './pages/outros/produto-vil'
 import PendentesMenu from './pages/admin/pedentes-menu';
 import PendentesPessoas from './pages/admin/pessoas';
-import Erro from './pages/erro';
+
 import Novo from './pages/usuario/NovoEmdereço';
 import Aprovado from './pages/procedimento/aprovado';
 import Boleto from './pages/procedimento/boleto';
@@ -27,22 +27,24 @@ export default function Index() {
     return(
         <BrowserRouter>
             <Routes>
-                <Route path="/erro404" element={<Erro/>}/>
+                <Route path="/boleto" element={<Boleto/>}/>
+
                 <Route path="/novo" element={<Novo/>}/>
                 <Route path="/aprovado" element={<Aprovado/>}/>
-                <Route path="/boleto" element={<Boleto/>}/>
-                <Route path="/cartao" element={<Cartão/>}/>
                 <Route path="/escolhapag" element={<EscolhaPag/>}/>
                 <Route path="tela1" element={<Tela1/>}/>
                 <Route path="tela2" element={<Tela2/>}/>
                 <Route path="tela3" element={<Tela3/>}/>
-                <Route path="/produto/vil" element={<ProdutoVil/>}/>
+
+                <Route path="/cartao" element={<Cartão/>}/>
+
                 <Route path="/pendentespessoas" element={<PendentesPessoas/>}/>
                 <Route path="/pendentesmenu" element={<PendentesMenu/>}/>
                 <Route path="/pendentes" element={<Pendentes/>}/>
-                <Route path="/Editar-site" element={<Editar/>}/>
+                <Route path="/Editar-site" element={<Editar/>}/>                
+                <Route path="/menu" element={<MenuAdmin/>}/>
+                <Route path="/produto/vil" element={<ProdutoVil/>}/>
                 <Route path="/" element={<Home/>}/>
-                <Route path="/menu" element={<MenuAdmin/>} />
                 <Route path="/login" element={<Login/>}/>
                 <Route path="/login-admin" element={<LoginAdmin/>}/>
                 <Route path="/cadastrar" element={<CadastrarUsuario/>}/>
