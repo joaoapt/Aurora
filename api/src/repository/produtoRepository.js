@@ -37,6 +37,18 @@ export async function salvarProdutoImagem(idProduto, imagemPath) {
     const [resp] = await con.query(comando, [idProduto, imagemPath])
 }
 
+export async function AlterarImagem(imagem, id){
+    const comando =
+        `UPDATE tb_produto_img
+            SET ds_img = ?
+          WHERE id_img = ?`;
+
+    const [resposta] = await con.query(comando, [imagem, id]);
+    return resposta.affectedRows;
+}
+
+
+
 
 
 //EEEEEEERROOOOOOO
@@ -69,16 +81,6 @@ export async function buscarProdutoPorId(id) {
     return registros[0];
 }
 
-export async function buscarProdutoImagens(idProduto) {
-    const comando = `
-          select ds_imagem   as imagem
-            from tb_produto
-           where id_produto = ?
-        `
-
-    const [registros] = await con.query(comando, [idProduto]);
-    return registros.map(item => item.imagem);
-}
 
 export async function listarProdutosInicio() {
     const comando = `

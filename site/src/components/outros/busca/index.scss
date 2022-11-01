@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap');
 .b{
       background: linear-gradient(280.5deg, #071441, #000000);
       background-size: 400% 400%;
@@ -6,8 +7,10 @@
    
   .titulo{
         font-size: 23px;
-        margin-top: 11px;
+        margin-top: 2px;
+        font-style: 20px;
         margin-left: 1px;
+        font-weight: 600;
         font-family: 'Oswald', sans-serif;
         color: #fff;
   }
@@ -78,17 +81,21 @@
       margin-left: 60px;
   }
   .botão-login{
+    font-family: 'Oswald', sans-serif;
     word-spacing: normal;
     border:none;
-    //color: ;
+    color:#fff ;
     padding: 5px 16px;
     cursor: pointer;
-    font-size: 25px;
-    font-family: 'Oswald', sans-serif;
+    font-size: 30px;
+    font-weight: 100;
     transition:all 0.5s ease-in-out 0s;
-    margin-top: 28px;
-    text-decoration: none;
+    margin-top: 15px;
     margin-left: 50px;
+  }
+
+  .botão-login:hover{
+    color:#25C998 ;
   }
 
   -webkit-animation: aaa 15s ease infinite;

@@ -49,7 +49,7 @@ export default function Index() {
             <ToastContainer/>
             <div className='conteudo-login'>
                 <div className='local'>
-                <h1>Login Admin</h1>
+                <h1>Login</h1>
                     <div className='contener-input'>
                         <div className='input-1'>
                             <label className='letras'>E-mail:</label>
