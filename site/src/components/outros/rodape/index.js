@@ -5,7 +5,7 @@ export default function Index (){
     return(
         <footer className='rodape'>
                 <div className='conterne-rodapé'>
-                    <div className='logo'> <img className="logo" src="./img/logo.png" alt="logo"/> </div>
+                    <div className='logo'> <img className='logo' src="../img/logo.png" alt='logo'/> </div>
                     <div className='texto-rodapé'>
                         <h1>Início</h1>
                         <p>Home</p>
