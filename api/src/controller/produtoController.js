@@ -20,6 +20,7 @@ server.post('/admin/cadastrar/livro', async (req, resp) => {
     }
 })
 
+//Editar
 server.put('/admin/produto/:id', async (req, resp) => {
     try {
         const id = req.params.id;

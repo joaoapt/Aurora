@@ -1,4 +1,4 @@
-import { buscarProdutoCategoria, buscarProdutoImagem, buscarProdutoPorId, listarProdutosInicio } from "../repository/produtoRepository.js";
+import { buscarProdutoImagem, buscarProdutoPorId, listarProdutosInicio } from "../repository/produtoRepository.js";
 
 import { Router } from "express";
 const server = Router();

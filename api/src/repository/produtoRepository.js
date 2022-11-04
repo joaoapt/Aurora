@@ -2,9 +2,9 @@ import { con } from './connection.js'
 
 export async function cadastrarLivro (cadastro) {
     const comando = `
-    INSERT INTO tb_produto ( nm_livro, nm_autor, ds_categoria, ds_classificacao, nm_editora, nm_idioma, nr_isbn13, nr_isbn10, vl_preco, nm_original, ds_sinopse, ds_versao, nr_pagina, nr_volume, nr_largura, nr_comprimento)
-    VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)`
-//15
+    INSERT INTO tb_produto ( nm_livro, nm_autor, ds_categoria, ds_classificacao, nm_editora, nm_idioma, nr_isbn13, nr_isbn10, vl_preco, nm_original, ds_sinopse, ds_versao, nr_pagina, nr_volume, nr_largura, nr_comprimento )
+    VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)`
+    
     const resposta = await con.query(comando, [cadastro.livro, cadastro.autor, cadastro.categoria, cadastro.classificacao, cadastro.editora, cadastro.idioma, cadastro.isbn13, cadastro.isbn10, cadastro.preco, cadastro.original, cadastro.sinopse, cadastro.versao, cadastro.pagina, cadastro.volume, cadastro.largura, cadastro.comprimento]);
     return resposta.insertId;
 }
