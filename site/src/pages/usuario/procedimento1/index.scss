@@ -1,0 +1,58 @@
+.page-procedimen
+{
+    //background-image:url(../../../../public/img2/unknown.png);
+    .cabecalho
+    {
+        display: flex;
+        justify-content:flex-end;
+        text-align:end;
+    }
+    
+.a{
+    position: absolute;
+    width: 563px;
+    height: 84px;
+    left: 468px;
+    top: 131px;
+
+    font-style: normal;
+    font-weight: 600;
+    font-size: 64px;
+    line-height: 95px;
+    text-align: center;
+
+    color: #FFFFFF;
+}
+
+.b{
+    position: absolute;
+    width: 94px;
+    height: 37px;
+    left: 541px;
+    top: 316px;
+
+    font-style: normal;
+    font-weight: 300;
+    font-size: 30px;
+    line-height: 44px;
+
+    color: #FFFFFF;
+}
+
+.c{
+    position: absolute;
+    width: 178px;
+    height: 49px;
+    left: 672px;
+    top: 740px;
+}
+
+.d{
+    position: absolute;
+    width: 579px;
+    height: 846px;
+    left: 460px;
+    top: 0px;
+    background: linear-gradient(90deg, #25C998 0%, rgba(45, 79, 167, 0.833333) 99.78%, rgba(37, 201, 152, 0) 100%);
+}
+}

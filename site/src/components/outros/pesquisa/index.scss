@@ -1,8 +1,12 @@
 .pesquisa{
-      nav{
-            height: 90px;
-            background: linear-gradient(280.5deg,  #071441 0%,  #071441 30%, #000 60%);
-      }
+      
+      background: linear-gradient(89deg, #071441, #000000);
+      background-size: 400% 400%;
+        
+      -webkit-animation: AnimationName 23s ease infinite;
+      -moz-animation: AnimationName 23s ease infinite;
+      animation: AnimationName 23s ease infinite;
+         
       .titulo{
             font-size: 19px;
             margin-top: 1px;
@@ -29,4 +33,21 @@
             height: 4px;
             width: auto;
       }
+
+
+      @-webkit-keyframes AnimationName {
+            0%{background-position:0% 52%}
+            50%{background-position:100% 49%}
+            100%{background-position:0% 52%}
+        }
+        @-moz-keyframes AnimationName {
+            0%{background-position:0% 52%}
+            50%{background-position:100% 49%}
+            100%{background-position:0% 52%}
+        }
+        @keyframes AnimationName {
+            0%{background-position:0% 52%}
+            50%{background-position:100% 49%}
+            100%{background-position:0% 52%}
+        }
 }

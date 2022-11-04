@@ -25,7 +25,7 @@ export default function Index() {
             <ToastContainer/>
             <div className='conteudo-login'>
                 <div className='local'>
-                <h1>Login Admin</h1>
+                <h1>Login</h1>
                     <div className='contener-input'>
                         <div className='input-2'>
                             <label className='letras'>Nome:</label>
@@ -40,8 +40,8 @@ export default function Index() {
                             <input className='input-2' type='password' value={senha} onChange={e => setSenha(e.target.value)}/>
                         </div>
                     </div>  
-                    <div>
-                      <Link className='botão-voltar-cadastrar' to='/login'>Voltar</Link>
+                    <div className='local-cadastrar'>
+                      <Link className='botão-cadastrar-login' to='/login'>Logar</Link>
                     </div>
                     <ToastContainer/>
                     <div className='botoes'>

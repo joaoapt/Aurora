@@ -20,7 +20,13 @@
         border-top-left-radius:100px ;
         padding: 33px 100px;
         color: rgb(255, 254, 254);
-        background: linear-gradient(85deg, #25c998d2 0%, #1c8783d5 30%, #1020abd8 100%);
+    
+            background: linear-gradient(270deg, #25c998e0, #1c8783de, #1020abd8);
+            background-size: 600% 600%;
+        
+            -webkit-animation: AnimationName 20s ease infinite;
+            -o-animation: AnimationName 20s ease infinite;
+            animation: AnimationName 20s ease infinite;
     }
     .invalido{
         position: absolute;
@@ -91,6 +97,22 @@
         font-family: 'Montserrat', sans-serif;
         transition:all 0.6s ease-in-out 0.05s;
     }
+    .local-cadastrar{
+        margin-top: 10px;
+        text-align: center;
+    }
+
+    .botão-cadastrar-login{
+        word-spacing: normal;
+        border:none;
+        padding: 5px 16px;
+        cursor: pointer;
+        color:#fff ;
+        font-size: 25px;
+        font-family: 'Oswald', sans-serif;
+        transition:all 0.5s ease-in-out 0s;
+    }
+
     .botão1{
         margin-right: 80px;
         background: none;
@@ -119,4 +141,24 @@
         border: 2px  solid #25C998;
         border-radius:5px;
     }    
+    .botão-cadastrar-login:hover{
+        color:#25C998;
+    }
+
+    @-webkit-keyframes AnimationName {
+        0%{background-position:0% 50%}
+        50%{background-position:100% 50%}
+        100%{background-position:0% 50%}
+    }
+    @-o-keyframes AnimationName {
+        0%{background-position:0% 50%}
+        50%{background-position:100% 50%}
+        100%{background-position:0% 50%}
+    }
+    @keyframes AnimationName {
+        0%{background-position:0% 50%}
+        50%{background-position:100% 50%}
+        100%{background-position:0% 50%}
+    }
+    
 }

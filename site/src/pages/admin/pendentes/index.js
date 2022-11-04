@@ -1,22 +1,22 @@
 import './index.scss';
 import Menu from '../../../components/admin/menu';
 import Cabecalho from '../../../components/admin/cabecalho';
-import { buscarLivro } from '../../../api/admin/consultar-BD'
-import { useEffect, useState } from 'react';
+// import { buscarLivro } from '../../../api/admin/consultar-BD';
+// import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 export default function Index(){
-    const [livro, setLivro] = useState([]);
+    // const [livro, setLivro] = useState([]);
 
-    async function listarLivro() {
-        const resp = await buscarLivro();
-        console.log(resp);
-        setLivro(resp);
-    }
+    // async function listarLivro() {
+    //     const resp = await buscarLivro();
+    //     console.log(resp);
+    //     setLivro(resp);
+    // }
 
-    useEffect(() => {
-        listarLivro();
-    })
+    // useEffect(() => {
+    //     listarLivro();
+    // })
     
     
     return(

@@ -10,10 +10,9 @@ server.put('/admin/produto/:id/imagem', upload.array('imagens'), async (req, res
             await removerProdutoImagensDiferentesDe(img);
         else
             await removerProdutoImagens(id);
-
         
-        for (const imagem of imagens) {
-            await salvarProdutoImagem(id, imagem.path);
+        for (const img of imagens) {
+            await salvarProdutoImagem(id, img.path);
         }
 
         resp.status(204).send();

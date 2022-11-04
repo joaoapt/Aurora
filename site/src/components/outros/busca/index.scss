@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap');
+.b{
+      background: linear-gradient(280.5deg, #071441, #000000);
+      background-size: 400% 400%;
+      width: 1349px;
+      height: 80px;
+   
+  .titulo{
+        font-size: 23px;
+        margin-top: 2px;
+        font-style: 20px;
+        margin-left: 1px;
+        font-weight: 600;
+        font-family: 'Oswald', sans-serif;
+        color: #fff;
+  }
+  
+  .cont-logo{
+        display: flex;
+  }
+  .logo{
+        margin-top: 8px;
+        margin-left: 20px;
+        width: 75px;
+  }
+  .barra{
+        margin-top: -4px;
+        font-size: 68px;
+        color: #fff;
+  }
+  .linha{
+        background:black;
+        height: 15px;
+        width: auto;
+  }
+
+  .caixa-busca {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: rgba(238, 237, 237, 0.788);
+      padding: 0px 40px;
+      border-top-left-radius:20px;
+     border-bottom-right-radius: 20px;
+     border-top-right-radius:2px;
+     border-bottom-left-radius: 2px;
+      width: 460px;
+      height: 40px;
+      margin-left: 180px;
+    margin-top: 25px;
+  }
+
+  .caixa-busca input {
+      background: none;
+      margin-left: -10px;
+      border: none;
+      padding: 0px;
+      font-size: 18px;
+      width: 700px;
+      height: 32px;
+      border-radius: 5px;
+      background-color: rgba(255, 255, 255, 0.884);
+  }
+
+  .caixa-busca img {
+      cursor: pointer;
+      position: relative;
+      right: -15px;
+  }
+  .puta{
+      width: 23px;
+  }
+  .carrinho{
+    margin-top: 24px;
+    width: 40px;
+    margin-left: 90px;
+  }
+  .puta2{
+      width: 35px;
+      margin-top: 30px;
+      margin-left: 60px;
+  }
+  .botão-login{
+    font-family: 'Oswald', sans-serif;
+    word-spacing: normal;
+    border:none;
+    color:#fff ;
+    padding: 5px 16px;
+    cursor: pointer;
+    font-size: 30px;
+    font-weight: 100;
+    transition:all 0.5s ease-in-out 0s;
+    margin-top: 15px;
+    margin-left: 50px;
+  }
+
+  .botão-login:hover{
+    color:#25C998 ;
+  }
+
+  -webkit-animation: aaa 15s ease infinite;
+  -moz-animation: aaa 15s ease infinite;
+  animation: aaa 15s ease infinite;
+     display: flex;
+
+  @-webkit-keyframes aaa {
+      0%{background-position:0% 52%}
+      50%{background-position:100% 49%}
+      100%{background-position:0% 52%}
+  }
+  @-moz-keyframes aaa {
+      0%{background-position:0% 52%}
+      50%{background-position:100% 49%}
+      100%{background-position:0% 52%}
+  }
+  @keyframes aaa {
+      0%{background-position:0% 52%}
+      50%{background-position:100% 49%}
+      100%{background-position:0% 52%}
+  }
+
+}

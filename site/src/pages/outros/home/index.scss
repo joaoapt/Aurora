@@ -1,5 +1,64 @@
-.ola{
-    
 
+.pag-home{
+    display: flex;
+    min-height: 700px;
+    .conteudo{
+        margin-top: 30px;
+    }
+
+    .box-quadrado{
+        margin-top: 15px;
+        display: flex;
+        justify-content:space-around;
+        text-align: center;
+    }
+
+    .quadrado{
+        width: 380px;
+        height: 450px;
+        border-radius: 10px;
+        background-color:rgb(221, 220, 220);
+        pointer-events: none;
+    }
+
+    .gif
+    {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        pointer-events: none;
+    }
+    
+     h3{
+        font-size: 30px;
+        color: black;
+        font-family: 'Montserrat', sans-serif;
+    }
+    .cate{
+        display: flex;
+        justify-content: center;
+    }
+
+    .img{
+        display: flex;
+        justify-content: center;
+        margin: 30px;
+    }
+
+    .propaganda
+    {
+        width: 1120px;
+    }
+    h4{
+        font-size: 30px;
+        margin-top: 30px;
+        margin-left: 140px;
+        color: rgb(71, 70, 70);
+        font-family: 'Montserrat', sans-serif;
+    }
+    .aaa{
+        display: flex;
+        justify-content: center;
+    }
 
 }
