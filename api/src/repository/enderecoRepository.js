@@ -10,7 +10,7 @@ export async function listar(idUsuario) {
             ds_bairro				bairro,
             ds_cidade				cidade,
             ds_estado				estado,
-            ds_pais                 pais
+            ds_pais                 pais,
             ds_complemento			complemento
        from tb_usuario_endereco 
       where id_usuario_conta = ?
