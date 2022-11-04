@@ -85,10 +85,10 @@ create table tb_usuarioendereco(
 );
 
 create table tb_usuariofavorito(
-	id_usuario_favorito int primary key auto_increment,
-    id_usuario_conta int,
+	id_usuariofavorito int primary key auto_increment,
+    id_usuario int,
     id_produto int,
-    foreign key (id_usuario_conta) references tb_usuarioconta(id_usuario_conta),
+    foreign key (id_usuario) references tb_usuario(id_usuario_conta),
     foreign key (id_produto) references tb_produto(id_produto)
 );
 
