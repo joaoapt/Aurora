@@ -1,10 +1,10 @@
 import { cadastrarLivro, ConsultarTodos, Editar, salvarProdutoImagem} from '../repository/produtoRepository.js'
 import { validarProduto } from '../service/produto.js'
 import { Router } from 'express'
-//import multer from 'multer'
+import multer from 'multer'
 
 const server = Router();
-//const upload = multer({ dest: 'storage/produto' });
+const upload = multer({ dest: 'storage/produto' });
 
 //cadaastro livro
 server.post('/admin/cadastrar/livro', async (req, resp) => {
