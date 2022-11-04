@@ -1,13 +1,13 @@
-import { cadastrarLivro, ConsultarTodos, Editar, salvarProdutoImagem} from '../repository/produtoRepository.js'
+import { cadastrarLivro, ConsultarTodos, Editar} from '../repository/produtoRepository.js'
 import { validarProduto } from '../service/produto.js'
 import { Router } from 'express'
 import multer from 'multer'
-
 const server = Router();
 const upload = multer({ dest: 'storage/produto' });
 
+
 //cadaastro livro
-server.post('/admin/cadastrar/livro', async (req, resp) => {
+server.post('/cadastrar/livro', async (req, resp) => {
     try {
         const novolivro = req.body;
         await validarProduto(novolivro);
@@ -20,7 +20,7 @@ server.post('/admin/cadastrar/livro', async (req, resp) => {
     }
 })
 
-//Editar
+
 server.put('/admin/produto/:id', async (req, resp) => {
     try {
         const id = req.params.id;
@@ -38,47 +38,6 @@ server.put('/admin/produto/:id', async (req, resp) => {
 })
 
 
-//img
-// server.put('/admin/produto/:id/imagem', upload.array('imagens'), async (req, resp) => {
-//     try {
-//         const id = req.params.id;
-//         const imagens = req.files;
-//         const img = req.body.imagens.filter(item => item != 'undefined');
-
-
-//         if (img.length > 0)
-//             await removerProdutoImagensDiferentesDe(img);
-//         else
-//             await removerProdutoImagens(id);
-
-        
-//         for (const imagem of imagens) {
-//             await salvarProdutoImagem(id, imagem.path);
-//         }
-
-//         resp.status(204).send();
-//     }
-//     catch (err) {
-//         resp.status(400).send({
-//             erro: err.message
-//         })
-//     }
-// })
-
-server.put('/livro/:id/imagem', async (req,resp) => {
-    try{
-
-    }
-    catch{
-        resp.status(400).send({
-            erro:err.message
-        })
-    }
-})
-
-
-
-
 //consultar
 server.get('/consultar', async (req,resp) => {
     try {
@@ -90,10 +49,6 @@ server.get('/consultar', async (req,resp) => {
         });
     }
 })
-
-
-
-
 
 
 export default server;

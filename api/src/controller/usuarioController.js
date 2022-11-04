@@ -12,8 +12,6 @@ server.post('/login/usuario', async (req, resp) => {
         if (!resposta) {
             throw new Error('Ops, Ocorreu um Erro Inesperado. Tente Novamente!');
         }
-
-
         resp.send(resposta)
 
     } catch (err) {
@@ -22,6 +20,7 @@ server.post('/login/usuario', async (req, resp) => {
         });
     }
 })
+
 
 server.post('/cadastrar/usuario', async (req, resp) => {
     try {
@@ -45,5 +44,6 @@ server.post('/cadastrar/usuario', async (req, resp) => {
         })
     }
 })
+
 
 export default server;

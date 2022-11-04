@@ -3,6 +3,7 @@ import { Router } from 'express';
 
 const server = Router();
 
+
 server.post('/admin/login', async (req, resp) => {
     try {
         const { email, senha } = req.body;
@@ -22,5 +23,6 @@ server.post('/admin/login', async (req, resp) => {
         });
     }
 })
+
 
 export default server;

@@ -18,6 +18,7 @@ server.get('/api/usuario/:id/endereco', async (req, resp) => {
     }
 })
 
+
 server.put('/admin/produto/:id', async (req, resp) => {
     try {
         const id = req.params.id;
@@ -31,6 +32,7 @@ server.put('/admin/produto/:id', async (req, resp) => {
         })
     }
 })
+
 
 server.post('/api/usuario/:id/endereco', async (req, resp) => {
     try {
@@ -46,8 +48,6 @@ server.post('/api/usuario/:id/endereco', async (req, resp) => {
         })
     }
 })
-
-
 
 
 export default server;

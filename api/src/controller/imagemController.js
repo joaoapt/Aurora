@@ -1,3 +1,6 @@
+
+
+
 //img
 server.put('/admin/produto/:id/imagem', upload.array('imagens'), async (req, resp) => {
     try {

@@ -17,7 +17,6 @@ server.get('/api/produto', async (req, resp) => {
 })
 
 
-
 server.get('/api/produto/:id', async (req, resp) => {
     try {
         const id = req.params.id;
@@ -36,7 +35,6 @@ server.get('/api/produto/:id', async (req, resp) => {
         })
     }
 })
-
 
 
 export default server;
