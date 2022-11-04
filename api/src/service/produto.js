@@ -1,12 +1,10 @@
-
-
 export async function validarProduto(novolivro) {
-        // if(!novolivro.categoria){
-        //     throw new Error('A Categoria é OBRIGATÓRIA!');
-        // }
-        // if(!produto.classicacao){
-        //     throw new Error('A Classificação Indicativa é OBRIGATÓRIA!');
-        // }
+        if(!novolivro.categoria){
+            throw new Error('A Categoria é OBRIGATÓRIA!');
+        }
+        if(!novolivro.classificacao){
+            throw new Error('A Classificação Indicativa é OBRIGATÓRIA!');
+        }
         if(!novolivro.livro){
             throw new Error('O Titulo do Livro é OBRIGATÓRIO!');
         }

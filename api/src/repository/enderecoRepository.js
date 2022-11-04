@@ -1,5 +1,6 @@
 import { con } from "./connection.js";
 
+
 export async function listar(idUsuario) {
     const comando = `
      select id_usuario_endereco		id,
@@ -21,7 +22,6 @@ export async function listar(idUsuario) {
 }
 
 
-
 export async function salvar(idUsuario, endereco) {
     const comando = `
     insert into tb_usuario_endereco (id_usuario, ds_referencia, ds_cep, ds_endereco, ds_bairro, ds_cidade, ds_estado, ds_pais, nr_endereco, ds_complemento)
@@ -31,6 +31,7 @@ export async function salvar(idUsuario, endereco) {
     const [info] = await con.query(comando, [idUsuario, endereco.referencia, endereco.cep, endereco.logradouro, endereco.bairro, endereco.cidade, endereco.estado,endereco.pais, endereco.numero, endereco.complemento]);
     return info.insertId;
 }
+
 
 export async function alterarEndereco(idUsuario, endereco) {
     const comando = `

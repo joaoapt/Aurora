@@ -14,6 +14,7 @@ export async function Login(email, senha) {
     return linhas[0];
 }
 
+
 export async function cadastrarLogin(login) {
     const comando = 
     `INSERT INTO tb_usuariologin (nm_usuario, ds_email, ds_senha)

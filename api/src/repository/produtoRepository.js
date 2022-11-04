@@ -1,13 +1,17 @@
 import { con } from './connection.js'
 
+
 export async function cadastrarLivro (cadastro) {
     const comando = `
-    INSERT INTO tb_produto ( nm_livro, nm_autor, ds_categoria, ds_classificacao, nm_editora, nm_idioma, nr_isbn13, nr_isbn10, vl_preco, nm_original, ds_sinopse, ds_versao, nr_pagina, nr_volume, nr_largura, nr_comprimento)
-    VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)`
-//15
-    const resposta = await con.query(comando, [cadastro.livro, cadastro.autor, cadastro.categoria, cadastro.classificacao, cadastro.editora, cadastro.idioma, cadastro.isbn13, cadastro.isbn10, cadastro.preco, cadastro.original, cadastro.sinopse, cadastro.versao, cadastro.pagina, cadastro.volume, cadastro.largura, cadastro.comprimento]);
+    INSERT INTO tb_produto ( nm_livro, ds_categoria, ds_classificacao, nm_autor, nm_editora, nm_idioma, nr_isbn13, nr_isbn10, vl_preco, nm_original, ds_sinopse, ds_versao, nr_pagina, nr_volume, nr_largura, nr_comprimento)
+    VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)`		
+
+
+//16
+    const resposta = await con.query(comando, [cadastro.livro, cadastro.categoria, cadastro.classificacao, cadastro.autor, cadastro.editora, cadastro.idioma, cadastro.isbn13, cadastro.isbn10, cadastro.preco, cadastro.original, cadastro.sinopse, cadastro.versao, cadastro.pagina, cadastro.volume, cadastro.largura, cadastro.comprimento]);
     return resposta.insertId;
 }
+
 
 export async function ConsultarTodos() {
     const comando = `
@@ -16,6 +20,7 @@ export async function ConsultarTodos() {
     const [linhas] = await con.query(comando)
     return linhas;
 }
+
 
 export async function Editar(id, produto) {
     const comando = `
@@ -27,6 +32,7 @@ export async function Editar(id, produto) {
     return resposta.affectedRows;
 }
 
+
 //img
 export async function salvarProdutoImagem(idProduto, imagemPath) {
     const comando = `
@@ -36,6 +42,7 @@ export async function salvarProdutoImagem(idProduto, imagemPath) {
 
     const [resp] = await con.query(comando, [idProduto, imagemPath])
 }
+
 
 export async function AlterarImagem(imagem, id){
     const comando =
@@ -48,10 +55,6 @@ export async function AlterarImagem(imagem, id){
 }
 
 
-
-
-
-//EEEEEEERROOOOOOO
 export async function buscarProdutos() {
     const comando = `
         select id_produto                   as id,
@@ -65,7 +68,6 @@ export async function buscarProdutos() {
     const [registros] = await con.query(comando);
     return registros;
 }
-
 
 
 export async function buscarProdutoPorId(id) {
@@ -95,6 +97,7 @@ export async function listarProdutosInicio() {
     const [registros] = await con.query(comando);
     return registros;
 }
+
 
 export async function removerProduto(idProduto) {
     const comando = `
