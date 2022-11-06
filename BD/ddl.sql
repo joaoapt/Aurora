@@ -21,7 +21,7 @@ create table tb_produto (
     nm_idioma			varchar(60),
     nr_isbn13			int default null,
     nr_isbn10			int default null,
-    vl_preco			decimal(15),
+    vl_preco			decimal(15,2),
     nm_original			varchar(150),
     ds_sinopse			varchar(450),
     ds_versao			varchar(10),
@@ -86,6 +86,7 @@ create table tb_pedido(
     tp_forma_pagamento int,
     ds_status varchar(150),
     dt_pedido date,
+    vl_total  decimal(15,2)
     foreign key (id_usuario_endereco) references tb_usuarioendereco(id_usuario_endereco),
     foreign key (id_usuario_conta) references tb_usuario(id_usuario_conta)
 );
