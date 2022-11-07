@@ -1,7 +1,7 @@
 import { con } from "./connection.js";
 
 
-export async function listar(idUsuario) {
+export async function listarEndereco(idUsuario) {
     const comando = `
      select id_usuario_endereco		id,
             ds_endereco			    endereco,
@@ -11,7 +11,7 @@ export async function listar(idUsuario) {
             ds_bairro				bairro,
             ds_cidade				cidade,
             ds_estado				estado,
-            ds_pais                 pais
+            ds_pais                 pais,
             ds_complemento			complemento
        from tb_usuario_endereco 
       where id_usuario_conta = ?
