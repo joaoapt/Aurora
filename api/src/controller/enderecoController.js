@@ -1,9 +1,9 @@
 import { Router } from "express";
-import { listarEndereco, salvar, alterarEndereco } from "../repository/enderecoRepository.js";
+import { listarEndereco, EnderecoUsuario, alterarEndereco } from "../repository/enderecoRepository.js";
 const server = Router();
 
 
-server.get('/api/usuario/:id/endereco', async (req, resp) => {
+server.get('/lista/:id/endereco', async (req, resp) => {
     try {
         const id = req.params.id;
         
@@ -19,35 +19,35 @@ server.get('/api/usuario/:id/endereco', async (req, resp) => {
 })
 
 
-// server.put('/admin/produto/:id', async (req, resp) => {
-//     try {
-//         const id = req.params.id;
-//         const endereco = req.body;        
-//         await alterarEndereco(id, endereco);
-//         resp.status(204).send();
-//     }
-//     catch (err) {
-//         resp.status(400).send({
-//             erro: err.message
-//         })
-//     }
-// })
+server.post('/usuario/alterar/:id', async (req, resp) => {
+    try {
+        const id = req.params.id;
+        const endereco = req.body;        
+        const r = await alterarEndereco(id, endereco);
+        resp.status(204).send();
+    }
+    catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        })
+    }
+})
 
 
-// server.post('/api/usuario/:id/endereco', async (req, resp) => {
-//     try {
-//         const id = req.params.id;
-//         const endereco = req.body;
+server.post('/usuario/:id/endereco', async (req, resp) => {
+    try {
+         const id = req.params.id;
+        const endereco = req.body;
 
-//         const r = await salvar(id, endereco);
-//         resp.status(204).send();
-//     }
-//     catch (err) {
-//         resp.status(400).send({
-//             erro: err.message
-//         })
-//     }
-// })
+        const r = await EnderecoUsuario(id, endereco);
+        resp.status(204).send();
+    }
+    catch (err) {
+        return resp.status(400).send({
+             erro: err.message
+        });
+    }
+})
 
 
 export default server;

@@ -12,6 +12,7 @@ server.post('/cadastrar/livro', async (req, resp) => {
         const novolivro = req.body;
         await validarProduto(novolivro);
         await cadastrarLivro(novolivro);
+        resp.status(204).send();
     }
     catch (err) {
         return resp.status(400).send({
@@ -43,7 +44,7 @@ server.get('/consultar', async (req,resp) => {
     try {
         const resposta = await ConsultarTodos();
         resp.send(resposta)
-    } catch (err) {
+    } catch (err) { 
         resp.status(401).send({
             erro: err.message
         });

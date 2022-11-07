@@ -72,12 +72,23 @@ export async function buscarProdutos() {
 
 export async function buscarProdutoPorId(id) {
     const comando = `
-        select nm_produto                   as produto,
-            vl_preco                        as preco,
-            ds_categoria                    as categoria
-     from tb_produto
-       where id_produto = ?
-        `
+       select nm_livro,
+		vl_preco,
+		ds_categoria
+       from tb_produto
+       where id_produto = ?;`
+
+    const [registros] = await con.query(comando, [id]);
+    return registros[0];
+}
+
+export async function buscarimg(id) {
+    const comando = `
+       select nm_livro,
+		vl_preco,
+		ds_categoria
+       from tb_produto
+       where id_produto = ?;`
 
     const [registros] = await con.query(comando, [id]);
     return registros[0];
@@ -86,13 +97,11 @@ export async function buscarProdutoPorId(id) {
 
 export async function listarProdutosInicio() {
     const comando = `
-           select id_produto        		id,
-               nm_produto					produto,
-               vl_preco						preco,
-               nm_categoria				    categoria,
-               ds_imagem     				imagem
-          from tb_produto
-    `
+    select id_produto       id,
+            nm_livro		produto,
+            vl_preco		preco,
+            ds_categoria	categoria
+    from tb_produto;`
 
     const [registros] = await con.query(comando);
     return registros;
