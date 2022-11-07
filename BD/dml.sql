@@ -1,8 +1,26 @@
 use aurorabksDB;
 
 -- criar login
-INSERT INTO tb_usuariologin (ds_email, ds_senha)
-     VALUES ('j', '1234');
+INSERT INTO tb_usuariologin (nm_usuario,ds_email, ds_senha)
+     VALUES ('João','j', '1234');
+
+INSERT INTO tb_usuario_endereco (id_usuariologin, ds_endereco, nr_endereco, nr_cep, ds_cpf, ds_referencia, ds_cidade, ds_bairro, ds_estado, ds_pais, ds_complemento)
+	VALUES (1,'vila',29903,123213,'asdf3e2434','asdfasd','asdfasdf','asdfa','asdfa','asdfaf','asdff');
+    
+update tb_usuario_endereco set
+ds_endereco= '?', 
+nr_endereco= 122, 
+nr_cep= 233, 
+ds_cpf= '?',
+ds_referencia= '?',
+ds_cidade= '?', 
+ds_bairro= '?',
+ds_estado= '?', 
+ds_pais= '?',
+ds_complemento= '?'
+where id_usuario_endereco = 1;
+
+
 
 -- login
 select id_admin 		 id
@@ -55,7 +73,23 @@ select * from tb_produto;
 -- consulta nome categoria
 select * from tb_categoria;
 
---CSOU2.1 :: alterar a imagem
+-- CoSOU2.1 :: alterar a imagem
+
 UPDATE tb_filme
    SET img_filme =``
  WHERE id_filme = 1;
+ 
+select nm_livro,
+		vl_preco,
+		ds_categoria
+from tb_produto
+where id_produto = 1;
+
+select id_produto       id,
+		nm_livro		produto,
+		vl_preco		preco,
+		ds_categoria	categoria
+from tb_produto;
+ 
+ 
+ select * from tb_usuario_endereco;
