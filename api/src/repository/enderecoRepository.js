@@ -1,7 +1,7 @@
 import { con } from "./connection.js";
 
 
-export async function listar(idUsuario) {
+export async function listarEndereco(idUsuario) {
     const comando = `
      select id_usuario_endereco		id,
             ds_endereco			    endereco,
@@ -22,9 +22,9 @@ export async function listar(idUsuario) {
 }
 
 
-export async function salvar(idUsuario, endereco) {
+export async function EnderecoUsuario(idUsuario, endereco) {
     const comando = `
-    insert into tb_usuario_endereco (id_usuario, ds_referencia, ds_cep, ds_endereco, ds_bairro, ds_cidade, ds_estado, ds_pais, nr_endereco, ds_complemento)
+    insert into tb_usuario_endereco (id_usuariologin, ds_endereco, nr_endereco, nr_cep, ds_cpf, ds_referencia, ds_cidade, ds_bairro, ds_estado, ds_pais, ds_complemento)
                              values (?, ?, ?, ?, ?, ?, ?, ?, ?)
     `
 

@@ -8,15 +8,16 @@ INSERT INTO tb_usuario_endereco (id_usuariologin, ds_endereco, nr_endereco, nr_c
 	VALUES (1,'vila',29903,123213,'asdf3e2434','asdfasd','asdfasdf','asdfa','asdfa','asdfaf','asdff');
     
 update tb_usuario_endereco set
-     ds_referencia = '?',
-     nr_cep = '?',
-     ds_endereco = '?', 
-     ds_bairro = 'aa',
-     ds_cidade = 'aa',
-     ds_estado = 'aaaa',
-     ds_pais = 'aaa',
-     nr_endereco = 'aaa',
-     ds_complemento ='aaa'
+ds_endereco= '?', 
+nr_endereco= 122, 
+nr_cep= 233, 
+ds_cpf= '?',
+ds_referencia= '?',
+ds_cidade= '?', 
+ds_bairro= '?',
+ds_estado= '?', 
+ds_pais= '?',
+ds_complemento= '?'
 where id_usuario_endereco = 1;
 
 
@@ -77,3 +78,18 @@ select * from tb_categoria;
 UPDATE tb_filme
    SET img_filme =``
  WHERE id_filme = 1;
+ 
+select nm_livro,
+		vl_preco,
+		ds_categoria
+from tb_produto
+where id_produto = 1;
+
+select id_produto       id,
+		nm_livro		produto,
+		vl_preco		preco,
+		ds_categoria	categoria
+from tb_produto;
+ 
+ 
+ select * from tb_usuario_endereco;
