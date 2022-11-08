@@ -1,35 +1,33 @@
-import './index.scss';
+import './index.css';
 
 export default function Index() {
     return(
-        <main className='page-home'>
-        
-                <div className='l'>
+        <div className="pag-novo">
+                <div className='l-cartao'>
                     <div>
-                        <p className='a'>Novo Endereço</p>
-                        <p className='b'>CEP:</p>
+                        <p className='a-cartao'>Novo Endereço</p>
+                        <p className='b-cartao'>CEP:</p>
                         <input type="text"/>
-                        <p className='c'>Logradouro:</p>
+                        <p className='c-cartao'>Logradouro:</p>
                         <input type="text"/>
-                        <p className='d'>Bairro:</p>
+                        <p className='d-cartao'>Bairro:</p>
                         <input type="text"/>
-                        <p className='e'>Cidade:</p>
+                        <p className='e-cartao'>Cidade:</p>
                         <input type="text"/>
-                        <p className='f'>Estado:</p>
+                        <p className='f-cartao'>Estado:</p>
                         <input type="text"/>
-                        <p className='g'>Número:</p>
+                        <p className='g-cartao'>Número:</p>
                         <input type="text"/>
-                        <p className='h'>Complemento:</p>
+                        <p className='h-cartao'>Complemento:</p>
                         <input type="text"/>
-                        <p className='i'>País:</p>
+                        <p className='i-cartao'>País:</p>
                         <input type="text"/>
                         <div>
-                            <p className='j'>voltar</p>
-                            <p className='k'>enviar</p>
+                            <p className='j-cartao'>voltar</p>
+                            <p className='k-cartao'>enviar</p>
                         </div>
                     </div>
                 </div>
-        
-        </main>
+        </div>
     )
 }

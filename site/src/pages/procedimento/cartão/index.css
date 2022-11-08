@@ -1,16 +1,19 @@
 .page-cartao
 {
-    //background-image:url(../../../../public/img/casa-fundo.jpg);
+    
+    background-image:url(../../../../public/img/casa-fundo.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: bottom center;
-    .cabecalho
+    color: #000;
+}
+    .cabecalho-cartao
     {
         display: flex;
         justify-content:flex-end;
         text-align:end;
     }
-    .a{
+    .a-cartao{
         position: absolute;
         width: 470px;
         height: 50px;
@@ -23,7 +26,7 @@
         color: #FFF;
     }
 
-    .b{
+    .b-cartao{
         position: absolute;
         width: 247px;
         height: 37px;
@@ -37,7 +40,7 @@
         color: #FFFFFF;
     }
 
-    .c{
+    .c-cartao{
         position: absolute;
         width: 247px;
         height: 37px;
@@ -52,7 +55,7 @@
         color: #FFFFFF;
     }
 
-    .d{
+    .d-cartao{
         position: absolute;
         width: 247px;
         height: 37px;
@@ -67,7 +70,7 @@
         color: #FFFFFF;
     }
 
-    .e{
+    .e-cartao{
         position: absolute;
         width: 247px;
         height: 37px;
@@ -82,7 +85,7 @@
         color: #FFFFFF;
     }
 
-    .f{
+    .f-cartao{
         position: absolute;
         width: 145 px;
         height: 40px;
@@ -99,7 +102,7 @@
         transition:all 0.6s ease-in-out 0.05s;
     }
 
-    .g{
+    .g-cartao{
         position: absolute;
         width: 565px;
         height: 685px;
@@ -110,7 +113,7 @@
         border-radius: 40px;
     }
 
-    .h{
+    .h-cartao{
         position: absolute;
         width: 382px;
         height: 429px;
@@ -120,7 +123,7 @@
         background: rgba(37, 201, 183, 0.7);
     }
 
-    .i{
+    .i-cartao{
         position: absolute;
         width: 333px;
         height: 74px;
@@ -136,7 +139,7 @@
         color: #FFFFFF;
     }
 
-    .j{
+    .j-cartao{
         position: absolute;
         width: 348px;
         height: 29px;
@@ -152,7 +155,7 @@
         color: #FFFFFF;
     }
 
-    .k{
+    .k-cartao{
         position: absolute;
         width: 348px;
         height: 33px;
@@ -168,7 +171,7 @@
         color: #FFFFFF;
     }
 
-    .l{
+    .l-cartao{
         position: absolute;
         width: 351px;
         height: 33px;
@@ -184,7 +187,7 @@
         color: #FFFFFF;
     }
 
-    .m{
+    .m-cartao{
         position: absolute;
         width: 447px;
         height: 25px;
@@ -199,7 +202,7 @@
 
         color: #FFFFFF;
     }
-    .n{
+    .n-cartao{
         position: absolute;
         width: 247px;
         height: 37px;
@@ -213,7 +216,7 @@
         
         color: #FFFFFF;
     }
-    .o{
+    .o-cartao{
         position: absolute;
         width: 247px;
         height: 37px;
@@ -227,7 +230,7 @@
         
         color: #FFFFFF;
     }
-    .p{
+    .p-cartao{
         position: absolute;
         width: 200px;
         height: 37px;
@@ -241,7 +244,7 @@
         
         color: #FFFFFF;
     }
-    .q{
+    .q-cartao{
         position: absolute;
         width: 200px;
         height: 37px;
@@ -255,11 +258,10 @@
         
         color: #FFFFFF;
     }
-    .r{
+    .r-cartao{
         position: absolute;
         width: 342px;
         left: 14px;
         top: 70px;
         color: #FFFFFF;
     }
-}
