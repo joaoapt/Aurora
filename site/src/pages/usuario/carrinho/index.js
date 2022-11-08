@@ -6,6 +6,7 @@ import Storage from 'local-storage'
 import { toast } from 'react-toastify'
 import { buscarProdutoPorId } from '../../../api/carrinho/produto.js';
 import { API_URL } from '../../../api/config/configAPI';
+import './index.scss';
 
 export default function Index() {
     const [produto, setProduto] = useState({ categorias: [], imagens: [], info: {} })
@@ -63,22 +64,22 @@ export default function Index() {
                 <Pesquisa/>
             </div>
             <div className='interação'>
-            <table>
+            <table className='table'>
                 <thead>
                     <tr>
-                        <th>Produto </th>
-                        <th>Nome </th>
-                        <th>Entrega </th>
-                        <th>Quantidade </th>
-                        <th>Preço </th>
+                        <th className='th'>Produto </th>
+                        <th className='th'>Nome </th>
+                        <th className='th'>Entrega </th>
+                        <th className='th'>Quantidade </th>
+                        <th className='th'>Preço </th>
                     </tr>
                 </thead>
                 <tr>
-                    <td><img className='img-livro' src='../img/the-boys-1.png' alt='img-Livro'/></td>
-                    <td>The Boys o nome do jogo</td>
-                    <td>É nessesa rio mais informações</td>
-                    <td><input type='Number' ></input></td>
-                    <td>R$:99,00</td>
+                    <td className='td'><img className='img-livro' src='../img/the-boys-1.png' alt='img-Livro'/></td>
+                    <td className='td'>The Boys o nome do jogo</td>
+                    <td className='td'>É nessesa rio mais informações</td>
+                    <td className='td'><input type='Number' ></input></td>
+                    <td className='td'>R$:99,00</td>
                 </tr>
             </table>
                 <div className='nota'> 

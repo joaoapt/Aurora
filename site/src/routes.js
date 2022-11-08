@@ -15,27 +15,24 @@ import PendentesPessoas from './pages/admin/pessoas';
 
 import Novo from './pages/usuario/NovoEmdereço';
 import Aprovado from './pages/procedimento/aprovado';
-import Boleto from './pages/procedimento/boleto';
 import Cartão from './pages/procedimento/cartão';
-import EscolhaPag from './pages/procedimento/escolha pagamento';
 import Tela1 from './pages/usuario/TelaUsuario1';
 import Tela2 from './pages/usuario/TelaUsuario2';
-import Tela3 from './pages/usuario/TelaUsuario3';
+
 
 
 export default function Index() {
     return(
         <BrowserRouter>
             <Routes>
-                <Route path="/boleto" element={<Boleto/>}/>
+
+
+                <Route path="/tela1" element={<Tela1/>}/>
+                <Route path="/tela2" element={<Tela2/>}/>
+
 
                 <Route path="/novo" element={<Novo/>}/>
                 <Route path="/aprovado" element={<Aprovado/>}/>
-                <Route path="/escolhapag" element={<EscolhaPag/>}/>
-                <Route path="tela1" element={<Tela1/>}/>
-                <Route path="tela2" element={<Tela2/>}/>
-                <Route path="tela3" element={<Tela3/>}/>
-
                 <Route path="/cartao" element={<Cartão/>}/>
 
                 <Route path="/pendentespessoas" element={<PendentesPessoas/>}/>
