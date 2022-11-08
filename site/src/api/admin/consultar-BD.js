@@ -1,7 +1,8 @@
 import axios from 'axios'
 const api = axios.create({
-    baseURL:'http://localhost:5000'
+    baseURL: API_URL
 })
+import { API_URL } from '../config/configAPI';
 
 //A Por Busca de Tordos os Livro
 export async function buscarLivro(totos) {

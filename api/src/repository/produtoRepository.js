@@ -1,6 +1,6 @@
 import { con } from './connection.js'
 
-
+//ok
 export async function cadastrarLivro (cadastro) {
     const comando = `
     INSERT INTO tb_produto ( nm_livro, ds_categoria, ds_classificacao, nm_autor, nm_editora, nm_idioma, nr_isbn13, nr_isbn10, vl_preco, nm_original, ds_sinopse, ds_versao, nr_pagina, nr_volume, nr_largura, nr_comprimento)
@@ -24,33 +24,26 @@ export async function ConsultarTodos() {
 
 export async function Editar(id, produto) {
     const comando = `
-    UPDATE tb_produto 
-    set nm_livro = ?, nm_autor = ?, ds_categoria = ?, ds_classificacao = ?, nm_editora = ?, nm_idioma = ?, nr_isbn13 = ?, nr_isbn10 = ?, vl_preco = ?, nm_original = ?, ds_sinopse, ds_versao, nr_pagina, nr_volume, nr_largura, nr_comprimento
-    where id_produto = ?
+    update tb_produto set
+    nm_livro	        =?,
+    ds_categoria        =?,
+    ds_classificacao    =?,
+    nm_autor	        =?,
+    nm_editora	        =?,
+    nm_idioma	        =?,
+    nr_isbn13	        =?,
+    nr_isbn10	        =?,
+    vl_preco	        =?,
+    nm_original	        =?,
+    ds_sinopse	        =?,
+    ds_versao	        =?,
+    nr_pagina	        =?,
+    nr_volume		    =?,
+    nr_largura	        =?,
+    nr_comprimento      =?	
+    where id_produto    =?;
     `
-    const resposta = await con.query(comando, [produto.livro, produto.autor, produto.categoria, produto.classificacao, produto.editora, produto.idioma, produto.isbn13, produto.isbn10, cadastro.preco, produto.original, produto.sinopse, produto.versao, produto.pagina, produto.volume, produto.largura, produto.comprimento, id]);
-    return resposta.affectedRows;
-}
-
-
-//img
-export async function salvarProdutoImagem(idProduto, imagemPath) {
-    const comando = `
-        insert into tb_produto_img (id_produto, ds_img)
-                                  values (?, ?)
-    `
-
-    const [resp] = await con.query(comando, [idProduto, imagemPath])
-}
-
-
-export async function AlterarImagem(imagem, id){
-    const comando =
-        `UPDATE tb_produto_img
-            SET ds_img = ?
-          WHERE id_img = ?`;
-
-    const [resposta] = await con.query(comando, [imagem, id]);
+    const resposta = await con.query(comando, [produto.livro, produto.categoria, produto.classificacao, produto.autor, produto.editora, produto.idioma, produto.isbn13, produto.isbn10, produto.preco, produto.original, produto.sinopse, produto.versao, produto.pagina, produto.volume, produto.largura, produto.comprimento, id]);
     return resposta.affectedRows;
 }
 
@@ -71,18 +64,6 @@ export async function buscarProdutos() {
 
 
 export async function buscarProdutoPorId(id) {
-    const comando = `
-       select nm_livro,
-		vl_preco,
-		ds_categoria
-       from tb_produto
-       where id_produto = ?;`
-
-    const [registros] = await con.query(comando, [id]);
-    return registros[0];
-}
-
-export async function buscarimg(id) {
     const comando = `
        select nm_livro,
 		vl_preco,
@@ -116,4 +97,38 @@ export async function removerProduto(idProduto) {
 
     const [resp] = await con.query(comando, [idProduto])
     return resp.affectedRows;
+}
+
+//não ok
+//img
+export async function salvarProdutoImagem(idProduto, imagemPath) {
+    const comando = `
+        insert into tb_produto_img (id_produto, ds_img)
+                values (?, ?);
+    `
+
+    const [resp] = await con.query(comando, [idProduto, imagemPath])
+}
+
+
+export async function AlterarImagem(imagem, id){
+    const comando =
+        `UPDATE tb_produto_img
+            SET ds_img = ?
+          WHERE id_img = ?`;
+
+    const [resposta] = await con.query(comando, [imagem, id]);
+    return resposta.affectedRows;
+}
+
+export async function buscarimg(id) {
+    const comando = `
+       select nm_livro,
+		vl_preco,
+		ds_categoria
+       from tb_produto
+       where id_produto = ?;`
+
+    const [registros] = await con.query(comando, [id]);
+    return registros[0];
 }

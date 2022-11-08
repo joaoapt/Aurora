@@ -1,7 +1,8 @@
 import axios from 'axios'
 const api = axios.create({
-    baseURL:'http://localhost:5000'
+    baseURL: API_URL
 })
+import { API_URL } from '../config/configAPI';
 
 export async function salvar(idUsuario, referencia, cep, rua, bairro, cidade, estado, pais, numero, complemento) {
     const r = await api.post('/api/usuario/' + idUsuario + '/endereco', { referencia, cep, rua, bairro, cidade, estado, pais, numero, complemento });
