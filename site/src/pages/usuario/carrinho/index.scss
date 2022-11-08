@@ -1,41 +1,31 @@
-.page-carrinho{
+.pag-carrinho{
     color: #fff;
     background: fixed;
     background-repeat: no-repeat;
     height: 655px;
-    background-image:url(../../../../public/img/praia.jpg) ;
+    background-image:url(../../../../public/img/praia.jpg);
 
-    .interação
-    {
+    .interação{
         display: flex;
-        
     }
-
-    .nota
-    {
+    .nota{
         margin-left: 50px;
         display: flex;
         justify-content:flex-end;
     }
-
-    .table
-    {
+    table{
         margin-left: -40px;
         width: 1450px;
         text-align: center;
     }
-
-    .th
-    {
+    th{
         color: #fff;
         margin: 30px;
         font-family: 'Oswald', sans-serif;
         font-size: 40px;
         margin: 3990px;
     }
-
-    .td
-    {
+    td{
         color: #000;
         font-weight: 600;
         font-family: 'Montserrat', sans-serif;
@@ -45,10 +35,8 @@
     }
 
 
-    .img-livro
-    {
+    .img-livro{
         width: 150px;
         height: 200px;
     }
-
 }

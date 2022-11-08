@@ -59,7 +59,7 @@ export default function Index() {
     }, [])
 
     return(
-        <div className='page-carrinho'>
+        <div className='pag-carrinho'>
             <div className='pesquisa'>
                 <Pesquisa/>
             </div>
