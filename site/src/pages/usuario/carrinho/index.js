@@ -6,6 +6,7 @@ import Storage from 'local-storage'
 import { toast } from 'react-toastify'
 import { buscarProdutoPorId } from '../../../api/carrinho/produto.js';
 import { API_URL } from '../../../api/config/configAPI';
+import './index.scss';
 
 export default function Index() {
     const [produto, setProduto] = useState({ categorias: [], imagens: [], info: {} })
@@ -58,7 +59,7 @@ export default function Index() {
     }, [])
 
     return(
-        <div className='page-carrinho'>
+        <div className='pag-carrinho'>
             <div className='pesquisa'>
                 <Pesquisa/>
             </div>
