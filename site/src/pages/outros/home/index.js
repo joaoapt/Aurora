@@ -5,8 +5,9 @@ import Card from '../../../components/carrocel/card';
 import Produto from '../../../components/carrocel/produto';
 import Categoria from '../../../components/outros/categoria';
 import { Link } from 'react-router-dom';
-import { Romance } from '../../../components/animação/romanceAnimation';
-import { FC } from '../../../components/animação/FCAnimatons';
+
+// import { Romance } from '../../../components/animação/romanceAnimation';
+// import { FC } from '../../../components/animação/FCAnimatons';
 
 export default function Index () {
     return(
@@ -42,11 +43,11 @@ export default function Index () {
                     <div className='box-quadrado'>
                         <div className='quadrado'>
                             <h3>Livro de Romance</h3>
-                            <Romance/>
+                        
                         </div>
                         <div className='quadrado'>
                             <h3>Livro de Sci-Fi</h3>
-                            <FC/>
+                            
                         </div>
                     </div>
                 </div>

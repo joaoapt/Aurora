@@ -6,15 +6,15 @@ export default function Index (){
         <div className='b'>
             <nav ClassName='local'>
                 <div className='cont-logo'>
-                    <div>
+                    <Link to='/'>
                         <img className='logo' src="../img/logo.png" alt='logo'/>
-                    </div>
-                    <div>
-                        <p className='barra'> | </p></div>
-                    <div className='titulo'>
-                        <h1>Aurora</h1>
-                        <h1>Books</h1>
-                    </div>
+                    </Link>
+                    <Link to='/'>
+                        <p className='barra'> | </p>
+                    </Link>
+                    <Link to='/'className='titulo'>
+                        <h1>Aurora</h1> <h1 className='sas'>Books</h1>
+                    </Link>
                     <div className='caixa-busca'>
                         <input type="text" placeholder='Buscar' />
                         <img className='puta' src='../img/pesquisa.png' alt='' />

@@ -7,6 +7,7 @@
     background: linear-gradient(280.5deg, #071441, #000000);
     background-size: 400% 400%;
     
+    
     .conterne-rodapé
     {
         display: flex;
@@ -46,6 +47,13 @@
         color: #fff;
         font-family: 'Montserrat', sans-serif;
     }
+    .aa{
+        text-decoration: none;
+        font-size: 17px;
+        margin-top: 5px;
+        color: #fff;
+        font-family: 'Montserrat', sans-serif;
+    }
     .ab{
         margin-top: 10px;
         margin-left: 120px;
@@ -65,7 +73,7 @@
         transition:all 0.6s ease-in-out 0.05s;
     }
 
-    a:hover{
+    .botão:hover{
         transition:all 0.5s ease-in-out 0s;
         color: #1CB284;
         border: 2px  solid #1CB284;

@@ -65,7 +65,7 @@ export default function Index() {
                             </div> 
                     <div className='botoes'>
                         <div>
-                            <button className='botão1'>Voltar</button>
+                            <Link to='/' className='botão1'>Voltar</Link>
                         </div>
                         <div>
                             <button className='botão' onClick={entrarClick} disabled={carregando}>Logar</button> 

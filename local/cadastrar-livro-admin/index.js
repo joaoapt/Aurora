@@ -67,12 +67,7 @@ export default function Index(){
                                         <div className='coluna-2'>
                                             <label>Edição:</label>
                                             <input type='text'  />
-                                        </div>
-                                        <div className='coluna-2'>
-                                            <label>Publicação:</label>
-                                            <input type='text'  />
-                                        </div>
-                                    
+                                        </div>            
                                         <div className='coluna-2'>
                                             <label>Classificação Indicativa:</label>
                                             <select type='text'  >

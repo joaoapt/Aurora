@@ -17,7 +17,7 @@ import Novo from './pages/usuario/NovoEmdereço';
 import Aprovado from './pages/procedimento/aprovado';
 import Cartão from './pages/procedimento/cartão';
 import Tela1 from './pages/usuario/TelaUsuario1';
-import Tela2 from './pages/usuario/TelaUsuario2';
+
 
 
 
@@ -28,7 +28,6 @@ export default function Index() {
 
 
                 <Route path="/tela1" element={<Tela1/>}/>
-                <Route path="/tela2" element={<Tela2/>}/>
 
 
                 <Route path="/novo" element={<Novo/>}/>

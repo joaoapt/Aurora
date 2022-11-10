@@ -6,6 +6,8 @@
       height: 80px;
    
   .titulo{
+        letter-spacing: 0.7px;
+        text-decoration: none;
         font-size: 23px;
         margin-top: 2px;
         font-style: 20px;
@@ -13,6 +15,10 @@
         font-weight: 600;
         font-family: 'Oswald', sans-serif;
         color: #fff;
+        .sas{
+          margin-left: 20px;
+          margin-top: -3px;
+        }
   }
   
   .cont-logo{
