@@ -9,10 +9,10 @@ export default function Index(){
                 </div>
                 <div className='resultado'>
                     <p>Total </p>
-                    <p> R$ 198,00</p>
+                    <p> R$ {calcularValorTotal}</p>
                 </div>
                 <div className='centralizar'>
-                    <button className='botão'>Finalizar Compra</button>
+                    <button className='botão' onClick={irPedido}>Finalizar Compra</button>
                 </div>
             </div>
         </div>
