@@ -2,9 +2,38 @@ import './index.scss';
 import Buscar from '../../../components/outros/busca';
 import Rodape from '../../../components/outros/rodape';
 import Produto from '../../../components/carrocel/produto';
+import Storage from 'local-storage'
+
 
 
 export default function Index () {
+
+    function adicionarAoCarrinho() {
+        let carrinho = [];
+        if (Storage('carrinho')) {
+            carrinho = Storage('carrinho');
+        }
+
+
+        if (!carrinho.find(item => item.id === id)) {
+            carrinho.push({
+                id: id,
+                qtd: 1
+            })
+
+            Storage('carrinho', carrinho);
+        }
+
+        toast.dark('Produto adicionado ao carrinho!');
+    }
+
+
+
+    useEffect(() => {
+        carregarPagina(); 
+    }, [])
+
+
     return(
         <div className='pag-produto-vil'>
             <div>
@@ -46,7 +75,7 @@ export default function Index () {
                                 </div>
                                 <div className='box-botão'>
                                     <div>
-                                        <button className='carrinho'>Adicionar <img src="../img/carrinho.png" alt=''/> </button>
+                                        <button className='carrinho' onClick = {adicionarAoCarrinho}>Adicionar <img src="../img/carrinho.png" alt=''/> </button>
                                     </div>
                                     <div>
                                         <button className='compra'>Comprar<img src="./img/" alt=''/></button>
