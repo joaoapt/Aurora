@@ -3,7 +3,7 @@ import { con } from './connection.js'
 
 export async function Login(email, senha) {
     const comando = 
-        `select id_usuario_login 		id,
+        `select id_usuariologin 		id,
                 ds_email		     email,
                 nm_usuario            nome
            from tb_usuariologin
@@ -13,6 +13,7 @@ export async function Login(email, senha) {
     const [linhas] = await con.query(comando, [email, senha])
     return linhas[0];
 }
+
 
 export async function cadastrarLogin(login) {
     const comando = 

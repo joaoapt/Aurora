@@ -1,7 +1,7 @@
 import storage from 'local-storage'
 import { Login } from '../../../api/usuario/login-usuario'
 import { useState, useRef } from 'react';
-//import {useEffect} from 'react';
+import {useEffect} from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import LoadingBar from 'react-top-loading-bar'
@@ -18,11 +18,11 @@ export default function Index() {
     const navigate = useNavigate();
     const ref = useRef();
 
-    // useEffect(() => {
-    //     if (storage('usuario-logado')) {
-    //         navigate('/cadastrar');
-    //     }
-    // }, [])
+     useEffect(() => {
+         if (storage('usuario-logado')) {
+             navigate('/cadastrar');
+        }
+     }, [])
 
     async function entrarClick(){
         ref.current.continuousStart()
@@ -49,7 +49,7 @@ export default function Index() {
             <ToastContainer/>
             <div className='conteudo-login'>
                 <div className='local'>
-                <h1>Login Admin</h1>
+                <h1>Login</h1>
                     <div className='contener-input'>
                         <div className='input-1'>
                             <label className='letras'>E-mail:</label>
@@ -60,12 +60,12 @@ export default function Index() {
                             <input className='input-2' type='password' value={senha} onChange={e => setSenha(e.target.value)}/>
                         </div>
                     </div>  
-                    <div>
-                      <Link className='botão-voltar-cadastrar' to='/cadastrar'>Voltar</Link>
-                    </div>
+                    <div className='local-cadastrar'>
+                                <Link className='botão-cadastrar-login' to='/cadastrar'>Cadastrar-se</Link>
+                            </div> 
                     <div className='botoes'>
                         <div>
-                            <button className='botão1'>Voltar</button>
+                            <Link to='/' className='botão1'>Voltar</Link>
                         </div>
                         <div>
                             <button className='botão' onClick={entrarClick} disabled={carregando}>Logar</button> 

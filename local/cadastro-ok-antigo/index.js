@@ -3,54 +3,44 @@ import './index.scss';
 import Menu from '../../../components/admin/menu';
 import Cabecalho from '../../../components/admin/cabecalho';
 
-import { useState,useEffect } from 'react';
+import { useState } from 'react';
 
-import { listarCategorias } from '../../../api/admin/categorias';
-import { cadastrar } from '../../../api/admin/cadastrar-livro';
- 
+import { cadastrar } from '../../../api/cadastrar-livro'
+
 import storage from 'local-storage';
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 export default function Index(){ 
-    const [categoria, setCategoria] = useState([]);
+    const [categoria, setCategoria] = useState ('');
     const [livro, setLivro] = useState ('');
     const [autor, setAutor] = useState ('');
     const [editora, setEditora] = useState ('');
     const [idioma, setIdimoma] = useState ('');
-    const [isbn13, setIsbn13] = useState ();
-    const [isbn10, setIsbn10] = useState ();
-    const [preco, setPreco] = useState ();
+    const [isbn13, setIsbn13] = useState (0);
+    const [isbn10, setIsbn10] = useState (0);
+    const [preco, setPreco] = useState (0);
     const [original, setOriginal] = useState ('');
     const [sinopse, setSinopse] = useState ('');
     const [versao, setVersao] = useState ('');
-    const [pagina, setPagina] = useState ();
-    const [volume, setVolume] = useState ();
-    const [largura, setLargura] = useState ();
-    const [idCategoria,setIdCategoria] = useState ();
-    const [comprimento, setComprimento] = useState ();
+    const [pagina, setPagina] = useState (0);
+    const [volume, setVolume] = useState (0);
+    const [largura, setLargura] = useState (0);
+    const [comprimento, setComprimento] = useState (0);
 
-    async function carregarCategorias() {
-        const r = await listarCategorias();
-        setCategoria(r);
-    }
 
     async function  salvarClick() {
         try {
             const usuario = storage ('usuario-logado').id;
-            const precoo = Number(preco.replace(',', '.'));
-            const resposta = await cadastrar(categoria, livro, autor, editora, idioma, isbn13, isbn10, precoo, original, sinopse, versao, pagina, volume, largura, comprimento,usuario);
+
+            const resposta = await cadastrar(categoria, livro, autor, editora, idioma, isbn13, isbn10, preco, original, sinopse, versao, pagina, volume, largura, comprimento, usuario);
 
             toast('Livro cadastrado com sucesso!');
         } catch (err) {
             toast.error(err.response.data.erro);
         }
     }
-
-    useEffect(() => {
-        carregarCategorias();
-    }, [])
 
     return(
         <main className='page-cadastrar-livro'>
@@ -110,11 +100,11 @@ export default function Index(){
                                         </div>
                                         <div className='coluna-2'>
                                             <label>Categoria:</label>
-                                            <select value={idCategoria} onChange={e => setIdCategoria(e.target.value)}>
+                                            <select type='text'  value={categoria} onChange={e => setCategoria(e.target.value)} >
                                                 <option selected disabled hidden>Selecione</option>
-                                                {categoria.map(item =>
-                                                <option value={item.id}> {item.categoria} </option>
-                                                )}
+                                                <option>Filosofia</option>
+                                                <option>Sociologia</option>
+                                                <option>Aventura</option>
                                             </select>
                                         </div>
                                         <div className='coluna-2'>

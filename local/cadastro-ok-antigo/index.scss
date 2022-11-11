@@ -1,0 +1,162 @@
+.page-cadastrar-livro{
+    height: 48.75em;
+    background-image:url(../../../../public/img/montanha.jpg);
+    background-size: cover;
+    background-position: borttom center;
+    display: flex;
+
+    .cabecalho
+    {
+        display: flex;
+        justify-content:flex-end;
+        text-align:end;
+    }
+    h2{
+        text-align: center;
+        color: #fff;
+        font-family: 'Oswald', sans-serif;
+        font-size:25px ;
+    }
+
+    input
+    {
+        margin: 0em 0em 0.5em 0em;
+        background: transparent;
+        font-family: 'Montserrat', sans-serif;
+        border: none;
+        outline: none;
+        font-size: 15px;
+        width: 200px;
+        height: 30px;
+        border: 1px none;
+        border-radius: 8px;
+        border: 2.5px solid #c4c2c2;
+        color: #fff;
+    }
+    .coluna1{
+        max-width: 500px;
+    }
+    
+    .container 
+    {
+        display: block;
+        flex-direction: column;
+        flex-grow: 1;
+    }
+    .conteudo 
+    {
+        margin-top: 10px;
+        margin-left: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-grow: 1;
+    }
+    .conteudo > section 
+    {
+        flex-grow: 1;
+    }
+    .box-sinopse{
+        display: block;
+    }
+    
+    label 
+    {
+        display: block;
+        font-size: 17px;
+        font-family: 'montserrat', sans-serif;
+        color: #fff;
+        width: 120px;
+        font-weight: 700;
+        margin-right: 8px;
+    }
+    
+    .upload-capa 
+    { 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 2.5px solid #c4c2c2;
+        border-radius: 3px;
+        height: 250px;
+        width: 200px;  
+        filter: drop-shadow(0px 0px 20px rgba(0, 0, 0, 0.3));
+        cursor: pointer;
+    }
+    
+    .form-colums 
+    {
+        display: flex;
+        margin-left: 0px;
+        margin-top: 10px;
+    }
+
+    .form-colums > div:nth-child(1) 
+    {
+        margin-right: 50px;
+    }
+    textarea 
+    {
+        font-size: 15px;
+        font-weight: 500;
+        font-family: 'montserrat', sans-serif;
+        background:none;
+        border: 2.5px solid #c4c2c2;
+        color: #fff;
+        width: 600px;
+        height: 153px;
+        border-radius: 5px;        
+    }
+    .box-botão{
+        margin-top: 5px;
+        text-align: center;
+    }
+    .botão
+    {    
+        background: none;
+        border: #fff 2px solid;
+        text-decoration: none;
+        border-radius: 20px;
+        padding: 3px 15px;
+        cursor: pointer;
+        color:#fff ;
+        font-size: 22px;
+        font-weight: 700;
+        font-family: 'Montserrat', sans-serif;
+        transition:all 0.6s ease-in-out 0.05s;
+         margin-top: 8px;
+         flex-grow: 1;
+         margin-left: -95px;
+    }
+    .coluna-3{
+        margin-left: -300px;
+        margin-top: 60px;
+    }
+    .botão:hover{
+        transition:all 0.5s ease-in-out 0s;
+        color: #20d39d;
+        border: 2px  solid #25C998;
+        border-radius:5px;
+    }  
+    .img{
+        width: 90px;
+    }
+    select{
+        margin: 0em 0em 0.5em 0em;
+        background: transparent;
+        font-family: 'Montserrat', sans-serif;
+        border: none;
+        outline: none;
+        font-size: 20px;
+        width: 200px;
+        height: 35px;
+        border: 1px none;
+        border-radius: 8px;
+        border: 2.5px solid #c4c2c2;
+        color: #fff;  
+    }
+    option{
+        color: #000;
+    }
+    
+}

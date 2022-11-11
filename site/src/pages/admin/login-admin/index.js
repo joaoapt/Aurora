@@ -5,7 +5,7 @@ import LoadingBar from 'react-top-loading-bar'
 import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+import { Link } from 'react-router-dom';
 import './index.scss';
 
 export default function Index() {
@@ -27,9 +27,7 @@ export default function Index() {
         
         try{
         const Marcelo = await LoginAdmin(email, senha);
-
             storage('usuario-logado', Marcelo);
-
         setTimeout(() => {
             navigate('/menu');
         }, 3000);
@@ -60,7 +58,7 @@ export default function Index() {
                       
                     <div className='botoes'>
                         <div>
-                            <button className='botão1'>Voltar</button>
+                            <Link to='/' className='botão1'>Voltar</Link>
                         </div>
                         <div>
                             <button className='botão' onClick={entrarClick} disabled={carregando}>Logar</button> 

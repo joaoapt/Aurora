@@ -1,0 +1,359 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap');
+.pag-novo
+{
+    background-image:url(../../../../public/img/casa-fundo.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom center;
+    min-height: 917px;
+    background-repeat: no-repeat;
+    background-size: 170%;
+    background-position: bottom center;
+    justify-content: center;
+    align-items: center;
+}
+
+    .cabecalho-novo
+    {
+        display: flex;
+        justify-content:flex-end;
+        text-align:end;
+    }
+
+    .a-novo
+    {
+        font-family: 'Montserrat';
+        position: absolute;
+        width: 576px;
+        height: 84px;
+        left: -10px;
+        top: 49px;
+        
+        font-style: normal;
+        font-weight: 400;
+        font-size: 60px;
+        line-height: 95px;
+        text-align: center;
+        
+        color: #FFFFFF;
+    }
+    
+    .b-novo
+    {
+        font-family: 'Oswald';
+        position: absolute;
+        width: 96.17px;
+        height: 37px;
+        left: 50px;
+        top: 162px;
+    
+        font-style: normal;
+        font-weight: 300;
+        font-size: 30px;
+        line-height: 44px;
+    
+        color: #FFFFFF;
+    }
+
+    .c-novo
+    {
+        font-family: 'Oswald';
+        position: absolute;
+        width: 121.75px;
+        height: 37px;
+        left: 50px;
+        top: 257px;
+    
+        font-style: normal;
+        font-weight: 300;
+        font-size: 30px;
+        line-height: 44px;
+    
+        color: #FFFFFF;
+    }
+    
+    .d-novo
+    {
+        font-family: 'Oswald';
+        position: absolute;
+        width: 96.17px;
+        height: 37px;
+        left: 50px;
+        top: 346px;
+    
+        font-style: normal;
+        font-weight: 300;
+        font-size: 30px;
+        line-height: 44px;
+        
+        color: #FFFFFF;
+    }
+    
+    .e-novo
+    {
+        position: absolute;
+        width: 158.58px;
+        height: 37px;
+        left: 50px;
+        top: 436px;
+    
+        font-family: 'Oswald';
+        font-style: normal;
+        font-weight: 300;
+        font-size: 30px;
+        line-height: 44px;
+    
+        color: #FFFFFF;
+    }
+    
+    .f-novo
+    {
+        position: absolute;
+        width: 158.58px;
+        height: 37px;
+        left: 50px;
+        top: 523px;
+    
+        font-family: 'Oswald';
+        font-style: normal;
+        font-weight: 300;
+        font-size: 30px;
+        line-height: 44px;
+    
+        color: #FFFFFF;
+    }
+    
+    .g-novo
+    {
+        position: absolute;
+        width: 158.58px;
+        height: 37px;
+        left: 50px;
+        top: 607px;
+    
+        font-family: 'Oswald';
+        font-style: normal;
+        font-weight: 300;
+        font-size: 30px;
+        line-height: 44px;
+    
+        color: #FFFFFF;
+    }
+    
+    .h-novo
+    {
+        position: absolute;
+        width: 158.58px;
+        height: 37px;
+        left: 50px;
+        top: 689px;
+    
+        font-family: 'Oswald';
+        font-style: normal;
+        font-weight: 300;
+        font-size: 30px;
+        line-height: 44px;
+    
+        color: #FFFFFF;
+    }
+    
+    .i-novo
+    {
+        position: absolute;
+        width: 158.58px;
+        height: 37px;
+        left: 50px;
+        top: 770px;
+    
+        font-family: 'Oswald', sans-serif;
+
+        font-style: normal;
+        font-weight: lighter;
+        font-size: 30px;
+        line-height: 44px;
+    
+        color: #FFFFFF;
+    }
+    
+    .j-novo
+    {
+        position: absolute;
+        width: 90px;
+        height: 41px;
+        left: 50px;
+        top: 860px;
+
+        color: #fff;
+        font-family: 'Montserrat', sans-serif;
+        background: none;
+        border: #fff 2px solid;
+        text-decoration: none;
+        border-radius: 20px;
+        padding: 3px 20px;
+        cursor: pointer;
+        font-size: 30px;
+        transition:all 0.6s ease-in-out 0.05s;
+    }
+    
+    .k-novo
+    {
+        position: absolute;
+        width: 90px;
+        height: 41px;
+        left: 370px;
+        top: 860px;
+
+        color: #fff;
+        font-family: 'Montserrat', sans-serif;
+        background: none;
+        border: #fff 2px solid;
+        text-decoration: none;
+        border-radius: 20px;
+        padding: 3px 20px;
+        cursor: pointer;
+        font-size: 30px;
+        transition:all 0.6s ease-in-out 0.05s;
+    }
+    
+    .l-novo
+    {
+        position: absolute;
+        width: 565px;
+        height: 930px;
+        left: 354px;
+        top: -13px;
+
+        background: linear-gradient(90deg, rgba(37, 201, 152, 0.74) 0%, rgba(45, 79, 167, 0.833333) 99.78%, rgba(37, 201, 152, 0) 100%);
+    }
+
+    .o-novo
+    {
+        position: absolute;
+        width: 450px;
+        height: 37px;
+        left: 50px;
+        top: 482px;
+
+        border-radius: 10px;
+
+        font-style: normal;
+        font-weight: 300;
+        font-size: 30px;
+        line-height: 44px;
+    }
+    
+    .p-novo
+    {
+        position: absolute;
+        width: 450px;
+        height: 37px;
+        left: 50px;
+        top: 390px;
+        
+        border-radius: 10px;
+
+        font-style: normal;
+        font-weight: 300;
+        font-size: 30px;
+        line-height: 44px;
+    }
+
+    .q-novo
+    {
+        position: absolute;
+        width: 450px;
+        height: 37px;
+        left: 50px;
+        top: 300px;
+        
+        border-radius: 10px;
+
+        font-style: normal;
+        font-weight: 300;
+        font-size: 30px;
+        line-height: 44px;
+    }
+
+    .r-novo
+    {
+        position: absolute;
+        width: 450px;
+        height: 37px;
+        left: 50px;
+        top: 210px;
+        
+        border-radius: 10px;
+
+        font-style: normal;
+        font-weight: 300;
+        font-size: 30px;
+        line-height: 44px;
+    }
+
+    .s-novo
+    {
+        position: absolute;
+        width: 450px;
+        height: 37px;
+        left: 50px;
+        top: 570px;
+
+        border-radius: 10px;
+    
+        font-style: normal;
+        font-weight: 300;
+        font-size: 30px;
+        line-height: 44px;
+    }
+
+    .t-novo
+    {
+        position: absolute;
+        width: 450px;
+        height: 37px;
+        left: 50px;
+        top: 650px;
+        
+        border-radius: 10px;
+
+        font-style: normal;
+        font-weight: 300;
+        font-size: 30px;
+        line-height: 44px;
+    }
+
+    .u-novo
+    {
+        position: absolute;
+        width: 450px;
+        height: 37px;
+        left: 50px;
+        top: 735px;
+        
+        border-radius: 10px;
+
+        font-style: normal;
+        font-weight: 300;
+        font-size: 30px;
+        line-height: 44px;
+    }
+
+    .v-novo
+    {
+        position: absolute;
+        width: 450px;
+        height: 37px;
+        left: 50px;
+        top: 810px;
+        
+        border-radius: 10px;
+
+        font-style: normal;
+        font-weight: 300;
+        font-size: 30px;
+        line-height: 44px;
+    }
+
+    input{
+        color: black;
+    }

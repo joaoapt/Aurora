@@ -1,0 +1,28 @@
+.big-mãe
+{
+    margin-top: -30px;
+    width:1349px;
+
+    .segundacoluna
+        {
+            cursor:grab;
+            display: flex;
+            justify-content: center;
+        }
+        img{
+             cursor:grab;
+            display: flex;
+            justify-content: center;
+            width: 1366px;
+            height: 400px;
+        }
+        span{
+            background-color: #fff;
+        }
+        .swiper-button-next::after{
+            color: #fff;
+        }
+        .swiper-button-prev::after{
+            color: #fff;
+        }
+}

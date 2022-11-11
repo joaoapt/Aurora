@@ -1,0 +1,106 @@
+.rodape{
+    display: flex;
+    align-items: flex-end;
+    height: 260px;
+    width: 1349px;
+    margin-top:40px;
+    background: linear-gradient(280.5deg, #071441, #000000);
+    background-size: 400% 400%;
+    
+    
+    .conterne-rodapé
+    {
+        display: flex;
+        margin: -00px;
+    }
+    
+    .logo
+    {
+        width: 150px;
+        margin: 5px 90px 0px 30px;
+    }
+
+    .texto-rodapé
+    {
+        width: 130px;
+        margin: 0px 120px 50px 0px;
+    }
+
+    h1
+    {
+        font-size: 25px;
+        color: #fff;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    h2
+    {
+        font-size: 20px;
+        color: #fff;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    p
+    {
+        font-size: 17px;
+        margin-top: 5px;
+        color: #fff;
+        font-family: 'Montserrat', sans-serif;
+    }
+    .aa{
+        text-decoration: none;
+        font-size: 17px;
+        margin-top: 5px;
+        color: #fff;
+        font-family: 'Montserrat', sans-serif;
+    }
+    .ab{
+        margin-top: 10px;
+        margin-left: 120px;
+    }
+
+    .botão
+    {
+        color: #fff;
+        font-family: 'Montserrat', sans-serif;
+        background: none;
+        border: #fff 2px solid;
+        text-decoration: none;
+        border-radius: 20px;
+        padding: 3px 20px;
+        cursor: pointer;
+        font-size: 30px;
+        transition:all 0.6s ease-in-out 0.05s;
+    }
+
+    .botão:hover{
+        transition:all 0.5s ease-in-out 0s;
+        color: #1CB284;
+        border: 2px  solid #1CB284;
+        border-radius:5px;
+    }
+
+    -webkit-animation: aaa 15s ease infinite;
+    -moz-animation: aaa 15s ease infinite;
+    animation: aaa 15s ease infinite;
+       display: flex;
+  
+    @-webkit-keyframes aaa {
+        0%{background-position:0% 52%}
+        50%{background-position:100% 49%}
+        100%{background-position:0% 52%}
+    }
+
+    @-moz-keyframes aaa {
+        0%{background-position:0% 52%}
+        50%{background-position:100% 49%}
+        100%{background-position:0% 52%}
+    }
+
+    @keyframes aaa {
+        0%{background-position:0% 52%}
+        50%{background-position:100% 49%}
+        100%{background-position:0% 52%}
+    }
+
+}

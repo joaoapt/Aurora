@@ -1,0 +1,190 @@
+.page-usu1
+{
+    background-image:url(../../../../public/img/artistic.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom center;
+    min-height: 917px;
+    background-repeat: no-repeat;
+    background-size: 170%;
+    background-position: bottom center;
+    justify-content: center;
+    align-items: center;
+}
+    .cabecalho-usu1
+    {
+        display: flex;
+        justify-content:flex-end;
+        text-align:end;
+    }
+
+    .a-usu1{
+        position: absolute;
+        width: 220px;
+        height: 65px;
+        left: 338px;
+        top: 162px;
+    
+        font-style: normal;
+        font-weight: 500;
+        font-size: 40px;
+        line-height: 49px;
+    
+        color: #FFFFFF;
+    }
+    
+    .b-usu1{
+        position: absolute;
+        width: 79px;
+        height: 33px;
+        left: 479px;
+        top: 171px;
+    
+        font-style: normal;
+        font-weight: 400;
+        font-size: 32px;
+        line-height: 39px;
+    
+        color: #FFFFFF;
+    }
+    
+    .c-usu1{
+        position: absolute;
+        width: 220px;
+        height: 65px;
+        left: 338px;
+        top: 236px;
+        
+        font-style: normal;
+        font-weight: 500;
+        font-size: 40px;
+        line-height: 49px;
+        
+        color: #FFFFFF;
+    }
+    
+    .d-usu1{
+        position: absolute;
+        width: 220px;
+        height: 65px;
+        left: 338px;
+        top: 308px;
+        
+        font-style: normal;
+        font-weight: 500;
+        font-size: 40px;
+        line-height: 49px;
+        
+        color: #FFFFFF;
+        
+    }
+    
+    .e-usu1{
+        position: absolute;
+        width: 423px;
+        height: 33px;
+        left: 472px;
+        top: 313px;
+        
+        font-style: normal;
+        font-weight: 400;
+        font-size: 32px;
+        line-height: 39px;
+        letter-spacing: 0.04em;
+        text-decoration-line: underline;
+        
+        color: #FFFFFF;
+    }
+    
+    .f-usu1{
+        position: absolute;
+        width: 220px;
+        height: 65px;
+        left: 338px;
+        top: 380px;
+    
+        font-style: normal;
+        font-weight: 500;
+        font-size: 40px;
+        line-height: 49px;
+    
+        color: #FFFFFF;
+    }
+    
+    .g-usu1{
+        position: absolute;
+        width: 323px;
+        height: 33px;
+        left: 437px;
+        top: 388px;
+        
+        font-style: normal;
+        font-weight: 400;
+        font-size: 32px;
+        line-height: 39px;
+        letter-spacing: 0.04em;
+        
+        color: #FFFFFF;
+    }
+    
+    .h-usu1{
+        position: absolute;
+        width: 220px;
+        height: 65px;
+        left: 338px;
+        top: 442px;
+        
+        font-style: normal;
+        font-weight: 500;
+        font-size: 40px;
+        line-height: 49px;
+        
+        color: #FFFFFF;
+    }
+    
+    .i-usu1{
+        position: absolute;
+        width: 928px;
+        height: 33px;
+        left: 572px;
+        top: 489px;
+        
+        font-style: normal;
+        font-weight: 400;
+        font-size: 32px;
+        line-height: 39px;
+        letter-spacing: 0.04em;
+        
+        color: #FFFFFF;
+    }
+    
+    .j-usu1{
+        position: absolute;
+        width: 288px;
+        height: 33px;
+        left: 572px;
+        top: 540px;
+        
+        font-style: italic;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 24px;
+        display: flex;
+        align-items: center;
+        letter-spacing: 0.04em;
+        text-decoration-line: underline;
+        
+        color: #FFFFFF;
+        font-variation-settings: 'slnt' -10;
+    }
+    
+    .k-usu1{
+        position: absolute;
+        width: 1181px;
+        height: 445px;
+        left: 319px;
+        top: 150px;
+    
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 30px;
+    }

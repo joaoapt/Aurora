@@ -1,10 +1,10 @@
-import { buscarProdutoCategoria, buscarProdutoImagem, buscarProdutoPorId, listarProdutosInicio } from "../repository/produtoRepository.js";
+import { buscarProdutoPorId, listarProdutosInicio } from "../repository/produtoRepository.js";
 
 import { Router } from "express";
 const server = Router();
 
 
-server.get('/api/produto', async (req, resp) => {
+server.get('/card/produto', async (req, resp) => {
     try {
         const r = await listarProdutosInicio();
         resp.send(r);
@@ -17,19 +17,14 @@ server.get('/api/produto', async (req, resp) => {
 })
 
 
-
 server.get('/api/produto/:id', async (req, resp) => {
     try {
         const id = req.params.id;
 
         const produto = await buscarProdutoPorId(id);
-        const categoria = await buscarProdutoCategoria(id);
-        const imagem = await buscarProdutoImagem(id);
 
         resp.send({
-            info: produto,
-            categoria: categoria,
-            imagem: imagem
+            info: produto
         })
     }
     catch (err) {
@@ -38,7 +33,6 @@ server.get('/api/produto/:id', async (req, resp) => {
         })
     }
 })
-
 
 
 export default server;

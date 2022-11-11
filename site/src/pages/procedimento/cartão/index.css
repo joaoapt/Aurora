@@ -1,0 +1,267 @@
+.page-cartao
+{
+    
+    background-image:url(../../../../public/img/casa-fundo.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom center;
+    color: #000;
+}
+    .cabecalho-cartao
+    {
+        display: flex;
+        justify-content:flex-end;
+        text-align:end;
+    }
+    .a-cartao{
+        position: absolute;
+        width: 470px;
+        height: 50px;
+        left: 100px;
+        top: 50px;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 48px;
+        line-height: 59px;
+        color: #FFF;
+    }
+
+    .b-cartao{
+        position: absolute;
+        width: 247px;
+        height: 37px;
+        left: 50px;
+        top: 212px;
+        background: none;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 30px;
+        line-height: 44px;
+        color: #FFFFFF;
+    }
+
+    .c-cartao{
+        position: absolute;
+        width: 247px;
+        height: 37px;
+        left: 50px;
+        top: 329px;
+
+        font-style: normal;
+        font-weight: 300;
+        font-size: 30px;
+        line-height: 44px;
+
+        color: #FFFFFF;
+    }
+
+    .d-cartao{
+        position: absolute;
+        width: 247px;
+        height: 37px;
+        left: 50px;
+        top: 429px;
+
+        font-style: normal;
+        font-weight: 300;
+        font-size: 30px;
+        line-height: 44px;
+
+        color: #FFFFFF;
+    }
+
+    .e-cartao{
+        position: absolute;
+        width: 247px;
+        height: 37px;
+        left: 300px;
+        top: 429px;
+
+        font-style: normal;
+        font-weight: 300;
+        font-size: 30px;
+        line-height: 44px;
+
+        color: #FFFFFF;
+    }
+
+    .f-cartao{
+        position: absolute;
+        width: 145 px;
+        height: 40px;
+        left: 220px;
+        top: 579px;
+        color: #FFFFFF;
+        background: none;
+        border: #fff 2px solid;
+        text-decoration: none;
+        border-radius: 20px;
+        padding: 3px 20px;
+        cursor: pointer;
+        font-size: 30px;
+        transition:all 0.6s ease-in-out 0.05s;
+    }
+
+    .g-cartao{
+        position: absolute;
+        width: 565px;
+        height: 685px;
+        left: 303px;
+        top: -13px;
+
+        background: linear-gradient(90deg, rgba(37, 201, 152, 0.74) 0%, rgba(45, 79, 167, 0.833333) 99.78%, rgba(37, 201, 152, 0) 100%);
+        border-radius: 40px;
+    }
+
+    .h-cartao{
+        position: absolute;
+        width: 382px;
+        height: 429px;
+        left: 868px;
+        top: -3px;
+
+        background: rgba(37, 201, 183, 0.7);
+    }
+
+    .i-cartao{
+        position: absolute;
+        width: 333px;
+        height: 74px;
+        left: 20px;
+        top: 16px;
+
+        font-style: normal;
+        font-weight: 500;
+        font-size: 50px;
+        line-height: 61px;
+        text-align: center;
+
+        color: #FFFFFF;
+    }
+
+    .j-cartao{
+        position: absolute;
+        width: 348px;
+        height: 29px;
+        left: 20px;
+        top: 120px;
+        
+        font-style: normal;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 29px;
+        text-align: center;
+        
+        color: #FFFFFF;
+    }
+
+    .k-cartao{
+        position: absolute;
+        width: 348px;
+        height: 33px;
+        left: 20px;
+        top: 175px;
+
+        font-style: normal;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 29px;
+        text-align: center;
+
+        color: #FFFFFF;
+    }
+
+    .l-cartao{
+        position: absolute;
+        width: 351px;
+        height: 33px;
+        left: 20px;
+        top: 234px;
+
+        font-style: normal;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 29px;
+        text-align: center;
+
+        color: #FFFFFF;
+    }
+
+    .m-cartao{
+        position: absolute;
+        width: 447px;
+        height: 25px;
+        left: -90px;
+        top: 353px;
+
+        font-style: normal;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 27px;
+        text-align: center;
+
+        color: #FFFFFF;
+    }
+    .n-cartao{
+        position: absolute;
+        width: 247px;
+        height: 37px;
+        left: 50px;
+        top: 270px;
+        
+        font-style: normal;
+        font-weight: 300;
+        font-size: 30px;
+        line-height: 44px;
+        
+        color: #FFFFFF;
+    }
+    .o-cartao{
+        position: absolute;
+        width: 247px;
+        height: 37px;
+        left: 50px;
+        top: 382px;
+        
+        font-style: normal;
+        font-weight: 300;
+        font-size: 30px;
+        line-height: 44px;
+        
+        color: #FFFFFF;
+    }
+    .p-cartao{
+        position: absolute;
+        width: 200px;
+        height: 37px;
+        left: 50px;
+        top: 482px;
+        
+        font-style: normal;
+        font-weight: 300;
+        font-size: 30px;
+        line-height: 44px;
+        
+        color: #FFFFFF;
+    }
+    .q-cartao{
+        position: absolute;
+        width: 200px;
+        height: 37px;
+        left: 300px;
+        top: 482px;
+        
+        font-style: normal;
+        font-weight: 300;
+        font-size: 30px;
+        line-height: 44px;
+        
+        color: #FFFFFF;
+    }
+    .r-cartao{
+        position: absolute;
+        width: 342px;
+        left: 14px;
+        top: 70px;
+        color: #FFFFFF;
+    }

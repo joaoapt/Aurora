@@ -5,7 +5,7 @@ export function criarNovoPedidoCartao(idUsuario, info) {
     return {
         idUsuario: idUsuario,
         idEndereco: info.idEndereco,
-        status: 'Confirmando Pagamento',
+        status: 'Pagamento Confirmado',
         tipoPagamento: 'Cartão'
     }
 }
@@ -19,7 +19,7 @@ export function criarNovoPedidoBoleto(idUsuario, info) {
     return {
         idUsuario: idUsuario,
         idEndereco: info.idEndereco,
-        status: 'Confirmando Pagamento',
+        status: 'Pagamento Confirmado',
         tipoPagamento: 'Boleto'
     }
 }

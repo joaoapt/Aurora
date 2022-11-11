@@ -14,13 +14,19 @@
         display: flex;
         align-items:center;
         justify-content:center;
-      height: 400px;
+        height: 400px;
         border-radius: 30px;
         border-bottom-right-radius: 100px;
         border-top-left-radius:100px ;
         padding: 33px 100px;
         color: rgb(255, 254, 254);
-        background: linear-gradient(85deg, #25c998d2 0%, #1c8783d5 30%, #1020abd8 100%);
+    
+            background: linear-gradient(270deg, #25c998e0, #1c8783de, #1020abd8);
+            background-size: 600% 600%;
+        
+            -webkit-animation: AnimationName 20s ease infinite;
+            -o-animation: AnimationName 20s ease infinite;
+            animation: AnimationName 20s ease infinite;
     }
     .invalido{
         position: absolute;
@@ -39,10 +45,12 @@
     }
 
     h1{
+        margin-top: -4px;
         text-align: center;
         color: #fff;
         font-family: 'Oswald', sans-serif;
         font-size:55px ;
+        margin-bottom: 50px;
     }
     .contener-input{
         margin-top: 35px;
@@ -69,6 +77,7 @@
         border-radius: 8px;
         border-bottom:#fff 1px solid ;
         color: #fff;
+        margin-bottom: 15px;
     }
     .botoes{
         display: flex;
@@ -91,6 +100,23 @@
         font-family: 'Montserrat', sans-serif;
         transition:all 0.6s ease-in-out 0.05s;
     }
+    .local-cadastrar{
+        margin-top: 40px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .botão-cadastrar-login{
+        word-spacing: normal;
+        border:none;
+        padding: 5px 16px;
+        cursor: pointer;
+        color:#fff ;
+        font-size: 25px;
+        font-family: 'Oswald', sans-serif;
+        transition:all 0.5s ease-in-out 0s;
+    }
+
     .botão1{
         margin-right: 80px;
         background: none;
@@ -119,4 +145,24 @@
         border: 2px  solid #25C998;
         border-radius:5px;
     }    
+    .botão-cadastrar-login:hover{
+        color:#25C998;
+    }
+
+    @-webkit-keyframes AnimationName {
+        0%{background-position:0% 50%}
+        50%{background-position:100% 50%}
+        100%{background-position:0% 50%}
+    }
+    @-o-keyframes AnimationName {
+        0%{background-position:0% 50%}
+        50%{background-position:100% 50%}
+        100%{background-position:0% 50%}
+    }
+    @keyframes AnimationName {
+        0%{background-position:0% 50%}
+        50%{background-position:100% 50%}
+        100%{background-position:0% 50%}
+    }
+    
 }

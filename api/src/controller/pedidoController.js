@@ -7,7 +7,6 @@ import { criarBoleto } from "../service/novopedido.js";
 const server = Router();
 
 
-
 server.post('/api/pedido/cartao/:idUsuario/', async (req, resp) => {
     try {
         const { idUsuario } = req.params;
@@ -35,7 +34,8 @@ server.post('/api/pedido/cartao/:idUsuario/', async (req, resp) => {
     }
 })
 
-server.post('/api/pedido/cartao/:idUsuario/', async (req, resp) => {
+
+server.post('/api/pedido/boleto/:idUsuario/', async (req, resp) => {
    try {
        const { idUsuario } = req.params;
        const info = req.body;
@@ -61,5 +61,6 @@ server.post('/api/pedido/cartao/:idUsuario/', async (req, resp) => {
         })
     }
 })
+
 
 export default server;

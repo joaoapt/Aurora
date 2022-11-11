@@ -1,0 +1,118 @@
+.page-aprovado
+{
+    background-image:url(../../../../public/img/montanha.jpg);
+    background-size: cover;
+    background-position: bottom center;
+    .cabecalho
+    {
+        display: flex;
+        justify-content:flex-end;
+        text-align:end;
+    }
+    .botão1{
+        margin-right: 80px;
+        background: none;
+        border: #fff 2px solid;
+        text-decoration: none;
+        border-radius: 20px;
+        padding: 3px 15px;
+        cursor: pointer;
+        color:#fff ;
+        font-size: 22px;
+        font-weight: 700;
+        font-family: 'Montserrat', sans-serif;
+        transition:all 0.6s ease-in-out 0.05s;
+    }
+
+    
+    .a{
+        position: absolute;
+        width: 672px;
+        height: 199px;
+        left: 15px;
+        top: 50px;
+
+        font-style: normal;
+        font-weight: 600;
+        font-size: 70px;
+        line-height: 104px;
+        text-align: center;
+
+        color: #FFFFFF;
+    }
+
+    .y{
+        position: absolute;
+        width: 635px;
+        height: 84px;
+        left: 200px;
+        top: 550px;
+
+        font-style: normal;
+        font-weight: 400;
+        font-size: 48px;
+        line-height: 71px;
+        text-align: center;
+
+    }
+
+    .c{
+        position: absolute;
+        width: 635px;
+        height: 84px;
+        left: 200px;
+        top: 600px;
+
+        font-style: normal;
+        font-weight: 400;
+        font-size: 48px;
+        line-height: 71px;
+        text-align: center;
+
+        color: #FFFFFF;
+    }
+
+    .d{
+        position: absolute;
+        width: 986px;
+        height: 210px;
+        left: 258px;
+        top: 1px;
+        background-color: #1A1D53;
+    }
+
+    .e{
+        position: absolute;
+        width: 698px;
+        height: 385px;
+        left: 150px;
+        top: 180px;
+
+        background: rgba(20, 183, 144, 0.59);
+        border-radius: 0px 0px 60px 60px;
+    }
+
+    .f{
+        position: absolute;
+        width: 986px;
+        height: 768px;
+        left: 258px;
+        top: 0px;
+
+        background: linear-gradient(270deg, #1020AB 0%, rgba(36, 190, 153, 0.79) 99.99%, rgba(37, 201, 152, 0) 100%);
+    }
+
+    .g{
+        color: #FFFFFF;
+    }
+
+    .cont-logo{
+        display: flex;
+    }
+
+    .logo{
+        margin-top: 8px;
+        margin-left: 20px;
+        width: 75px;
+    } 
+}
