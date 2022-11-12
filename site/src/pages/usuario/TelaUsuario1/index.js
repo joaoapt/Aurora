@@ -35,18 +35,14 @@ export default function Index() {
 
                     {usuario.map(item =>
                         <div>
-                            <div>
-                                <p className='a-usu1'>Nome:</p>
-                                <p className='b-usu1'>{item.nome}</p>
-                                <p className='c-usu1'>Senha: *</p>
-                                <p className='d-usu1'>Email:</p> 
-                                <p className='e-usu1'>{item.email}</p>
-                                <p className='f-usu1'>CPF:</p>
-                                <p className='g-usu1'>{item.cpf}</p>
-                            </div>
-                            
+                            <p className='a-usu1'>Nome:</p>
+                            <p className='b-usu1'>{item.nome}</p>
+                            <p className='c-usu1'>Senha: {item.senha}</p>
+                            <p className='d-usu1'>Email:</p> 
+                            <p className='e-usu1'>{item.email}</p>
+                            <p className='f-usu1'>CPF:</p>
+                            <p className='g-usu1'>{item.cpf}</p>
                         </div> 
-                        
                     )}
                     {endereco.map(item => 
                         <div>
