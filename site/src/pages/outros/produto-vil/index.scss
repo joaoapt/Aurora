@@ -3,8 +3,9 @@
     display: flex;
     min-height: 700px;
     hr{
+        position: absolute;
         margin-left: 50px;
-        width: 600px;
+        width: 900px;
     }
     .box-livro{
         display: flex;
@@ -13,7 +14,7 @@
             margin-left: 40px;
             margin-top: 35px;
             height: 405px;
-            border-radius: 3px;
+            border-radius: 8px;
         }
     }
     .informação{
@@ -33,54 +34,86 @@
             font-size: 31px;
             font-family: 'Montserrat', sans-serif;
         }
+        p{
+            margin-left:-80px ;
+            margin-top: 20px;
+        }
     
         .carrinho{
             margin-top: 5px;
             background-color: rgb(82, 80, 80);
             border:none;
+            cursor: pointer;
             color: #fff;
             border-top-right-radius: 15px;
             border-top-left-radius: 15px;
-            padding: 10px 17.5px;
+            width: 194px;
+            height: 50px;
             font-size: 20px;
         }
         .compra{
+            cursor: pointer;
             margin-top: 5px;
             background-color: black;
             color: #fff;
             border-bottom-right-radius: 15px;
             border-bottom-left-radius: 15px;
             font-size: 20px;
-            padding: 10px 20px;
+            width: 194px;
+            height: 48px;
+        }
+        .car{
+            position: absolute;
+            top: 140px;
+        }
+        .sacola{
+            position: absolute;
+            top: 193px;
         }
         img{
-            width: 20px;
-            height: 20px;
+            width: 40px;
+            height: 40px;
         }
 
     }
-    .box-informacoes{
+    .sobre-livro
+    {
         display: flex;
-        justify-items: center;
         align-items: center;
-        margin: 20px;
-
-        h6{
-            font-size: 15px;
-            margin-top: 30px;
-            margin-left: 50px;
-            color: rgb(71, 70, 70);
-            font-family: 'Montserrat', sans-serif;
-        }
-        img{
+        justify-content: center;
+        margin-left: -40px;
+        img
+        {
             display: flex;
-            flex-direction: column;
+            align-items: center;
             justify-content: center;
-            aling-items:center;
-            text-align: center;
-            width:30px;
-            height:30px;
+            width: 58px;
+            display: flex;
         }
+        .box
+        {
+            margin-top: 30px;
+            margin-bottom: 30px;
+            margin-left: 10px;
+            margin-right: 10px;
+            color: #727274; 
+        }
+
+        .local-img{
+            margin-left: 49px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    
+        h6
+        {
+            margin-top: 20px;
+            text-align: center;
+            font-size:18px;
+            font-family: 'Montserrat', sans-serif;
+            width: 150px;
+        } 
     }
     .sinples{
         font-size: 25px;

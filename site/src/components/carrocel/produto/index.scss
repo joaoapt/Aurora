@@ -6,6 +6,13 @@
     display: flex;  
     justify-content: center;
 
+    .swiper-button-next::after{
+        color: #000;
+    }
+    .swiper-button-prev::after{
+        color: #000;
+    }
+
     .segundacoluna
         {
             cursor:grab;
@@ -36,6 +43,8 @@
             font-size: 20px;
             color: rgb(109, 108, 108);
             font-family: 'Montserrat', sans-serif;
+            width: 200px;
+            height: 50px;
         }
 
         h1{
@@ -51,6 +60,7 @@
             justify-content: center;
             width: 150px;
             height: 200px;
+            border-radius: 5px;
         }
 
 }
