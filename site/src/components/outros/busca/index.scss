@@ -15,6 +15,7 @@
         font-weight: 600;
         font-family: 'Oswald', sans-serif;
         color: #fff;
+
         .sas{
           margin-left: 20px;
           margin-top: -3px;
@@ -24,16 +25,19 @@
   .cont-logo{
         display: flex;
   }
+
   .logo{
         margin-top: 8px;
         margin-left: 20px;
         width: 75px;
   }
+
   .barra{
         margin-top: -4px;
         font-size: 68px;
         color: #fff;
   }
+
   .linha{
         background:black;
         height: 15px;
@@ -47,13 +51,13 @@
       background-color: rgba(238, 237, 237, 0.788);
       padding: 0px 40px;
       border-top-left-radius:20px;
-     border-bottom-right-radius: 20px;
-     border-top-right-radius:2px;
-     border-bottom-left-radius: 2px;
+      border-bottom-right-radius: 20px;
+      border-top-right-radius:2px;
+      border-bottom-left-radius: 2px;
       width: 460px;
       height: 40px;
       margin-left: 180px;
-    margin-top: 25px;
+      margin-top: 25px;
   }
 
   .caixa-busca input {
@@ -73,19 +77,23 @@
       position: relative;
       right: -15px;
   }
-  .puta{
-      width: 23px;
+
+  .img-pesquisa{
+    width: 23px;
   }
+
   .carrinho{
     margin-top: 24px;
     width: 40px;
     margin-left: 90px;
   }
-  .puta2{
+
+  .linhas{
       width: 35px;
       margin-top: 30px;
       margin-left: 60px;
   }
+
   .botão-login{
     font-family: 'Oswald', sans-serif;
     word-spacing: normal;

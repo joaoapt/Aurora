@@ -1,5 +1,6 @@
 import './index.scss';
 import { Link } from 'react-router-dom';
+import Sidebar from '../../menu';
 
 export default function Index (){
     return(
@@ -17,16 +18,15 @@ export default function Index (){
                     </Link>
                     <div className='caixa-busca'>
                         <input type="text" placeholder='Buscar' />
-                        <img className='puta' src='../img/pesquisa.png' alt='' />
+                        <img className='img-pesquisa' src='../img/pesquisa.png' alt='' />
                     </div>
                     <Link to='/carrinho'>
                         <img className='carrinho' src='../img/carrinho.png' alt='' />
                     </Link>
                     <Link className='botão-login' to='/login'>Login</Link>
-                    <div>
-                        <img className='puta2' src='../img/menu-aberto.png' alt='menu' />
-                    </div>
-                
+                    <div className='linhas'>
+                        <Sidebar/>
+                    </div> 
                 </div>
             </nav>
             <div className='linha'></div>

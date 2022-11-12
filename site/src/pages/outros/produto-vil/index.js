@@ -26,7 +26,7 @@ export default function Index () {
                                     <p className='sinples'>300</p>
                                 </div>
                                 <div className='informação-sinopce'>
-                                    <h6 className='si'>Sinopce:</h6>
+                                    <h6 className='si'>Sinopse:</h6>
                                     <br/>
                                     <p className='sinopce'>
                                     Conheça Doze. Seu clã mudou seu nome. Ela mudará o mundo.
@@ -46,47 +46,59 @@ export default function Index () {
                                 </div>
                                 <div className='box-botão'>
                                     <div>
-                                        <button className='carrinho'>Adicionar <img src="../img/carrinho.png" alt=''/> </button>
+                                        <button className='carrinho'><p>Adicionar</p><img className='car' src="../img/carrinho.png" alt=''/> </button>
                                     </div>
                                     <div>
-                                        <button className='compra'>Comprar<img src="./img/" alt=''/></button>
+                                        <button className='compra'><p>Comprar</p><img className='sacola' src="./img/" alt=''/></button>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div className='box-informacoes'>
-                        <div>
-                            <h6>Idade de leitura</h6>
-                            <img className="logo" src="../img/abra-o-livro.png" alt="logo"/>
-                            <h6 className='paginas'>200 páginas</h6>
-                        </div>
-                        <div>
-                            <h6>Idioma</h6>
-                            <img className="logo" src="../img/linguas.png" alt="logo"/>
-                            <h6 className='idioma'>Português</h6>
-                        </div>
-                        <div>
-                            <h6>Dimensões</h6>
-                            <img className="logo" src="../img/area.png" alt="logo"/>
-                            <h6 className='autura'>15.5 x 1.7 x 23 cm</h6>
-                        </div>
-                        <div>
-                            <h6>Editora</h6>
-                            <img className="logo" src="../img/predio.png" alt="logo"/>
-                            <h6 className='editora'>HarperCollins Brasil</h6>
-                        </div>
-                        <div>
-                            <h6>ISBN-10</h6>
-                            <img className="logo" src="../img/codigo-de-barras.png" alt="logo"/>
-                            <h6 className='cod'>6555112131</h6>
-                        </div>
-                        <div>
-                            <h6>ISBN-13</h6>
-                            <img className="logo" src="../img/codigo-de-barras.png" alt=""/>
-                            <h6 className='cod'>978-6555112139</h6>
-                        </div>
-                    </div>
+                            <div className='sobre-livro'>
+                                <div className='box'>
+                                    <h6>paginas</h6>
+                                    <div className='local-img'>
+                                        <img src="../img/abra-o-livro.png" alt="logo"/>
+                                    </div>
+                                    <h6 className='paginas'>200 páginas</h6>
+                                </div>
+                                <div className='box'>
+                                    <h6>Idioma</h6>
+                                    <div className='local-img'>
+                                        <img src="../img/linguas.png" alt="logo"/>
+                                    </div>
+                                    <h6 className='cod'>Português</h6>
+                                </div>
+                                <div className='box'>
+                                    <h6>Dimensões</h6>
+                                    <div className='local-img'>
+                                        <img src="../img/area.png" alt="logo"/>
+                                    </div>
+                                    <h6 className='autura'>15.5 x 1.7 x 23 cm</h6>
+                                </div>
+                                <div className='box'>
+                                    <h6>Editora</h6>
+                                    <div className='local-img'>
+                                        <img src="../img/predio.png" alt=""/>
+                                    </div>
+                                    <h6 className='editora'>HarperCollins Brasil</h6>
+                                </div>
+                                <div className='box'>
+                                    <h6>ISBN-13</h6>
+                                    <div className='local-img'>
+                                        <img src="../img/codigo.png" alt=""/>
+                                    </div>
+                                    <h6 className='cod'>6555112131</h6>
+                                </div>
+                                <div className='box'>
+                                    <h6>ISBN-13</h6>
+                                    <div className='local-img'>
+                                        <img src="../img/codigo.png" alt=""/>
+                                    </div>
+                                    <h6 className='cod'>6555112131</h6>
+                                </div>
+                            </div>
                     <div>
                         <h4>Recomendado</h4>
                         <div className='aaa'>
