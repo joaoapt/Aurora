@@ -3,7 +3,7 @@ import  Pesquisa from '../../../components/outros/pesquisa';
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import Storage from 'local-storage'
-import { toast } from 'react-toastify'
+
 import { buscarProdutoPorId } from '../../../api/carrinho/produto.js';
 import { API_URL } from '../../../api/config/configAPI';
 import './index.scss';
