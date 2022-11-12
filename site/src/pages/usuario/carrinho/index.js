@@ -41,9 +41,6 @@ export default function Index() {
         return API_URL + '/' + imagem;
     }
 
-    function irPedido() {
-        navigate('/pedido')
-    }
 
     async function carregarCarrinho() {
         let carrinho = Storage('carrinho');
@@ -88,7 +85,7 @@ export default function Index() {
                         <th className='th'>Preço </th>
                     </tr>
                 </thead>
-                criar componente desse tr abaixo puxando os itens da api
+                criar componente desse tr abaixo puxando os itens da api 
                 deixarei exemplo na pasta componentes ass:Nick
                 <tr>
                     <td className='td'><img className='img-livro' src='../img/the-boys-1.png' alt='img-Livro'/></td>
