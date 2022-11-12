@@ -43,8 +43,19 @@ export async function Editar(id, produto) {
     nr_comprimento      =?	
     where id_produto    =?;
     `
+
     const resposta = await con.query(comando, [produto.livro, produto.categoria, produto.classificacao, produto.autor, produto.editora, produto.idioma, produto.isbn13, produto.isbn10, produto.preco, produto.original, produto.sinopse, produto.versao, produto.pagina, produto.volume, produto.largura, produto.comprimento, id]);
     return resposta.affectedRows;
+}
+
+
+export async function salvarProdutoImagem(idProduto, imagemPath) {
+    const comando = `
+        insert into tb_produto_img (id_produto, ds_img)
+                                  values (?, ?)
+    `
+
+    const [resp] = await con.query(comando, [idProduto, imagemPath])
 }
 
 
@@ -65,24 +76,56 @@ export async function buscarProdutos() {
 
 export async function buscarProdutoPorId(id) {
     const comando = `
-       select nm_livro,
-		vl_preco,
-		ds_categoria
-       from tb_produto
-       where id_produto = ?;`
+         select id_produto                      as id,
+                nm_produto                      as produto,
+                vl_preco                        as preco,
+                ds_categoria                    as categoria,
+        from tb_produto 
+       where id_produto = ?
+        `
 
     const [registros] = await con.query(comando, [id]);
     return registros[0];
 }
 
 
+export async function buscarProdutoCategorias(idProduto) {
+    const comando = `
+         select ds_categoria   as       categoria
+           from tb_produto 
+          where id_produto = ?
+        `
+
+    const [registros] = await con.query(comando, [idProduto]);
+    return registros.map(item => item.id);
+}
+
+
+
+export async function buscarProdutoImagens(idProduto) {
+    const comando = `
+          select ds_imagem   as imagem
+            from tb_produto
+           where id_produto = ?
+        `
+
+    const [registros] = await con.query(comando, [idProduto]);
+    return registros.map(item => item.imagem);
+}
+
 export async function listarProdutosInicio() {
     const comando = `
-    select id_produto       id,
-            nm_livro		produto,
-            vl_preco		preco,
-            ds_categoria	categoria
-    from tb_produto;`
+           select tb_produto.id_produto		id,
+               nm_produto					produto,
+               vl_preco						preco,
+               ds_categoria				    categoria,
+               ds_imagem     				imagem
+          from tb_produto
+         group 
+            by tb_produto.id_produto,
+               nm_produto,
+               ds_categoria
+    `
 
     const [registros] = await con.query(comando);
     return registros;

@@ -40,6 +40,7 @@ create table tb_produto_img (
 create table tb_usuariologin(
     id_usuariologin int primary key auto_increment,
     nm_usuario varchar(200),
+    ds_cpf varchar(14),
     ds_email varchar(100),
     ds_senha varchar(100)
 );
@@ -50,7 +51,7 @@ create table tb_usuario_endereco(
     ds_endereco varchar(200),
     nr_endereco int,
     nr_cep varchar(9),
-	ds_cpf varchar(14),
+
     ds_referencia varchar(350),
     ds_cidade varchar(100),
     ds_bairro varchar(100),

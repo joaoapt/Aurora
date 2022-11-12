@@ -14,6 +14,19 @@ export async function Login(email, senha) {
     return linhas[0];
 }
 
+export async function Consultar(id) {
+    const comando = 
+        `select ds_email		      email,
+                nm_usuario            nome,
+                ds_senha              senha,
+                ds_cpf                cpf
+           from tb_usuariologin
+          where id_usuariologin 		    = ? `
+    
+    const [linhas] = await con.query(comando, [id])
+    return linhas[0];
+}
+
 
 export async function cadastrarLogin(login) {
     const comando = 

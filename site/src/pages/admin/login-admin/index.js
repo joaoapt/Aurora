@@ -27,9 +27,7 @@ export default function Index() {
         
         try{
         const Marcelo = await LoginAdmin(email, senha);
-
             storage('usuario-logado', Marcelo);
-
         setTimeout(() => {
             navigate('/menu');
         }, 3000);

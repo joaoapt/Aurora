@@ -6,12 +6,12 @@ const api = axios.create({
 })
 
 export async function Login(email, senha){
-        const Marcelo = await api.post('/login/usuario', {
+    const Marcelo = await api.post('/login/usuario', {
             email: email,
             senha: senha
-});
+    });
 
-return Marcelo.data;
+    return Marcelo.data;
 }
 
 export async function novoLogin(nome ,email, senha){
@@ -19,7 +19,11 @@ export async function novoLogin(nome ,email, senha){
         nome: nome,
         email: email,
         senha: senha
-});
-
+    });
 return Martelo.data;
 }
+
+export async function consultar(id){
+    const Marte = await api.get('/info/usuario/' + id);
+    return Marte.data;
+} 

@@ -1,7 +1,7 @@
 import storage from 'local-storage'
 import { Login } from '../../../api/usuario/login-usuario'
 import { useState, useRef } from 'react';
-//import {useEffect} from 'react';
+import {useEffect} from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import LoadingBar from 'react-top-loading-bar'
@@ -18,11 +18,11 @@ export default function Index() {
     const navigate = useNavigate();
     const ref = useRef();
 
-    // useEffect(() => {
-    //     if (storage('usuario-logado')) {
-    //         navigate('/cadastrar');
-    //     }
-    // }, [])
+     useEffect(() => {
+         if (storage('usuario-logado')) {
+             navigate('/cadastrar');
+        }
+     }, [])
 
     async function entrarClick(){
         ref.current.continuousStart()
