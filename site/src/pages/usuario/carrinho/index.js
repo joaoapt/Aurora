@@ -9,7 +9,7 @@ import { API_URL } from '../../../api/config/configAPI';
 import './index.scss';
 
 export default function Index() {
-    const [produto, setProduto] = useState({ categorias: [], imagens: [], info: {} })
+    const [produto, setProduto] = useState({imagens: [], info: {} })
     const [imagemPrincipal, setImagemPrincipal] = useState(0);
 
     const { id } = useParams();
@@ -67,6 +67,7 @@ export default function Index() {
 
     useEffect(() => {
         carregarPagina(); 
+        calcularValorTotal();
     }, [])
 
     return(
