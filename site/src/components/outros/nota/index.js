@@ -1,6 +1,10 @@
+import { useState } from 'react'
 import './index.scss'
 
 export default function Index(){
+    const [irPedido, setirPedido] = useState(0);
+    const [calcularValorTotal, setCalcularValorTotal] = useState(0);
+    
     return(
         <div className='nota-pagamento'>
             <div className='conteudo'>

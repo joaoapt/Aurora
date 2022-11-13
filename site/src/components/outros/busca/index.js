@@ -1,10 +1,40 @@
 import './index.scss';
 import { Link } from 'react-router-dom';
-import Sidebar from '../../menu';
+import { Scrollbars } from 'react-custom-scrollbars-2';
+import { useState } from 'react';
+import Lottie from "react-lottie";
+import animationData from '../../../animacao/menu.json';
+
 
 export default function Index (){
+    
+    const [menu, setMenu] = useState(false);
+    const [animationState, setAnimationState] = useState({
+        isStopped: false, isPaused: false,
+        direction: 1,
+      });
+    
+      const defaultOptions = {
+        loop: false,
+        autoplay: false, 
+        animationData: animationData,
+        rendererSettings: {
+          preserveAspectRatio: 'xMidYMid slice'
+        }
+      };
+    
+
+    function simOUnão() {
+        if(menu === false){setMenu(true)
+        }
+        else if(menu === true){
+            setMenu(false)
+        }
+    }
+
+
     return(
-        <div className='b'>
+        <nav className='b'>
             <nav ClassName='local'>
                 <div className='cont-logo'>
                     <Link to='/'>
@@ -24,12 +54,42 @@ export default function Index (){
                         <img className='carrinho' src='../img/carrinho.png' alt='' />
                     </Link>
                     <Link className='botão-login' to='/login'>Login</Link>
-                    <div className='linhas'>
-                        <Sidebar/>
-                    </div> 
+                    <div onClick={simOUnão}>
+                    <div className= 'nave'
+                    onClick={() => {
+                            const reverseAnimation = -1;
+                            const normalAnimation = 1;
+                         setAnimationState({
+                            ...animationState,
+                            isStopped: true,
+                            direction: animationState.direction === normalAnimation 
+                              ? reverseAnimation
+                              : normalAnimation,
+                          })
+                         }}>
+                        <Lottie
+                        options={defaultOptions}
+                        width={60}
+                        direction={animationState.direction}
+                        isStopped={animationState.isStopped}
+                        isPaused={animationState.isPaused}
+                        />
+                        {menu === true && 
+                        <nav className='menu-page'>
+                        <div className='exit'></div>
+                        <Scrollbars className="scroll"></Scrollbars>
+                        <div className='navbar-nav'>
+                            <div className='nav-item'><Link to='/login'>Inicio</Link><hr></hr></div>
+                            <div className='nav-item'><Link to='/carrinho'>Sobre</Link><hr></hr></div>
+                            <div className='nav-item'><Link to='/menu'>Projeto</Link><hr></hr></div>
+                        </div>
+                        </nav>
+                        }
+                    </div>
+                    </div>
                 </div>
             </nav>
             <div className='linha'></div>
-        </div>
+        </nav>
     )
 }

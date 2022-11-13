@@ -1,13 +1,17 @@
- import axios from 'axios'
+import { API_URL } from '../config/configAPI';
+import axios from 'axios'
+ 
+ 
  const api = axios.create({
      baseURL: API_URL
  })
- import { API_URL } from '../config/configAPI';
 
- export async function cadastrar(categoria, livro, autor, editora, idioma, isbn13, isbn10, preco, original, sinopse, versao, pagina, volume, largura, comprimento) {
+ export async function cadastrar(categoria,classificacao, livro, autor, editora, idioma, isbn13, isbn10, preco, original, sinopse, versao, pagina, volume, largura, comprimento) {
      const resposta = await api.post('/admin/cadastrar/livro', {
          livro:livro,
          autor:autor,
+         categoria:categoria,
+         classificacao:classificacao,
          editora:editora,
          idioma:idioma,
          isbn13:isbn13,

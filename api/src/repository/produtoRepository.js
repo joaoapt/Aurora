@@ -144,13 +144,15 @@ export async function removerProduto(idProduto) {
 
 //não ok
 //img
+
+
 export async function salvarProdutoImagem(idProduto, imagemPath) {
     const comando = `
         insert into tb_produto_img (id_produto, ds_img)
                 values (?, ?);
     `
-
     const [resp] = await con.query(comando, [idProduto, imagemPath])
+    console.log (resp);
 }
 
 

@@ -36,6 +36,7 @@
         font-family: 'Montserrat', sans-serif;
     }
     .cate{
+        margin-top: 400px;
         display: flex;
         justify-content: center;
     }
@@ -60,6 +61,33 @@
     .aaa{
         display: flex;
         justify-content: center;
+    }
+    footer{
+        margin-top: 0px;
+    }
+    .voltar{
+        margin-top: 70px;
+        background-color: aqua;
+        width: 1349px;
+        height: 64px;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        h1{
+            color: #000;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .img1{
+            height: 40px;
+            left: 1200px;
+            position: absolute;
+        }
+        .img2{
+            height: 40px;
+            left: 115px;
+            position: absolute;
+        }
     }
 
 }
