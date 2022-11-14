@@ -1,35 +1,55 @@
 import { API_URL } from '../config/configAPI';
 import axios from 'axios'
- 
- 
  const api = axios.create({
      baseURL: API_URL
  })
 
  export async function cadastrar(categoria,classificacao, livro, autor, editora, idioma, isbn13, isbn10, preco, original, sinopse, versao, pagina, volume, largura, comprimento) {
-     const resposta = await api.post('/admin/cadastrar/livro', {
-         livro:livro,
-         autor:autor,
-         categoria:categoria,
-         classificacao:classificacao,
-         editora:editora,
-         idioma:idioma,
-         isbn13:isbn13,
-         isbn10:isbn10,
-         preco:preco,
-         original:original,
-         sinopse:sinopse,
-         versao:versao,
-         pagina:pagina,
-         volume:volume,
-         largura:largura,
-         comprimento:comprimento
+     const resposta = await api.post('/cadastrar/livro', {
+        categoria:categoria,
+        classificacao:classificacao,
+        livro:livro,
+        autor:autor,
+        editora:editora,
+        idioma:idioma,
+        isbn13:isbn13,
+        isbn10:isbn10,
+        preco:preco,
+        original:original,
+        sinopse:sinopse,
+        versao:versao,
+        pagina:pagina,
+        volume:volume,
+        largura:largura,
+        comprimento:comprimento
      })
      return resposta.data;
  }
 
  export async function alterarProduto(id, nome, preco, destaque, idDepartamento, categorias) {
      await api.put('/admin/livro/' + id, { nome, preco, destaque, idDepartamento, categorias });
+ }
+
+ export async function editar(categoria,classificacao, livro, autor, editora, idioma, isbn13, isbn10, preco, original, sinopse, versao, pagina, volume, largura, comprimento) {
+     const resposta = await api.post('/cadastrar/livro', {
+        categoria:categoria,
+        classificacao:classificacao,
+        livro:livro,
+        autor:autor,
+        editora:editora,
+        idioma:idioma,
+        isbn13:isbn13,
+        isbn10:isbn10,
+        preco:preco,
+        original:original,
+        sinopse:sinopse,
+        versao:versao,
+        pagina:pagina,
+        volume:volume,
+        largura:largura,
+        comprimento:comprimento
+     })
+     return resposta.data;
  }
 
 
@@ -42,16 +62,16 @@ import axios from 'axios'
 
  export async function salvarImagem(id, imagem) {
     
-     let form = new FormData();
-     form.append('imagem', imagem);
+     let formData = new FormData();
+     formData.append('capa', imagem);
 
-     const r = await api.put(`/admin/livro/${id}/imagem`, form, {
+     const resp = await api.put(`/livro/${id}/capa`, formData, {
          headers: {
-             'Content-Type': 'multipart/form-data'
+             "Content-Type": "multipart/form-data"
          }
      });
 
-     return r.data;
+     return resp.status;
  }
 
 
@@ -71,9 +91,9 @@ import axios from 'axios'
 //imagem capa do livro
 export async function enviarImagem(id, imagem) {
     const formData = new FormData();
-    formData.append('capa-livro', imagem);
+    formData.append('capa', imagem);
 
-      const resposta = await api.put(`/img/${id}/capa/livro`, formData, {
+      const resposta = await api.put(`/livro/${id}/capa`, formData, {
         headers: {
             "Content-Type": "multipart/form-data"
         }

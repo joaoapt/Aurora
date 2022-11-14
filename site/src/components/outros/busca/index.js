@@ -79,9 +79,9 @@ export default function Index (){
                         <div className='exit'></div>
                         <Scrollbars className="scroll"></Scrollbars>
                         <div className='navbar-nav'>
-                            <div className='nav-item'><Link to='/login'>Inicio</Link><hr></hr></div>
-                            <div className='nav-item'><Link to='/carrinho'>Sobre</Link><hr></hr></div>
-                            <div className='nav-item'><Link to='/menu'>Projeto</Link><hr></hr></div>
+                            <div className='nav-item'><Link to='/login'>Inicio</Link></div>
+                            <div className='nav-item'><Link to='/carrinho'>Sobre</Link></div>
+                            <div className='nav-item'><Link to='/menu'>Projeto</Link></div>
                         </div>
                         </nav>
                         }

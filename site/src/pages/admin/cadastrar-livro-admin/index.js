@@ -5,7 +5,7 @@ import Cabecalho from '../../../components/admin/cabecalho';
 
 import { useState } from 'react';
 
-import { cadastrar } from '../../../api/admin/produto';
+import { cadastrar, enviarImagem } from '../../../api/admin/produto';
 
 import storage from 'local-storage';
 
@@ -19,16 +19,17 @@ export default function Index(){
     const [autor, setAutor] = useState ('');
     const [editora, setEditora] = useState ('');
     const [idioma, setIdimoma] = useState ('');
-    const [isbn13, setIsbn13] = useState (0);
-    const [isbn10, setIsbn10] = useState (0);
-    const [preco, setPreco] = useState (0);
+    const [isbn13, setIsbn13] = useState ();
+    const [isbn10, setIsbn10] = useState ();
+    const [preco, setPreco] = useState ();
     const [original, setOriginal] = useState ('');
     const [sinopse, setSinopse] = useState ('');
     const [versao, setVersao] = useState ('');
-    const [pagina, setPagina] = useState (0);
-    const [volume, setVolume] = useState (0);
-    const [largura, setLargura] = useState (0);
-    const [comprimento, setComprimento] = useState (0);
+    const [pagina, setPagina] = useState ();
+    const [volume, setVolume] = useState ();
+    const [largura, setLargura] = useState ();
+    const [comprimento, setComprimento] = useState ();
+    const [imagem, setImagem] = useState();
 
 
     async function  salvarClick() {
@@ -36,11 +37,21 @@ export default function Index(){
             const usuario = storage ('usuario-logado').id;
 
             const r = await cadastrar(categoria,classificacao, livro, autor, editora, idioma, isbn13, isbn10, preco, original, sinopse, versao, pagina, volume, largura, comprimento, usuario);
+            const img = await enviarImagem(r.id, imagem); 
+            //12:44
 
             toast('Livro cadastrado com sucesso!');
         } catch (err) {
             toast.error(err.response.data.erro);
         }
+    }
+
+    function escolherCapa() {
+        document.getElementById('imagemCapa').click();
+    }
+
+    function mostrarImagem() {
+        return URL.createObjectURL(imagem);
     }
 
     return(
@@ -66,7 +77,7 @@ export default function Index(){
                                         <div className='form-row'>
                                             <label>Classificação Indicativa:</label>
                                             <select type='text'  value={classificacao} onChange={e => setClassificacao(e.target.value)} >
-                                                <option selected disabled hidden>Selecione</option>
+                                                <option selected hidden >Selecione</option>
                                                 <option>L</option>
                                                 <option>10</option>
                                                 <option>14</option>
@@ -111,7 +122,7 @@ export default function Index(){
                                         <div className='coluna-2'>
                                             <label>Categoria:</label>
                                             <select type='text'  value={categoria} onChange={e => setCategoria(e.target.value)} >
-                                                <option selected disabled hidden>Selecione</option>
+                                                <option selected hidden >Selecione</option>
                                                 <option>Filosofia</option>
                                                 <option>Ficção científica</option>
                                                 <option>Aventura</option>
@@ -154,8 +165,17 @@ export default function Index(){
                                 <div>
                                         <div className='coluna-3'>
                                             <div>
-                                            <div className='upload-capa'>
-                                                <img className='img' src="../img/upload.png" alt="upload" />
+                                            <div className='upload-capa' onClick={escolherCapa}>
+
+                                                {!imagem &&
+                                                     <img className='img' src="../img/upload.png" alt="upload" />
+                                                }
+
+                                                {imagem &&
+                                                 <img className='img1' src={mostrarImagem()} alt=''/>
+                                                }
+                                               
+                                                <input type='file' className='input-capa' onChange={e => setImagem(e.target.files[0])}/>
                                             </div>
                                             </div>
                                             <div className='box-botão'>

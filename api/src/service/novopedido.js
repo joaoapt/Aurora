@@ -1,26 +1,14 @@
-import randomString from 'randomstring'
+//import randomString from 'randomstring'
 
-export function criarNovoPedidoCartao(idUsuario, info) {
+export function criarNovoPedidoCartao(idUsuarioLogin, info) {
+
+    let agora = new Date();
 
     return {
-        idUsuario: idUsuario,
-        idEndereco: info.idEndereco,
+        idUsuarioLogin: idUsuarioLogin,
+        idUsuarioEndereco: info.idUsuarioEndereco,
+        data: agora,
         status: 'Pagamento Confirmado',
         tipoPagamento: 'Cartão'
     }
 }
-
-export function criarBoleto() {
-    return randomString.generate(11);
-}
-
-export function criarNovoPedidoBoleto(idUsuario, info) {
-
-    return {
-        idUsuario: idUsuario,
-        idEndereco: info.idEndereco,
-        status: 'Pagamento Confirmado',
-        tipoPagamento: 'Boleto'
-    }
-}
-

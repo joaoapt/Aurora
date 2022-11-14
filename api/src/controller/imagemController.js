@@ -1,48 +1,20 @@
-import {salvarProdutoImagem} from '../repository/produtoRepository.js'
 import { Router } from 'express'
-import {AlterarImagem} from '../repository/produtoRepository.js'
-// import {buscarimg} from '../repository/produtoRepository.js'
+import {AlterarImg} from '../repository/produtoRepository.js'
 import multer from 'multer'
 const server = Router();
-const upload = multer({ dest: 'storage/produto' });
+const upload = multer({ dest: 'storage' });
 
-//img
-server.put('/livro/:id/imagens', upload.array('imagens'), async (req, resp) => {
+server.put('/livro/:id/capa', upload.single('capa'), async (req, resp) => {
     try {
-        const id = req.params.id;
-        const imagens = req.files;
+        const { id } = req.params;
+        const img = req.file.path;
 
-        console.log(id);
-        console.log(imagens);
-
-        // if (img.length > 0)
-        //     await removerProdutoImagensDiferentesDe(img);
-        // else
-        //     await removerProdutoImagens(id);
-        
-        for (const img of imagens) {
-            await salvarProdutoImagem(id, img.path);
-        }
+        const resposta = await AlterarImg(img, id);
+        if (resposta !== 1)
+            throw new Error("A imagem Não foi Fi");
 
         resp.status(204).send();
-    }
-    catch (err) {
-        resp.status(400).send({
-            erro: err.message
-        })
-    }
-})
-
-server.put('/editar/img/:id', async (req, resp) => {
-    try {
-        const id = req.params.id;
-        const produto = req.body;
-        await AlterarImagem(id, produto);
-        
-        resp.status(204).send();
-
-    }
-    catch (err) {
+    } catch (err) {
         resp.status(400).send({
             erro: err.message
         })

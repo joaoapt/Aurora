@@ -1,9 +1,10 @@
-import { buscarProdutoPorId, cadastrarLivro, ConsultarTodos, Editar, removerProduto} from '../repository/produtoRepository.js'
+import { cadastrarLivro, ConsultarTodos, Editar, removerProduto} from '../repository/produtoRepository.js'
+
+//buscar
 import { validarProduto } from '../service/produto.js'
 import { Router } from 'express'
-import multer from 'multer'
 const server = Router();
-const upload = multer({ dest: 'storage/produto' });
+
 
 //ok
 //cadaastro livro
@@ -13,9 +14,7 @@ server.post('/cadastrar/livro', async (req, resp) => {
         await validarProduto(novolivro);
         await cadastrarLivro(novolivro);
 
-        resp.send({
-            id: buscarProdutoPorId
-        });
+        resp.send(novolivro);
     }
     catch (err) {
         return resp.status(400).send({
@@ -25,14 +24,60 @@ server.post('/cadastrar/livro', async (req, resp) => {
 })
 
 //editar
-server.put('/editar/livro/:id', async (req, resp) => {
+server.put('/editar/:id/livro', async (req, resp) => {
     try {
         const id = req.params.id;
         const produto = req.body;
-        await Editar(id, produto);
-        
-        resp.status(204).send();
 
+        if(!produto.categoria){
+            throw new Error('A Categoria é OBRIGATÓRIA!');
+        }
+        if(!produto.classificacao){
+            throw new Error('A Classificação Indicativa é OBRIGATÓRIA!');
+        }
+        if(!produto.livro){
+            throw new Error('O Titulo do Livro é OBRIGATÓRIO!');
+        }
+        if(!produto.autor){
+            throw new Error('O Nome do Autor é OBRIGATÓRIO!');
+        }
+        if(!produto.editora){
+            throw new Error('O Nome da Editora é OBRIGATÓRIO!');
+        }
+        if(!produto.idioma){
+            throw new Error('O Idioma é OBRIGATÓRIO!');
+        }
+        if(!produto.preco){
+            throw new Error('O Valor é OBRIGATÓRIO!');
+        }
+        if(produto.preco <= 0){
+            throw new Error('O Valor Não Pode Ser Menor Ou Igual A ZERO!');
+        }
+        if(!produto.sinopse){
+            throw new Error('A Sinopse é OBRIGATÓRIA!');
+        }
+        if(!produto.versao){
+            throw new Error('A Versão é OBRIGATÓRIA!');
+        }
+        if(!produto.pagina){
+            throw new Error('A Quantidade de Páginas é OBRIGATÓRIA');
+        }
+        if(!produto.volume){
+            throw new Error('O Volume é OBRIGATÓRIO!');
+        }
+        if(!produto.largura){
+            throw new Error('A Largura é OBRIGATÓRIA!');
+        }
+        if(!produto.comprimento){
+            throw new Error('O Comprimento é OBRIGATÓRIO');
+        }
+        
+    
+        const  resposta = await Editar(id, produto);
+        if (resposta !=1)
+            throw new Error('Este Livro não foi alterado');
+        else
+            resp.send(produto);
     }
     catch (err) {
         resp.status(400).send({
@@ -70,6 +115,7 @@ server.get('/consultar', async (req,resp) => {
         });
     }
 })
+
 
 
 export default server;

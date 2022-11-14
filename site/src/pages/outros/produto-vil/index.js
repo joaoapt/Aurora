@@ -43,7 +43,7 @@ export default function Index () {
             <nav><Buscar/></nav>
             <div>
                 <div className='box-livro'>
-                    <img className="logo" src="../img/nascida.jpg" alt="logo"/>
+                    <img className="capa" src="../img/nascida.jpg" alt="logo"/>
                     <div className='informação'>
                         <div>
                             <div className='informação'>
@@ -81,7 +81,7 @@ export default function Index () {
                                     <button className='carrinho'><p>Adicionar</p><img className='car' src="../img/carrinho.png" alt=''/> </button>
                                 </div>
                                 <div>
-                                    <button className='compra'><p>Comprar</p><img className='sacola' src="./img/" alt=''/></button>
+                                    <button className='compra'><p>Comprar</p><img className='sacola' src="../img/compras.png" alt=''/></button>
                                 </div>
                             </div>
                         </div>
@@ -89,42 +89,42 @@ export default function Index () {
                 </div>
                         <div className='sobre-livro'>
                             <div className='box'>
-                                <h6>paginas</h6>
+                                <h6 className='acima'>Categoria</h6>
                                 <div className='local-img'>
                                     <img src="../img/abra-o-livro.png" alt="logo"/>
                                 </div>
-                                <h6 className='paginas'>200 páginas</h6>
+                                <h6 className='paginas'>Aventura</h6>
                             </div>
                             <div className='box'>
-                                <h6>Idioma</h6>
+                                <h6 className='acima'>Idioma</h6>
                                 <div className='local-img'>
                                     <img src="../img/linguas.png" alt="logo"/>
                                 </div>
                                 <h6 className='cod'>Português</h6>
                             </div>
-                            <div className='box'>
-                                <h6>Dimensões</h6>
+                            <div className='box-oll'>
+                                <h6  className='acima'>Dimensões</h6>
                                 <div className='local-img'>
                                     <img src="../img/area.png" alt="logo"/>
                                 </div>
                                 <h6 className='autura'>15.5 x 1.7 x 23 cm</h6>
                             </div>
-                            <div className='box'>
-                                <h6>Editora</h6>
+                            <div className='box-oll'>
+                                <h6  className='acima'>Editora</h6>
                                 <div className='local-img'>
                                     <img src="../img/predio.png" alt=""/>
                                 </div>
                                 <h6 className='editora'>HarperCollins Brasil</h6>
                             </div>
                             <div className='box'>
-                                <h6>ISBN-13</h6>
+                                <h6 className='acima'>ISBN-13</h6>
                                 <div className='local-img'>
                                     <img src="../img/codigo.png" alt=""/>
                                 </div>
                                 <h6 className='cod'>6555112131</h6>
                             </div>
                             <div className='box'>
-                                <h6>ISBN-13</h6>
+                                <h6 className='acima'>ISBN-13</h6>
                                 <div className='local-img'>
                                     <img src="../img/codigo.png" alt=""/>
                                 </div>
@@ -137,9 +137,6 @@ export default function Index () {
                         <Produto/>
                     </div>
                 </div>
-            </div>
-            <div className='voltar'>
-                <h1>Voltar ao inicio</h1>
             </div>
             <footer><Rodape/></footer>
         </div>
