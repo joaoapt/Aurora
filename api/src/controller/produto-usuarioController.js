@@ -1,5 +1,6 @@
 import {buscarProdutoPorId,listarProdutosInicio,buscarProdutovil,buscarProdutoCategorias,buscarProdutosClassificacao,buscarProdutos} from '../repository/produtoRepository.js'
 import { Router } from "express";
+import { con } from '../repository/connection.js';
 const server = Router();
 
 server.get('/card/produto', async (req, resp) => {
@@ -87,6 +88,7 @@ server.get('/produtovil/:id', async (req, resp) => {
         })
     }
 })
+
 
 
 export default server;

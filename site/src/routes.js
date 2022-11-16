@@ -2,7 +2,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 //Aceso apenas para administradores do site
 import Cadastralivro from './pages/admin/cadastrar-livro-admin';
-import Editar from './pages/admin/editar-site'
 import Pendentes from './pages/admin/pendentes'
 import LoginAdmin from './pages/admin/login-admin';
 import MenuAdmin from './pages/admin/menu';
@@ -40,8 +39,7 @@ export default function Index() {
                 <Route path="/cadastrar/livro" element={<Cadastralivro/>}/>
                 <Route path="/pendentespessoas" element={<PendentesPessoas/>}/>
                 <Route path="/pendentesmenu" element={<PendentesMenu/>}/>
-                <Route path="/pendentes" element={<Pendentes/>}/>
-                <Route path="/Editar-site" element={<Editar/>}/>                
+                <Route path="/pendentes" element={<Pendentes/>}/>               
                 <Route path="/menu" element={<MenuAdmin/>}/>
                 <Route path="/carrinho" element={<Carrinho/>}/>
                 <Route path="/produto/vil" element={<ProdutoVil/>}/>

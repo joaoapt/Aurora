@@ -20,11 +20,11 @@ export default function Index(){
                             <table>
                                 <thead>
                                     <tr>
-                                        <th>IDENTIFICAÇÃO</th>
+                                        <th>Identificação</th>
                                         <th>Nome</th>
-                                        <th>Telefone</th>
-                                        <th>Envio</th>
-                                        <th>Valor</th>
+                                        <th>Pais</th>
+                                        <th>Cidade</th>
+                                        <th>Bairo</th>
                                     </tr>
                                 </thead>
                                 <tbody>

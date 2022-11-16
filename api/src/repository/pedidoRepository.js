@@ -7,14 +7,16 @@ export async function inserirPedido(novoPedido) {
             id_usuariologin,
             id_usuario_endereco,
             dt_pedido,
+            cod_nota_fiscal,
             ds_status
         )
-        VALUES (?, ?, ?, ?)
+        VALUES (?, ?, ?, ?, ?)
     `
 
     const [info] = await con.query(comando, [
         novoPedido.idUsuarioLogin,
         novoPedido.idUsuarioEndereco,
+        novoPedido.Notafiscal,
         novoPedido.data,
         novoPedido.status,
         novoPedido.Notafiscal

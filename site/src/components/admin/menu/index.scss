@@ -1,11 +1,12 @@
 .menu{
     width: 285px;
     padding-bottom: 30px;
-    background: linear-gradient(360.5deg,  #071441 0%,  #071441 40%, #000 100%);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: 750px;
+    background: linear-gradient(280.5deg, #071441, #000000);
+    background-size: 400% 400%;
   
     .titulo{
         font-size: 25px;
@@ -105,11 +106,11 @@
     }
 
     .selecionado{
-        background-color: aqua;
+        background-color: rgb(172, 171, 171);
     }
  
     a:hover{
-        background-color: aqua;
+        background-color:   rgb(172, 171, 171);
         margin-left: -10px;
         transition: all 0.5s ease-in-out 0s;
     }
@@ -118,5 +119,28 @@
         transition: none;
         margin-left: 10px;
     }
+
+
+    
+  -webkit-animation: aaa 15s ease infinite;
+  -moz-animation: aaa 15s ease infinite;
+  animation: aaa 15s ease infinite;
+     display: flex;
+
+  @-webkit-keyframes aaa {
+      0%{background-position:0% 52%}
+      50%{background-position:100% 49%}
+      100%{background-position:0% 52%}
+  }
+  @-moz-keyframes aaa {
+      0%{background-position:0% 52%}
+      50%{background-position:100% 49%}
+      100%{background-position:0% 52%}
+  }
+  @keyframes aaa {
+      0%{background-position:0% 52%}
+      50%{background-position:100% 49%}
+      100%{background-position:0% 52%}
+  }
 }
 

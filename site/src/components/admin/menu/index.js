@@ -54,12 +54,6 @@ export default function Index(props) {
                         <p className='menu-p3'>Pendentes</p>
                     </Link>
                 </div>
-                <div>
-                    <Link to='/editar-site' className={verificarMenuSele ('editar')}>
-                        <img className='icon-editar' src="../img/editar-site.png" alt='consultar'/>
-                        <p className='menu-p3'>Editar Site</p>
-                    </Link>
-                </div>
             </div>
             <div >
                 <div>

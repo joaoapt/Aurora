@@ -14,6 +14,24 @@ export async function Login(email, senha) {
     return linhas[0];
 }
 
+export async function listarUsuarioEndereco(){
+    const comando = `
+        select * from tb_usuario_endereco
+    `
+
+    const [regis] = await con.query(comando);
+    return regis;
+}
+
+export async function listarUsuarioLogin(){    
+    const comando = `
+    select * from tb_usuariologin
+`
+
+const [regis] = await con.query(comando);
+return regis;
+}
+
 export async function Consultar(id) {
     const comando = 
         `select ds_email		      email,

@@ -7,7 +7,7 @@ import enderecoController from './controller/enderecoController.js';
 import produtoUsuarioController from './controller/produto-usuarioController.js';
 
 import imagemController from './controller/imagemController.js';
-// import pedidoController from './controller/pedidoController.js';
+import pedidoController from './controller/pedidoController.js';
 
 import express from 'express';
 import cors from 'cors';
@@ -22,7 +22,7 @@ server.use('/storage/produto', express.static('storage/produto'));
 //fudido
 
 server.use(imagemController);
-// server.use(pedidoController);
+server.use(pedidoController);
 
 //em analise
 server.use(produtoUsuarioController);

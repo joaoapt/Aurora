@@ -16,7 +16,12 @@ export async function cadastrarLivro (cadastro) {
 
 export async function ConsultarTodos() {
     const comando = `
-    select * from tb_produto`
+    select 	id_produto                      as id,
+            nm_livro                      	as livro,
+            vl_preco                        as preco,
+            ds_classificacao                as classificacao,
+            nr_volume						as volume
+    from tb_produto;`
 
     const [linhas] = await con.query(comando)
     return linhas;

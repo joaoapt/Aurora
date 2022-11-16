@@ -1,18 +1,17 @@
 import { Router } from "express";
 import { inserirPagamentoCartao, inserirPedido, inserirPedidoItem } from "../repository/pedidoRepository.js";
 import { buscarProdutoPorId } from "../repository/produtoRepository.js";
-import { criarNovoPedidoCartao } from "../service/index.js";
+import { criarNovoPedidoCartao } from "../service/novopedido.js";
 
 const server = Router();
 
 
-server.post('/api/pedido/cartao/:idUsuario/', async (req, resp) => {
+server.post('/api/pedido/cartao/:idUsuarioLogin/', async (req, resp) => {
     try {
-        const { idUsuario } = req.params;
+        const { idUsuarioLogin } = req.params;
         const info = req.body;
 
-
-        const novoPedido = criarNovoPedidoCartao(idUsuario, info);
+        const novoPedido = criarNovoPedidoCartao(idUsuarioLogin, info);
 
         const idPedidoCriado = await inserirPedido(novoPedido);
         await inserirPagamentoCartao(idPedidoCriado, info.cartao);

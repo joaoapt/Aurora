@@ -1,11 +1,12 @@
 import axios from 'axios'
+import { API_URL } from '../config/configAPI';
 const api = axios.create({
     baseURL: API_URL
 })
-import { API_URL } from '../config/configAPI';
+
 
 export async function listarProdutosInicio() {
-    const r = await api.get('/api/produto');
+    const r = await api.get('/card/produto');
     return r.data;
 }
 
