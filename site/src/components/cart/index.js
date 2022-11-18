@@ -2,12 +2,7 @@
 import { API_URL } from '../../api/config';
 import './index.scss'
 
-import Storage from 'local-storage'
-import { useState } from 'react';
-
-export default function CarrinhoCard({ item: { produto: { info, imagens }, qtd }, removerItem, carregarCarrinho }) {
-    const [qtdProduto, setQtdProduto] = useState(qtd);
-
+export default function CarrinhoCard({ item: { produto: { info, imagens }, qtd }, carregarCarrinho, remover }) {
 
     function exibirImagem() {
         if (imagens.length > 0) {
@@ -19,21 +14,9 @@ export default function CarrinhoCard({ item: { produto: { info, imagens }, qtd }
     }
 
     function calcularSubtotal() {
-        const subtotal = qtdProduto * info.preco;
+        const subtotal = 1 * info.preco;
         return subtotal;
     }
-
-    function alterarQuantidade(novaQtd) {
-        setQtdProduto(novaQtd);
-
-        let carrinho = Storage('carrinho');
-        let itemStorage = carrinho.find(item => item.id == info.id);
-        itemStorage.qtd = novaQtd;
-
-        Storage('carrinho', carrinho);
-        carregarCarrinho();
-    }
-
 
 
 
@@ -41,32 +24,30 @@ export default function CarrinhoCard({ item: { produto: { info, imagens }, qtd }
         <div className='comp-carrinho-item'>
             <div className='produto-container'>
                 <div className='produto-box'>
-                    <div className='imagens'>
-                        <div className='atual'>
-                            <img src={exibirImagem()} />
-                        </div>
-                    </div>
-                    <div className='detalhes'>
-                        <div className='departamento'> {info.nomeDepartamento} </div>
-                        <div className='nome'> {info.produto} </div>
-
-
+                    <table className='table'>
+                        <thead>
+                            <tr>
+                                <th className='th'>Produto </th>
+                                <th className='th'>Nome </th>
+                                <th className='th'>Entrega </th>
+                                <th className='th'>Preço </th>
+                            </tr>
+                        </thead>
+                        <tr>
+                            <td className='td'><img className='img-livro' src={exibirImagem()} alt='img-Livro'/></td>
+                            <td className='td'>{info.produto}</td>
+                            <td className='td'>É nessesário mais informações</td>
+                            <td className='td'>R$ {calcularSubtotal()}</td>
+                            
+                        </tr>
+                        
+                    </table>
+                    <div className='lixo'  onClick={remover}>
+                        <img src="./img/icons8-remover-24.png" />
                     </div>
                 </div>
-                <div className='qtd-box'>
-                    <div className='i'></div>
-                    <div className='subtotal'>
 
-                        <div>R$  {calcularSubtotal()}</div>
-                        <div>(A vista no PIX)</div>
-
-                    </div>
-
-                </div>
-
-                <div className='lixo'>
-                    <img src="./img/icons8-remover-24.png" />
-                </div>
+                
             </div>
 
         </div>
