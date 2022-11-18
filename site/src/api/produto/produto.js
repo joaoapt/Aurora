@@ -15,3 +15,8 @@ export async function buscarProdutoPorId(id) {
     const r = await api.get('/api/produto/' + id);
     return r.data;
 }
+
+export async function buscarProdutovil(id) {
+    const r = await api.get('/produtovil/' + id);
+    return r.data;
+}

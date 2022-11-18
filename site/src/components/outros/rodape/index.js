@@ -5,7 +5,7 @@ export default function Index (){
     return(
         <footer className='rodape'>
                 <div className='conterne-rodapé'>
-                    <div className='logo'> <img className='logo' src="../img/logo.png" alt='logo'/> </div>
+                    <div className='logo'> <img className='logo' src="/img/logo.png" alt='logo'/> </div>
                     <div className='texto-rodapé'>
                         <h1>Início</h1>
                         <Link to='/' className='aa'>Home</Link>
@@ -29,7 +29,6 @@ export default function Index (){
                     <div className='texto-rodapé'>
                         <h1>Suporte</h1>
                         <p>Contato</p>
-                        <h2>FAQ</h2>
                     </div>
                     <div className='ab'>
                         <Link to='/login-admin' className='botão'>Login</Link> 

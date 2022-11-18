@@ -38,7 +38,7 @@ export default function Index (){
             <nav ClassName='local'>
                 <div className='cont-logo'>
                     <Link to='/'>
-                        <img className='logo' src="../img/logo.png" alt='logo'/>
+                        <img className='logo' src="/img/logo.png" alt='logo'/>
                     </Link>
                     <Link to='/'>
                         <p className='barra'> | </p>
@@ -48,10 +48,10 @@ export default function Index (){
                     </Link>
                     <div className='caixa-busca'>
                         <input type="text" placeholder='Buscar' />
-                        <img className='img-pesquisa' src='../img/pesquisa.png' alt='' />
+                        <img className='img-pesquisa' src='/img/pesquisa.png' alt='' />
                     </div>
                     <Link to='/carrinho'>
-                        <img className='carrinho' src='../img/carrinho.png' alt='' />
+                        <img className='carrinho' src='/img/carrinho.png' alt='' />
                     </Link>
                     <Link className='botão-login' to='/login'>Login</Link>
                     <div onClick={simOUnão}>

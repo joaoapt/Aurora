@@ -141,7 +141,7 @@ export async function buscarProdutovil(id) {
                 nm_livro					    livro,
                 vl_preco						preco,
                 ds_classificacao				classificacao,
-                ds_categoria
+                ds_categoria                    categoria,
                 ds_img    				        imagem,
                 nm_autor						autor,
                 nm_editora						editora,
@@ -155,7 +155,7 @@ export async function buscarProdutovil(id) {
                 nr_largura						largura,
                 nr_comprimento					comprimento
                 from tb_produto
-            where id_produto = 6;
+            where id_produto = ?;
         `
 
     const [registros] = await con.query(comando, [id]);

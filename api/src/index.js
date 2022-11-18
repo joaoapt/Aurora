@@ -17,7 +17,7 @@ server.use(cors());
 server.use(express.json()); 
 
 //imagems
-server.use('/storage/produto', express.static('storage/produto'));
+server.use('/storage', express.static('storage'));
 // endpoints :)
 //fudido
 

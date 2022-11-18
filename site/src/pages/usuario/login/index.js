@@ -20,7 +20,7 @@ export default function Index() {
 
      useEffect(() => {
          if (storage('usuario-logado')) {
-             navigate('/cadastrar');
+             navigate('/novo');
         }
      }, [])
 
@@ -33,9 +33,6 @@ export default function Index() {
 
             storage('usuario-logado', Marcelo);
 
-        setTimeout(() => {
-            navigate('/menu');
-        }, 3000);
     
     } catch (err) {
      

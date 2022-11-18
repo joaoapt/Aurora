@@ -22,6 +22,7 @@ import Login from './pages/usuario/login';
 //Procedimento de compra
 import Aprovado from './pages/procedimento/aprovado';
 import Cartão from './pages/procedimento/cartão';
+import Pix from './pages/procedimento/pix';
 
 
 
@@ -31,8 +32,7 @@ export default function Index() {
         <BrowserRouter>
             <Routes>
                 <Route path="/tela1" element={<Tela1/>}/>
-                
-                
+                <Route path="/pix" element={<Pix/>} />
                 <Route path="/novo" element={<Novo/>}/>
                 <Route path="/aprovado" element={<Aprovado/>}/>
                 <Route path="/cartao" element={<Cartão/>}/>
@@ -42,7 +42,7 @@ export default function Index() {
                 <Route path="/pendentes" element={<Pendentes/>}/>               
                 <Route path="/menu" element={<MenuAdmin/>}/>
                 <Route path="/carrinho" element={<Carrinho/>}/>
-                <Route path="/produto/vil" element={<ProdutoVil/>}/>
+                <Route path="/produto/vil/:id" element={<ProdutoVil/>}/>
                 <Route path="/" element={<Home/>}/>
                 <Route path="/login" element={<Login/>}/>
                 <Route path="/login-admin" element={<LoginAdmin/>}/>

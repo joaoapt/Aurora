@@ -5,7 +5,39 @@ import { Navigation, Pagination, Thumbs } from 'swiper';
 import "swiper/scss/free-mode";
 import 'swiper/scss/navigation';
 import 'swiper/scss/pagination';
+
+import { useEffect, useState } from 'react';
+import { listarProdutosInicio } from '../../../api/produto/produto'
+import 'swiper/scss/pagination';
+
+import { API_URL } from '../../../api/config/configAPI';
+import { useNavigate } from 'react-router-dom';
+
 export default function Index() {
+    const naviga = useNavigate();
+    const [livro, setLivro] = useState([]);
+    
+    async function listar() {
+        const resp = await listarProdutosInicio();
+        setLivro(resp)
+    }
+
+    function formatarPreco(preco) {
+        return preco.toFied(2).replace('.',',');
+    }
+    
+    function open(id) {
+        naviga('/produto/vil/' + id )
+    }
+
+    function exibir(imagem) {
+            return `${API_URL}/${imagem}`;
+    }
+
+    useEffect(() => {
+        listar();
+    }, []);
+
     return(
         <div className="big-mãe-produto">
             <Swiper
@@ -17,56 +49,15 @@ export default function Index() {
             Thumbs
             onSlideChange={() => console.log('slide change')}
             onSwiper={(swiper) => console.log(swiper)}
-            >
-                <SwiperSlide className='loca'>
-                    <div className='local'>
-                        <img className='logo' src="../img/the-boys-1.png" alt='logo'/>
-                        <h2>The Boys</h2>
-                        <h1>R$99,00</h1>
-                    </div>
-                </SwiperSlide>
-                <SwiperSlide className='loca'>
-                    <div className='local'>
-                        <img className='logo' src="../img/acronica.jpg" alt='logo'/>
-                        <h2>As cronicas de Navigation</h2>
-                        <h1>R$99,00</h1>
-                    </div>
-                </SwiperSlide>
-                <SwiperSlide className='loca'>
-                    <div className='local'>
-                        <img className='logo' src="../img/aventuramike.jpg" alt='logo'/>
-                        <h2>Aventura de um Traidor</h2>
-                        <h1>R$99,00</h1>
-                    </div>
-                </SwiperSlide>
-                <SwiperSlide className='loca'>
-                    <div className='local'>
-                        <img className='logo' src="../img/aventuramike.jpg" alt='logo'/>
-                        <h2>Aventura de um Traidor</h2>
-                        <h1>R$99,00</h1>
-                    </div>
-                </SwiperSlide>
-                <SwiperSlide className='loca'>
-                    <div className='local'>
-                        <img className='logo' src="../img/aventuramike.jpg" alt='logo'/>
-                        <h2>Aventura de um Traidor</h2>
-                        <h1>R$99,00</h1>
-                    </div>
-                </SwiperSlide>
-                <SwiperSlide className='loca'>
-                    <div className='local'>
-                        <img className='logo' src="../img/aventuramike.jpg" alt='logo'/>
-                        <h2>Aventura de um Traidor</h2>
-                        <h1>R$99,00</h1>
-                    </div>
-                </SwiperSlide>
-                <SwiperSlide className='loca'>
-                    <div className='local'>
-                        <img className='logo' src="../img/aventuramike.jpg" alt='logo'/>
-                        <h2>Aventura de um Traidor</h2>
-                        <h1>R$99,00</h1>
-                    </div>
-                </SwiperSlide>
+            >       {livro.map(item  =>
+                    <SwiperSlide className='loca' onClick={() => open(item.id)}>
+                        <div className='local'>
+                            <img className='logo' src={exibir(item.imagem)}  alt=''/>
+                            <h2>{item.livro}</h2>
+                            <h1>R$ {item.preco}</h1>
+                        </div>
+                    </SwiperSlide>
+                    )}
             </Swiper>
         </div>
     )
