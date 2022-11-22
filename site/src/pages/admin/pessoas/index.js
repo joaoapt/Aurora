@@ -2,8 +2,33 @@ import './index.scss';
 import Menu from '../../../components/admin/menu';
 import Cabecalho from '../../../components/admin/cabecalho';
 import { Link } from 'react-router-dom';
+import { listar } from '../../../api/endereco/listar-endereco';
+import { consultar } from '../../../api/usuario/login-usuario';
+import { useState,useEffect } from 'react';
+import Storage from 'local-storage';
+
 
 export default function Index(){
+
+    const [endereco,setEndereco] = useState([]);
+    const [usuario,setUsuario] = useState([]);
+
+    async function carregarusuario(){
+        const id = Storage('cliente-logado').id;
+        const r = await  consultar(id);
+        setUsuario(r);
+    }
+
+    async function carregarEndereco() {
+     const id = Storage('cliente-logado').id;
+        const r = await listar(id);
+     setEndereco(r);
+    }
+ 
+    useEffect(() => {
+     carregarEndereco();
+     carregarusuario();
+    })
     return(
         <div className='page-pendentes-pessoas'>
             <Menu selecionado='pendentes'/>
@@ -28,42 +53,14 @@ export default function Index(){
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>1234</td>
-                                        <td>João</td>
-                                        <td>40028922</td>
-                                        <td>04/01/05</td>
-                                        <td>R$ 400,00</td>
-                                    </tr>
-                                    <tr>
-                                    <td>1234</td>
-                                        <td>João</td>
-                                        <td>40028922</td>
-                                        <td>04/01/05</td>
-                                        <td>R$ 400,00</td>
-                                    </tr>
-                                    <tr>
-                                        <td>1234</td>
-                                        <td>João</td>
-                                        <td>40028922</td>
-                                        <td>04/01/05</td>
-                                        <td>R$ 400,00</td>
-                                    </tr>
-                                    <tr>
-                                        <td>1234</td>
-                                        <td>João</td>
-                                        <td>40028922</td>
-                                        <td>04/01/05</td>
-                                        <td>R$ 400,00</td>
-                                    </tr>
-                                    <tr>
-                                        <td>1234</td>
-                                        <td>João</td>
-                                        <td>40028922</td>
-                                        <td>04/01/05</td>
-                                        <td>R$ 400,00</td>
-                                    </tr>
-                                
+                                    {endereco.map(item =>
+                                       <tr>
+                                           <td>{usuario.map(item.nome)}</td>
+                                           <td>{item.numero}</td>
+                                           <td>{item.bairo}</td>
+                                           <td>{item.cidade}</td>
+                                       </tr>
+                                    )}
                                 </tbody>
                             </table>
                         </div>

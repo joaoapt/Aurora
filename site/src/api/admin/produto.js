@@ -77,7 +77,7 @@ import axios from 'axios'
 
 
  export async function removerProduto(id) {
-     const r = await api.delete('/admin/livro/' + id);
+     const r = await api.delete('/deletar/' + id);
      return r.data;
  }
 

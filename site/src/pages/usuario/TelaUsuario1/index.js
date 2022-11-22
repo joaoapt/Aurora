@@ -19,7 +19,6 @@ export default function Index() {
             setEndereco(e);
             setUsuario(r);
             toast('Seja Bem Vindo, Usuário!');
-
     }
     useEffect(() => {
         info();

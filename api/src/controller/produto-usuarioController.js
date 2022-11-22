@@ -1,4 +1,4 @@
-import {buscarProdutoPorId,listarProdutosInicio,buscarProdutovil,buscarProdutoCategorias,buscarProdutosClassificacao,buscarProdutos} from '../repository/produtoRepository.js'
+import {buscarProdutoPorId,listarProdutosInicio,buscarProdutovil,buscarProdutoCategorias,buscarProdutosClassificacao,buscarProdutos, removerProduto} from '../repository/produtoRepository.js'
 import { Router } from "express";
 import { con } from '../repository/connection.js';
 const server = Router();
@@ -88,6 +88,20 @@ server.get('/produtovil/:id', async (req, resp) => {
         })
     }
 })
+
+server.delete('/admin/deletar/:id'), async (req,resp) => {
+    try{
+        const id =req.params.id;
+        
+        await removerProduto(id);
+        resp.status(400).send();
+    }
+    catch(err){
+        resp.status(400).send({
+            erro: err.message
+        })
+    }
+}
 
 
 

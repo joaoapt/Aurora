@@ -34,7 +34,7 @@ export default function Index (){
 
 
     return(
-        <nav className='b'>
+        <nav className='buscar'>
             <nav ClassName='local'>
                 <div className='cont-logo'>
                     <Link to='/'>
@@ -50,9 +50,6 @@ export default function Index (){
                         <input type="text" placeholder='Buscar' />
                         <img className='img-pesquisa' src='/img/pesquisa.png' alt='' />
                     </div>
-                    <Link to='/carrinho'>
-                        <img className='carrinho' src='/img/carrinho.png' alt='' />
-                    </Link>
                     <Link className='botão-login' to='/login'>Login</Link>
                     <div onClick={simOUnão}>
                     <div className= 'nave'
@@ -79,9 +76,9 @@ export default function Index (){
                         <div className='exit'></div>
                         <Scrollbars className="scroll"></Scrollbars>
                         <div className='navbar-nav'>
-                            <div className='nav-item'><Link to='/login'>Inicio</Link></div>
-                            <div className='nav-item'><Link to='/carrinho'>Sobre</Link></div>
-                            <div className='nav-item'><Link to='/menu'>Projeto</Link></div>
+                            <div className='nav-item'><Link to='/'>Home</Link></div>
+                            <div className='nav-item'><Link to='/login'>Seu Login</Link></div>
+                            <div className='nav-item'><Link to='/login-admin'>Login Administrativo</Link></div>
                         </div>
                         </nav>
                         }

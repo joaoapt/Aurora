@@ -4,11 +4,14 @@ import Cabecalho from '../../../components/admin/cabecalho';
 import { buscarLivro } from '../../../api/admin/consultar-BD';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Scrollbar } from 'swiper';
 import 'swiper/scss';
 import 'swiper/scss/scrollbar';
+import {removerProduto} from '../../../api/admin/produto'
 
 
 export default function Index(){
@@ -19,6 +22,17 @@ export default function Index(){
         setLivro(resp)
     }
 
+    async function deletarLivro(id) {
+        try {
+            await removerProduto(id);
+            await listarLivro();
+            toast('Produto Retirado');
+        }
+        catch(err){
+            toast.dark.error(err.response.date.erro);
+        }
+    }
+
     useEffect(() => {
         listarLivro();
     }, []);
@@ -26,6 +40,7 @@ export default function Index(){
     
     return(
         <div className='page-pendentes'>
+            <ToastContainer/>
             <Menu selecionado='pendentes'/>
             <div>
                 <div className='cabecalho'>
@@ -51,6 +66,7 @@ export default function Index(){
                                         </div>
                                         <h1>{item.livro}</h1>
                                         <p>{item.volume}</p>
+                                        <img className='nossa' onClick={() => deletarLivro(item.id)} src='/img/lixo.png' alt=''/>
                                         <p className='disponivel'>disponivel</p>
                                     </SwiperSlide>
                                 )}

@@ -21,7 +21,7 @@ export default function Index(){
     const [idioma, setIdimoma] = useState ('');
     const [isbn13, setIsbn13] = useState ();
     const [isbn10, setIsbn10] = useState ();
-    const [preco, setPreco] = useState ();
+    const [preco, setPreco] = useState ('');
     const [original, setOriginal] = useState ('');
     const [sinopse, setSinopse] = useState ('');
     const [versao, setVersao] = useState ('');
@@ -37,7 +37,7 @@ export default function Index(){
             const usuario = storage ('usuario-logado').id;
 
             const r = await cadastrar(categoria,classificacao, livro, autor, editora, idioma, isbn13, isbn10, preco, original, sinopse, versao, pagina, volume, largura, comprimento, usuario);
-            const img = await enviarImagem(r.id, imagem); 
+            await enviarImagem(r.id, imagem); 
             //12:44
 
             toast('Livro cadastrado com sucesso!');
@@ -102,7 +102,8 @@ export default function Index(){
                                         </div>
                                         <div className='form-row'>
                                             <label>Preço:</label>
-                                            <input type='number' value={preco} onChange={e => setPreco(e.target.value)} />
+                                            <input type='text'
+                                             value={preco} onChange={e => setPreco(e.target.value)} />
                                         </div>
                                         <div className='form-row'>
                                             <label>Volume:</label>
@@ -126,14 +127,11 @@ export default function Index(){
                                                 <option>Filosofia</option>
                                                 <option>Ficção científica</option>
                                                 <option>Aventura</option>
-                                                <option>Aventura</option>
-                                                <option>Aventura</option>
                                                 <option>Distopia</option>
                                                 <option>Misterio</option>
                                                 <option>HQs</option>
                                                 <option>Horror</option>
                                                 <option>Romance</option>
-                                                <option>LGBTQ+</option>
                                                 <option>Biografia</option>
                                                 <option>Gastronomia</option>
                                                 <option>Autoajuda</option>

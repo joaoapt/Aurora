@@ -6,12 +6,15 @@ import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { buscarProdutovil } from '../../../api/produto/produto';
 import { API_URL } from '../../../api/config/configAPI';
-import { Link } from 'react-router-dom';
-//import Storage from 'local-storage'
+import Storage from 'local-storage'
+
+import 'react-toastify/dist/ReactToastify.css';
+import { useNavigate } from 'react-router-dom';
 
 
 
 export default function Index () {
+    const naviga = useNavigate();
     const [produto, setproduto] = useState({ info: {} })
     const { id } = useParams();
 
@@ -20,72 +23,58 @@ export default function Index () {
         setproduto(r);
     }
 
-    // function exibir(imagem) {
-    //     if (produto.info.imagem.length){
-    //     return API_URL + '/' + imagem;
-    //     }
-    //     else{
-    //         return '/produto.png'
-    //     }
-    // }
+    function exibir(imagem) {
+        return API_URL + '/' + imagem;
+    }
 
-    // function adicionarAoCarrinho() {
-    //     let carrinho = [];
-    //     if (Storage('carrinho')) {
-    //         carrinho = Storage('carrinho');
-    //     }
+    function adicionarAoCarrinho() {
+        let carrinho = [];
+        if (Storage('carrinho')) {
+            carrinho = Storage('carrinho');
+            return  naviga('/endereco')
+        }
+        if (!carrinho.find(item => item.id === id)) {
+            carrinho.push({
+                id: id
+            })
 
-
-    //     if (!carrinho.find(item => item.id === id)) {
-    //         carrinho.push({
-    //             id: id,
-    //             qtd: 1
-    //         })
-
-    //         Storage('carrinho', carrinho);
-    //     }
-
-    //     toast.dark('Produto adicionado ao carrinho!');
-    // }
+            Storage('carrinho', carrinho);
+        }
+    }
+    
 
 
-
-
-    // merda do caralho e no botão carrinho
-    //onClick = {adicionarAoCarrinho}
-
-    // {produto.info.imagem.map((item) =>
-    //     <img className="capa" src={exibir(item)} alt=''/>    
-    // )}
 
     useEffect(() => {
         carregarPag();
-    }, [])
+    }, )
 
     return(
+    
         <div className='pag-produto-vil'>
+
         <div>
             <nav><Buscar/></nav>
             <div>
                 <div className='box-livro'>
                 
-                        <img className="capa" src='/img/produto.png' alt='aaa'/>    
+                        <img className="capa" src={exibir(produto.info.imagem)} alt='aaa'/>    
                 
                     <div className='informação'>
-                        <div>
-                            <div className='informação'>
+                        <div className='nono'>
+                            <div>
                                 <h6 className='titulo'>{produto.info.livro}</h6>
                                 </div>
-                            <div className='informação'>
-                                <h6 className='pag/autor'>Por:</h6>
+                            <div className='sub'>
+                                <h6 className='pag/autor'>Autor:</h6>
                                 <p className='sinples'>{produto.info.autor}</p>
                             </div>
-                            <div className='informação'> 
+                            <div className='sub'> 
                                 <h6 className='pag/autor'>Qtd.Páginas:</h6>
                                 <p className='sinples'>{produto.info.paginas}</p>
                             </div>
                             <div className='informação-sinopce'>
-                                <h6 className='si'>Sinopse:</h6>
+                                <h6 className='siss'>Sinopse:</h6>
                                 <br/>
                                 <p className='sinopce'>
                                 {produto.info.sinopse}
@@ -93,17 +82,21 @@ export default function Index () {
                             </div>
                             <hr></hr>
                         </div>
-                        <div className='box-botão'>
-                            <div className='box-botão'>
-                                <div className='preço'>R$  {produto.info.preco}</div>
-                            </div>
-                            <div className='box-botão'>
-                                <div>
-                                    <button className='carrinho'><p>Adicionar</p><img className='car' src="/img/carrinho.png" alt=''/> </button>
+                        <div className='box-lala'>
+                            <div>
+                                <div className='box-botão'>
+                                    <div className='preço'>R$  {produto.info.preco}</div>
                                 </div>
-                                <Link to='/login'>
-                                    <button className='compra'><p>Comprar</p><img className='sacola' src="/img/compras.png" alt=''/></button>
-                                </Link>
+                                <div onClick = {adicionarAoCarrinho}>
+                                    <div>
+                                        <button className='compra'>Comprar<img  src="/img/compras.png" alt=''/></button>
+                                    </div>
+                                    <div className='local-classi'>
+                                        <div className='classi'>
+                                            {produto.info.classificacao}
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -128,7 +121,7 @@ export default function Index () {
                                 <div className='local-img'>
                                     <img src="/img/area.png" alt="logo"/>
                                 </div>
-                                <h6 className='autura'> {produto.info.largura} x  {produto.info.comprimento}</h6>
+                                <h6 className='autura'> {produto.info.largura}X <br/>  {produto.info.comprimento}X cm</h6>
                             </div>
                             <div className='bo'>
                                 <h6  className='acima'>Editora</h6>

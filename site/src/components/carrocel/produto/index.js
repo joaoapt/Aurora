@@ -14,6 +14,8 @@ import { API_URL } from '../../../api/config/configAPI';
 import { useNavigate } from 'react-router-dom';
 
 export default function Index() {
+
+
     const naviga = useNavigate();
     const [livro, setLivro] = useState([]);
     
@@ -22,10 +24,6 @@ export default function Index() {
         setLivro(resp)
     }
 
-    function formatarPreco(preco) {
-        return preco.toFied(2).replace('.',',');
-    }
-    
     function open(id) {
         naviga('/produto/vil/' + id )
     }
@@ -37,6 +35,7 @@ export default function Index() {
     useEffect(() => {
         listar();
     }, []);
+
 
     return(
         <div className="big-mãe-produto">
@@ -50,10 +49,11 @@ export default function Index() {
             onSlideChange={() => console.log('slide change')}
             onSwiper={(swiper) => console.log(swiper)}
             >       {livro.map(item  =>
-                    <SwiperSlide className='loca' onClick={() => open(item.id)}>
+                    <SwiperSlide className='loca'>
                         <div className='local'>
                             <img className='logo' src={exibir(item.imagem)}  alt=''/>
                             <h2>{item.livro}</h2>
+                            <button className='botão' onClick={() => open(item.id)}>Comprar</button>
                             <h1>R$ {item.preco}</h1>
                         </div>
                     </SwiperSlide>

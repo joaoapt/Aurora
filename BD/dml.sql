@@ -3,9 +3,12 @@ use aurorabksDB;
 -- criar login
 INSERT INTO tb_usuariologin (nm_usuario,ds_email, ds_senha)
      VALUES ('João','j', '1234');
+     
+INSERT INTO tb_admin (ds_email, ds_senha)
+     VALUES ('j', '1234');
 
-INSERT INTO tb_usuario_endereco (id_usuariologin, ds_endereco, nr_endereco, nr_cep, ds_cpf, ds_referencia, ds_cidade, ds_bairro, ds_estado, ds_pais, ds_complemento)
-	VALUES (1,'vila',29903,123213,'asdf3e2434','asdfasd','asdfasdf','asdfa','asdfa','asdfaf','asdff');
+INSERT INTO tb_usuario_endereco (id_usuariologin, ds_endereco, ds_cep, ds_referencia, ds_cidade, ds_bairro, ds_estado, ds_pais, ds_complemento)
+	VALUES (1,'vila','asdf3e2434','asdfasd','asdfasdf','asdfa','asdfa','asdfaf','asdff');
     
 update tb_usuario_endereco set
 ds_endereco= '?', 
@@ -55,8 +58,8 @@ select id_usuario_endereco      id,
  where  id_usuario         = 12;
 
 -- inserir dados
-insert into tb_produto (id_categoria, nm_livro, nm_autor, nm_editora, nr_isbn13, nr_isbn10, vl_preco, nm_original, ds_sinopse, ds_versao, nr_pagina, nr_volume, nr_largura, nr_comprimento)
-	values(1,'ameno','alan','mono',320,402,19,'amenonolo','martelo de ferro','2',23,42,24,43);
+insert into tb_produto (ds_categoria, nm_livro, nm_autor, nm_editora, nr_isbn13, nr_isbn10, vl_preco, nm_original, ds_sinopse, ds_versao, nr_pagina, nr_volume, nr_largura, nr_comprimento)
+	values('csadc','ameno','alan','mono',320,402,19,'amenonolo','martelo de ferro','2',23,42,24,43);
    
 -- inserir imagem
 insert into tb_produto (ds_imagem)
@@ -91,5 +94,8 @@ select id_produto       id,
 		ds_categoria	categoria
 from tb_produto;
  
+ insert into tb_pedido(id_produto,id_usuario_endereco,dt_pedido,vl_produto)
+		value(1,1,'2005 -12-14',20);
+        
  
- select * from tb_usuario_endereco;
+ select * from tb_pedido;

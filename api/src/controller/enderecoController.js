@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { listarEndereco, EnderecoUsuario, alterarEndereco } from "../repository/enderecoRepository.js";
+import { IdlistarEndereco, EnderecoUsuario, alterarEndereco } from "../repository/enderecoRepository.js";
 const server = Router();
 
 
@@ -7,7 +7,7 @@ server.get('/lista/:id/endereco', async (req, resp) => {
     try {
         const id = req.params.id;
         
-        const r = await listarEndereco(id);
+        const r = await IdlistarEndereco(id);
         
         resp.send(r);
     }

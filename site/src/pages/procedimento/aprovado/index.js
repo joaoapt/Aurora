@@ -12,16 +12,8 @@ export default function Index() {
                         </div>
                         <div className='g'>
                             <p className='y'>Número do pedido: 34567</p>
-                            <p className='c'>Valor Total: R$ 99,00</p>
                         </div>
-                    </div>
-                    <div className='cont-logo'>
-                        <div className='d'>
-                            <div>
-                                <img className='logo' src="../img/logo.png" alt='logo'/>
-                            </div>
-                        </div>
-                    </div>
+                    </div>             
                 </div>
                 <div>
                     <Link to='/' className='botão1'>Voltar</Link>

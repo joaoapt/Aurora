@@ -43,11 +43,11 @@ export default function Index () {
                     <div className='box-quadrado'>
                         <div className='quadrado'>
                             <h3>Livro de Romance</h3>
-                        
+                                <Romance/>
                         </div>
                         <div className='quadrado'>
                             <h3>Livro de Sci-Fi</h3>
-                            
+                                <FC/>
                         </div>
                     </div>
                 </div>

@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap');
-.b{
+.buscar{
       background: linear-gradient(280.5deg, #071441, #000000);
       background-size: 400% 400%;
       width: 1349px;
       height: 80px;
+
   .nave{
     cursor: pointer;
     display: flex;
@@ -67,7 +68,7 @@
 
   .logo{
         margin-top: 8px;
-        margin-left: 20px;
+        margin-left: 45px;
         width: 75px;
   }
 
@@ -144,7 +145,7 @@
     font-weight: 100;
     transition:all 0.5s ease-in-out 0s;
     margin-top: 15px;
-    margin-left: 50px;
+    margin-left: 140px;
   }
 
   .botão-login:hover{

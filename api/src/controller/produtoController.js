@@ -92,9 +92,9 @@ server.delete('/deletar/:id', async (req, resp) => {
         const { id } = req.params;
 
         const resposta = await removerProduto(id);
-        if (resposta != 1)
+        if (resposta != 1){
             throw new Error('Pedido não pode ser deletado');
-        
+        }
         resp.status(204).send();
     } catch (err) {
         resp.status(400).send({

@@ -36,8 +36,7 @@ export async function Consultar(id) {
     const comando = 
         `select ds_email		      email,
                 nm_usuario            nome,
-                ds_senha              senha,
-                ds_cpf                cpf
+                ds_senha              senha
            from tb_usuariologin
           where id_usuariologin 		    = ? `
     
